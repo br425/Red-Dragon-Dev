@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, width=device-width">
+
+	<title>Home Page Alpha</title>
+
+	<link rel="stylesheet" href="css/main-styles.css">
+	<link rel="stylesheet" href="css/anims.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<script src='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' />
+    
+    <style>body{margin:0; padding:0;}#map{position:absolute; top:0; bottom:-30px; width:100%;}
+    </style>
+
+</head>
+<body onload="drawMap('regularBG')">
+    <style>#map{position:fixed;width:100%;z-index: -2;}</style>
+
+		
+
+
+<div class="regularBG" id="regularBG"></div>
+<div class="hueBG" id="hueBG"></div>
+<div id='map'></div>
+<!-- <div id="loading"><img src="icons/loading.gif" alt="Loading..."></div> -->
+
+					<div id="debug" style="display: none;">
+						<label>scroll direction</label>
+						<code id="scrollDirection"></code>
+						<br>
+						<label>state</label>
+						<code id="state">outside</code>
+						<br>
+						<label>last hit</label>
+						<code id="lastHit">nothing</code>
+						<br>
+						<label>progress</label>
+						<code id="progress">0</code>
+					</div>
+
+
+	<aside id="voyageNav">
+		<a href="index.html">
+			<h1 class="voyageLogo">The Red<span class="biggerFont"> Dragon</span></h1>
+		</a>
+		<div id="sideBar">
+			<object data="icons/sidebar.svg" type="image/svg+xml">
+				<img src="icons/sidenav1-light.png" alt="Sidenav Icon">
+			</object>
+		</div>
+	</aside>
+
+
+	<main id="content">
+
+<div id="locationBox">
+	<h2 class="locationTitle" id="englandTitle">England</h2>
+	<h2 class="locationTitle" id="fuerteventuraTitle">Fuerteventura</h2>
+	<h2 class="locationTitle" id="rioDeOroTitle">Rio De Oro</h2>
+	<h2 class="locationTitle" id="sierraLeoneTitle">Sierra Leone</h2>
+	<h2 class="locationTitle" id="rioDeLaPlataTitle">Rio De La Plata</h2>
+	<h2 class="locationTitle" id="islaDeLobosTitle">Isle De Lobos</h2>
+	<h2 class="locationTitle" id="salvadorTitle">Salvador</h2>
+	<h2 class="locationTitle" id="capeVerdeTitle">Cape Verde</h2>
+</div>
+
+
+<div class="spacer20"></div>
+<div class="spacer50 spaceCenter">
+	<h1 id="titleH">The Voyage of The Red Dragon</h1>
+</div>
+<div class="spacer50"></div>
+
+		<section id="departure">
+			
+			
+			<div class="spacer50"></div>
+
+			<div class="spaceRight">
+
+				<div class="textBox redTextBox">
+					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
+					<a href="">
+						<h2>Thomas Hood</h2>
+						<img src="icons/rightArrow.svg" alt="Arrow">
+					</a>
+					<div class="textArea">
+						<p>
+						Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl. Swab barque interloper chantey doubloon starboard grog black jack gangway rutters.
+						</p>
+						<p>
+						Deadlights jack lad schooner scallywag dance the hempen jig carouser broadside cable strike colors. Bring a spring upon her cable holystone blow the man down spanker Shiver me timbers to go on account lookout wherry doubloon chase. Belay yo-ho-ho keelhaul squiffy black spot yardarm spyglass sheet transom heave to.
+						</p>
+						<p>
+						Trysail Sail ho Corsair red ensign hulk smartly boom jib rum gangway. Case shot Shiver me timbers gangplank crack Jennys tea cup ballast Blimey lee snow crow's nest rutters. Fluke jib scourge of the seven seas boatswain schooner gaff booty Jack Tar transom spirits.					
+						</p>
+					</div>
+					<a href="">
+						<h2>Thomas Hood</h2>
+						<img src="icons/rightArrow.svg" alt="Arrow">
+					</a>
+					<img class="boxBottom" src="icons/boxTop.svg" alt="Sidenav Icon">
+				</div>
+			</div>	
+			
+		</section>
+
+		<div class="spacer50"></div>
+		<div class="spacer50"></div>
+		<div class="spacer50"></div>
+		<div class="spacer50"></div>
+		<div class="spacer50"></div>
+		<div class="spacer50"></div>
+		<div class="spacer50"></div>
+		
+		<section id="england">
+
+			<div class="spacer50"></div>
+
+			<div class=" spaceRight">
+				<div class="textBox redTextBox">
+					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
+					<a href="">
+						<h2>Departing England</h2>
+						<img src="icons/rightArrow.svg" alt="Arrow">
+					</a>
+					<div class="textArea">
+						<p>
+						Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl. Swab barque interloper chantey doubloon starboard grog black jack gangway rutters.
+						</p>
+						<p>
+						Deadlights jack lad schooner scallywag dance the hempen jig carouser broadside cable strike colors. Bring a spring upon her cable holystone blow the man down spanker Shiver me timbers to go on account lookout wherry doubloon chase. Belay yo-ho-ho keelhaul squiffy black spot yardarm spyglass sheet transom heave to.
+						</p>
+						<p>
+						Trysail Sail ho Corsair red ensign hulk smartly boom jib rum gangway. Case shot Shiver me timbers gangplank crack Jennys tea cup ballast Blimey lee snow crow's nest rutters. Fluke jib scourge of the seven seas boatswain schooner gaff booty Jack Tar transom spirits.					
+						</p>
+						<p>
+						Deadlights jack lad schooner scallywag dance the hempen jig carouser broadside cable strike colors. Bring a spring upon her cable holystone blow the man down spanker Shiver me timbers to go on account lookout wherry doubloon chase. Belay yo-ho-ho keelhaul squiffy black spot yardarm spyglass sheet transom heave to.
+						</p>
+					</div>
+					<img class="boxBottom" src="icons/boxTop.svg" alt="Sidenav Icon">
+				</div>
+			</div>	
+			
+			
+			<div id="englandFade"></div>
+
+		</section>
+
+			
+			
+
+		<section id="fuerteventura">
+			<div class="spacer50"></div>
+
+			<div class=" spaceRight">
+
+				<div class="textBox redTextBox">
+					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
+					<a href="">
+						<h2>Setting Sail</h2>
+						<img src="icons/rightArrow.svg" alt="Arrow">
+					</a>
+					<div class="textArea">
+						<p>
+						Trysail Sail ho Corsair red ensign hulk smartly boom jib rum gangway. Case shot Shiver me timbers gangplank crack Jennys tea cup ballast Blimey lee snow crow's nest rutters. Fluke jib scourge of the seven seas boatswain schooner gaff booty Jack Tar transom spirits.					
+						</p>
+						<p>
+						Deadlights jack lad schooner scallywag dance the hempen jig carouser broadside cable strike colors. Bring a spring upon her cable holystone blow the man down spanker Shiver me timbers to go on account lookout wherry doubloon chase. Belay yo-ho-ho keelhaul squiffy black spot yardarm spyglass sheet transom heave to.
+						</p>
+						<p>
+						Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl. Swab barque interloper chantey doubloon starboard grog black jack gangway rutters.
+						</p>
+					</div>
+					<img class="boxBottom" src="icons/boxTop.svg" alt="Sidenav Icon">
+				</div>
+			</div>	
+			
+		</section>
+
+		<section id="rioDeOro">
+
+			
+			
+			
+			
+		</section>
+
+		<section id="sierraLeone">
+
+			
+			
+			
+			
+		</section>
+
+		<section id="rioDeLaPlata">
+
+			
+			
+			
+			
+		</section>
+
+		<section id="islaDeLobos">
+
+			
+			
+			
+			
+		</section>
+
+		<section id="salvador">
+
+			
+			
+			
+			
+		</section>
+
+		<section id="capeVerde">
+
+			
+			
+			
+			
+		</section>
+
+		<section id="southampton">
+
+			
+			
+			
+			
+		</section>
+
+		<section id="ending">
+
+			<div class="spacer50"></div>
+			
+			
+			
+		</section>
+
+		
+	<footer></footer>
+	
+	</main>
+
+
+	<script src="js/jquery-min.js"></script>
+	<script src="js/generalScripts.js"></script>
+	<script src="js/ScrollMagic.js"></script>
+	<!-- <script src="js/ScrollMagic.min.js"></script> -->
+	<script src="js/TweenMax.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+	<script src="js/brushstroke.min.js"></script>
+	<script src="js/voyageScrolls.js"></script>
+	<script src="js/voyageStrokes.js"></script>
+<script >
+
+  mapboxgl.accessToken = 'pk.eyJ1IjoiYXhvbmFsdCIsImEiOiJjajh1bXU0ajcxMjY2MzNwOGJvaHN0bDBjIn0.oUvMV9_vKdrLQExQnzMTXQ';
+  // pk.eyJ1IjoiYmVucm9kaWEiLCJhIjoiY2pjZmM5NXd0MW41cTMzbnQ2YnM1eXYxMiJ9.czwp2BPD_rLc8trOb33TdA
+
+  var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/axonalt/cj93ba48s47wr2sma5siaoamq',
+      interactive: false,
+      bearing: 0,
+      center: [-0.14955, 51.4775],
+      zoom: 5,
+      pitch: 20
+  });
+
+  var chapters = {
+      'departure': {
+          duration: 5000,
+          bearing: 0,
+          center: [-0.14955, 51.4775],
+          zoom: 4,
+          pitch: 40
+      },
+      'england': {
+          duration: 26000,
+          bearing: 0,
+          center: [-0.14955, 51.4775],
+          zoom: 8,
+          pitch: 20
+      },
+      'fuerteventura': {
+          duration: 40000,
+          center: [-14.0537, 28.3587],
+          bearing: -180,
+          zoom: 10,
+          pitch: 55
+      },
+      'rioDeOro': {
+          duration: 36000,
+          center: [-15.796667, 23.711389],
+          bearing: -90,
+          zoom: 10,
+          pitch: 45
+      },
+      'sierraLeone': {
+          duration: 16000,
+          center: [-13.0289, 8.3308],
+          bearing: 90,
+          zoom: 7,
+          pitch: 65
+      },
+      'rioDeLaPlata': {
+          duration: 12000,
+          bearing: 30,
+          center: [-56.7412, -35.1945],
+          zoom: 9,
+          pitch: 70
+      },
+      'islaDeLobos': {
+          bearing: 30,
+          center: [-54.8834, -35.0267],
+          zoom: 8,
+          duration: 2000,
+          pitch: 40
+      },
+      'salvador': {
+          bearing: 30,
+          center: [-38.365938, -12.802113],
+          zoom: 9,
+          duration: 10000,
+          pitch: 80
+      },
+      'capeVerde': {
+          bearing: 50,
+          center: [-23.0418, 16.5388],
+          zoom: 6,
+          duration: 6000,
+          pitch: 100
+      },
+      'southampton': {
+          bearing: 30,
+          center: [-1.4044, 50.9097],
+          zoom: 5,
+          duration: 6000,
+          pitch: 40
+      }
+  };
+
+  // On every scroll event, check which element is on screen
+  window.onscroll = function() {
+      var chapterNames = Object.keys(chapters);
+      for (var i = 0; i < chapterNames.length; i++) {
+          var chapterName = chapterNames[i];
+          if (isElementOnScreen(chapterName)) {
+              setActiveChapter(chapterName);
+              break;
+          }
+      }
+  };
+
+  var activeChapterName = 'england';
+  function setActiveChapter(chapterName) {
+      if (chapterName === activeChapterName) return;
+
+      map.easeTo(chapters[chapterName]);
+
+      document.getElementById(chapterName).setAttribute('class', 'active');
+      document.getElementById(activeChapterName).setAttribute('class', '');
+
+      activeChapterName = chapterName;
+  }
+
+  function isElementOnScreen(id) {
+      var element = document.getElementById(id);
+      var bounds = element.getBoundingClientRect();
+      return bounds.top < window.innerHeight && bounds.bottom > 0;
+  }
+
+  map.on('load', function () {
+
+    map.addLayer({
+        "id": "route",
+        "type": "line",
+        "source": {
+            "type": "geojson",
+            "data": {
+                "type": "Feature",
+                "properties": {},
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                    // ENGLAND
+                        [-0.3708, 51.4419],
+                    // THE REST
+                        [-0.3708, 51.4419],
+                        [-14.0537, 28.3587],
+                        [-15.796667, 23.711389],                                             
+                        [-13.0289, 8.3308],
+                        [-56.7412, -35.1945],
+                        [-54.8834, -35.0267],
+                        [-38.365938, -12.802113],
+                        [-23.0418, 16.5388],
+                        [-1.4044, 50.9097]
+                    ]
+                }
+            }
+        },
+        "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+        },
+        "paint": {
+            "line-color": "#9a0000",
+            "line-width": 5,
+        }
+    });
+});
+
+// var controller = new ScrollMagic.Controller();
+
+// var scene = new ScrollMagic.Scene({triggerElement: "#intro", duration: 20})
+// 				.addTo(controller)
+// 				.on("leave", function (e) {
+// 					console.log('ITS HERE');
+// 					$("#scrollDirection").text(e.target.controller().info("scrollDirection"));
+// 				})
+				// .on("enter leave", function (e) {
+				// 	$("#state").text(e.type == "enter" ? "inside" : "outside");
+				// })
+				// .on("start end", function (e) {
+				// 	$("#lastHit").text(e.type == "start" ? "top" : "bottom");
+				// })
+				// .on("progress", function (e) {
+				// 	$("#progress").text(e.progress.toFixed(3));
+				// })
+				;
+
+
+</script>
+
+</body>
+</html>

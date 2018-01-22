@@ -1,0 +1,427 @@
+.
+
+/* GENERAL STYLES */
+
+html {
+	font-size: 100%;
+	background-color: black;
+}
+body {
+	overflow-x: hidden;
+}
+
+/* TEXT */
+
+@font-face {
+	src: url('../fonts/ZapfinoLinotypeOne.ttf');
+	font-family: 'Zapfino';
+}
+
+h1 {
+	font-family: 'Zapfino';
+	font-weight: bold;
+}
+
+@font-face {
+	src: url('../fonts/Kallos-itc-medium.ttf');
+	font-family: 'Kallos';
+}
+
+h2,h3,h4 {
+	font-family: 'Kallos';
+}
+
+@font-face {
+	src: url('../fonts/Neuton-Regular.TTF');
+	font-family: 'Neuton';
+}
+
+p {
+	font-family: 'Neuton';
+}
+
+.textBox {
+	width: 25rem;
+	display: flex;
+	flex-flow: column;
+	align-items: stretch;
+}
+
+.redTextBox .textArea {
+	border: solid #9a0000 2px;
+	background: rgba(250, 245, 245,.9);
+}
+.blackTextBox .textArea {
+	border: solid #000 2px;
+	background: rgba(50, 40, 40,.9);
+}
+
+.textBox a {
+	padding: 1rem;
+	width: 100%;
+	height: 4rem;
+	display: flex;
+}
+.textBox a img {
+	margin-right: .5rem;
+	max-height: 100%;
+}
+.textBox a:hover h2 {
+	color: #dad0d0;
+	transition: .3s;
+}
+.textBox a:hover img {
+	margin-right: 0;
+	fill: #eae0e0;
+	transition: .3s;
+}
+.redTextBox a {
+	background: #9a0000;	
+}
+.blackTextBox a {
+	background: #0a0000;
+}
+
+.textBox a h2 {
+	color: #fffcfc;
+	width: 100%;
+	height: auto;
+}
+
+
+.textBox p {
+	padding: 0rem 1rem 2rem;
+}
+
+.textBox .textArea {
+	padding-top: 2rem;
+}
+
+.blackTextBox p {
+	color: #fffcfc;
+	padding: 1rem 1rem 1rem;
+}
+.blackTextBox h3 {
+	color: #fffcfc;
+	padding: 1rem 0;
+}
+.blackTextBox span {
+	padding: 1rem;
+}
+
+.boxTop {
+	/*margin-bottom: -1rem;*/
+}
+.boxBottom {
+	/*margin-top: -.5rem;*/
+	transform: rotateZ(180deg);
+	transform-origin: 50%;
+
+}
+
+.flexRow {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+/* IMAGES */
+
+img {
+	max-width: 100%;
+}
+
+
+.spacer10 {
+	min-height: 10vh;
+}
+.spacer20 {
+	min-height: 20vh;
+}
+.spacer50 {
+	min-height: 50vh;
+}
+.spacer100 {
+	min-height: 100vh;
+}
+
+.spaceCenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.spaceLeft {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 2rem;
+}
+.spaceRight {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 2rem;
+}
+
+.locationTitle {
+	font-family: 'Zapfino';
+	font-size: 5rem;
+	font-weight: bold;
+	color: #9a0000;
+
+	position: fixed;
+	left: 15rem;
+	top: 2rem;
+	opacity: 0;
+	z-index: 10;
+}
+
+#locationBox {
+	display: none;
+}
+
+
+#debug {
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 999;
+	background: rgba(110,110,110,.8);
+	padding: 1rem;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MOBILE */
+
+/* HEADER */
+
+#homeHeader {
+	position: fixed;
+	display: flex;
+	z-index: 4;
+	flex-flow: row nowrap;
+	height: 10rem;
+	width: 27rem;
+	padding: 1rem;
+	background: rgba(250, 245, 245,.9);
+	border-right: solid #9a0000 2px;
+	border-bottom: solid #9a0000 2px;
+}
+
+
+ h1 {
+	/*max-width: 50%;*/
+	color: #9a0000;
+}
+
+.voyageLogo {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.voyageLeft {
+	margin-left: 3rem;
+}
+.biggerFont {
+	font-size: 3.5rem;
+	line-height: .5rem;
+}
+
+#homeHeader .logo {
+	max-height: 100%;
+	margin-left: -7rem;
+}
+
+
+#voyageNav {
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 2;
+	height: 100%;
+	width: 10rem;
+	padding: 0rem;
+	border-right: solid #9a0000 3px;
+	background: url('../imgs/paper-bg.jpg');
+	opacity: 0;
+}
+
+#voyageNav h1 {
+	padding: 1.5rem 0;
+	margin: 0;
+	border-bottom: solid #9a0000 3px;	
+	transition: .2s;
+}
+#voyageNav h1:hover {
+	background-color: #9a0000;
+	color: #fffcfc;
+}
+
+#sideBar {
+	max-width: 100%;
+	max-height: 100%;
+	margin: 2rem 1rem;
+}
+
+.activeDot {
+	fill: transparent;
+	stroke: #9a0000;
+}
+
+
+.redTheme h2 {
+	color: #fffcfc !important;
+	transition: 2s;
+}
+
+#voyageNav.redTheme {
+	background: transparent;
+	border: 0;
+	transition: 2s;
+}
+#voyageNav.redTheme * {
+	border: none;
+	color: #fffcfc;
+	transition: 2s;
+}
+.redTheme svg circle {
+	fill: #fffcfc !important;
+	transition: 2s;
+}
+
+#hueBG.redTheme {
+	mix-blend-mode: multiply;
+}
+
+/* MAIN */
+
+.regularBG {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background: url('../imgs/paper-bg.jpg');
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+}
+
+#titleH {
+	font-size: 5rem;
+	position: relative;
+}
+
+
+/* SECTION */
+
+#skyBG {
+	position: fixed;
+	top: 0;
+	background: url('../imgs/sky-bg.jpg');
+	background-size: cover;
+	background-position: center;
+	width: 120vw;
+	height: 110vh;
+	right: -20%;
+	z-index: -10;
+}
+#shipBG {
+	position: fixed;
+	bottom: 0;
+	background: url('../imgs/ship-bg.png');
+	background-size: cover;
+	background-position: center;
+	width: 120vw;
+	height: 110vh;
+	right: -20%;
+	z-index: -5;
+	/*transform: translateX(-10%);*/
+}
+#shipFG {
+	position: fixed;
+	bottom: -70px;
+	height: 110%;
+	right: 100px;
+	z-index: 1;
+}
+
+#darken {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background-color: black;
+	opacity: .8;
+	z-index: -1;
+}
+
+
+#voyageInfo {
+/*	position: fixed;
+	z-index: 30;
+	top: 15rem;
+*/}
+#archiveInfo {
+/*	position: fixed;
+	z-index: 30;
+	top: 15rem;
+	right: 0;
+*/}
+#aboutInfo {
+/*	position: fixed;
+	z-index: 20;
+	top: 0rem;
+	right: 0;
+*/}
+
+/* FOOTER */
+
+
+
+/* MISC */
+
+
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TABLET */
+
+@media screen and (min-width: 500px) {
+	
+/* HEADER */
+/* MAIN */
+/* SECTION */
+/* FOOTER */
+/* MISC */
+
+}
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DESKTOP */
+
+@media screen and (min-width: 900px) {
+	
+/* HEADER */
+/* MAIN */
+/* SECTION */
+/* FOOTER */
+/* MISC */
+
+}
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ LARGER */
+
+@media screen and (min-width: 1700px) {
+	
+/* HEADER */
+/* MAIN */
+/* SECTION */
+/* FOOTER */
+/* MISC */
+
+}
+

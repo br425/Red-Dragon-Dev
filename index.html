@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta>
+	<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+	<title>Home Page Alpha</title>
+
+	<link rel="stylesheet" href="css/main-styles.css">
+	<link rel="stylesheet" href="css/anims.css">
+	<link rel="stylesheet" href="css/normalize.css">
+</head>
+<body>
+	<div id="wrapper">
+		<div class="BGimg" id="wrapperBG"></div>
+
+	<header id="homeHeader">
+		<h1><span class="voyageLeft">The Voyage of </span><br><span class="biggerFont">The Red Dragon</span></h1>
+		<img class="logo" src="imgs/new-logo.png" alt="Logo">
+	</header>
+
+	<main>
+		<section id="parallaxElements">
+			<div class="bob"><div id="skyBG"></div></div>
+			<div class="bob"><div id="shipBG"></div></div>
+			<div class="bob"><img src="imgs/ship-fg.png" alt="ship" id="shipFG"></div>
+			<div id="darken"></div>
+		</section>
+
+		<section id="parallaxTriggers">
+			<div class="spacer20"></div>
+			<div class="spacer10"></div>
+			<div class="spacer100 spaceLeft" id="toArchiveTrigger">
+				<div class="textBox redTextBox" id="">
+					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
+					<a href="voyage.html">
+						<h2>Experience The Voyage</h2>
+						<img src="icons/rightArrow.svg" alt="Arrow">
+					</a>
+					<div class="textArea">
+						<p>
+							Discover the voyage of the Red Dragon, a privateering vessel which rampaged through the Atlantic for thirteen months. Relive the journey told by the Pilot Thomas Hood of how they plundered, fought, and sailed for riches to bring back to England.
+						</p>
+					</div>
+					<img class="boxBottom" src="icons/boxTop.svg" alt="Sidenav Icon">
+				</div>
+			</div>
+
+			<div class="spacer100 spaceRight" id="toArchiveTrigger">
+				<div class="textBox redTextBox" id="">
+					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
+					<a href="">
+						<h2>Discover the Archive</h2>
+						<img src="icons/rightArrow.svg" alt="Arrow">
+					</a>
+					<div class="textArea">
+						<p>
+							Discover the research that went into reconstructing the tale of the Red Dragon. Learn about the other ccounts of the story from those within and gainst the voyage.
+						</p>
+					</div>
+					<img class="boxBottom" src="icons/boxTop.svg" alt="Sidenav Icon">
+				</div>				
+			</div>
+
+				<div class="spacer100" id="toAboutTrigger"></div>
+				<div class="spacer10"></div>
+				<div class="spacer100 spaceRight">
+					<div class="textBox blackTextBox" id="">
+					<img class="boxTop" src="icons/boxTopBlack.svg" alt="Sidenav Icon">
+						<a href="">
+							<h2>Contributors</h2>
+						</a>
+
+						<div class="flexRow textArea">
+							<span>
+								<h3>Researchers</h3>
+								<p>Gabriel Rocha</p>
+								<p>Tommy Oliver</p>
+								<p>Mario Bummer</p>
+								<p>Ted Theo</p>
+							</span>
+							<span>
+								<h3>Developers</h3>
+								<p>Ben Rodia</p>
+								<p>Axel Mortimer</p>
+								<p>Stephen Gross</p>
+								<p>Su Hnin Pwint</p>
+							</span>
+						</div>
+					<img class="boxBottom" src="icons/boxTopBlack.svg" alt="Sidenav Icon">
+					</div>
+				</div>
+		</section>
+
+
+	</main>
+	<footer></footer>
+	</div>
+
+	<script src="js/jquery-min.js"></script>
+	<script src="js/ScrollMagic.js"></script>
+	<!-- <script src="js/ScrollMagic.min.js"></script> -->
+	<script src="js/TweenMax.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+	<script src="js/homeScrolls.js"></script>
+</body>
+</html>
