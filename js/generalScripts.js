@@ -23,3 +23,9 @@ onReady(function () {
     show('loading', false);
 });
 
+
+$(".textBox a").hover(function(){
+    $('.redTextBox').addClass('boxHover');
+    }, function(){
+    $('.textBox').removeClass('boxHover');
+});

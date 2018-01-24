@@ -1,4 +1,4 @@
-.
+
 
 /* GENERAL STYLES */
 
@@ -38,6 +38,7 @@ h2,h3,h4 {
 
 p {
 	font-family: 'Neuton';
+	max-width: 60rem;
 }
 
 .textBox {
@@ -50,6 +51,9 @@ p {
 .redTextBox .textArea {
 	border: solid #9a0000 2px;
 	background: rgba(250, 245, 245,.9);
+	display: flex;
+	flex-flow: column;
+	align-items: center;
 }
 .blackTextBox .textArea {
 	border: solid #000 2px;
@@ -61,14 +65,11 @@ p {
 	width: 100%;
 	height: 4rem;
 	display: flex;
+	transition: .3s;
 }
 .textBox a img {
 	margin-right: .5rem;
 	max-height: 100%;
-}
-.textBox a:hover h2 {
-	color: #dad0d0;
-	transition: .3s;
 }
 .textBox a:hover img {
 	margin-right: 0;
@@ -113,10 +114,16 @@ p {
 	/*margin-bottom: -1rem;*/
 }
 .boxBottom {
-	/*margin-top: -.5rem;*/
+	/*margin-top: -1rem;*/
 	transform: rotateZ(180deg);
 	transform-origin: 50%;
+}
+.boxHover a {
+	background: #f23535 !important;
+}
 
+.boxHover .textArea {
+	border: 2px solid #f23535;
 }
 
 .flexRow {
@@ -146,13 +153,15 @@ img {
 
 .spaceCenter {
 	display: flex;
+	flex-flow: column;
 	justify-content: center;
 	align-items: center;
 }
 .spaceLeft {
 	display: flex;
-	justify-content: flex-start;
-	align-items: center;
+	flex-flow: column;
+	justify-content: center;
+	align-items: flex-start;
 	padding: 2rem;
 }
 .spaceRight {
@@ -172,11 +181,27 @@ img {
 	left: 15rem;
 	top: 2rem;
 	opacity: 0;
+	pointer-events: none;
 	z-index: 10;
+
 }
 
 #locationBox {
 	display: none;
+}
+
+#sierraleoneImgs * {
+	position: fixed;
+	left: 15rem;
+	z-index: 12;
+	top: 10rem;
+	width: 30rem;
+	opacity: 0;
+	transition: 1s;
+}
+
+.show {
+	opacity: 1;
 }
 
 
@@ -239,33 +264,64 @@ img {
 	height: 100%;
 	width: 10rem;
 	padding: 0rem;
-	border-right: solid #9a0000 3px;
+	/*border-right: solid #9a0000 3px;*/
+	box-shadow: 2px 0 15px gray;
 	background: url('../imgs/paper-bg.jpg');
 	opacity: 0;
 }
 
 #voyageNav h1 {
-	padding: 1.5rem 0;
+	padding: 1.5rem 1rem;
 	margin: 0;
-	border-bottom: solid #9a0000 3px;	
-	transition: .2s;
+	/*border-bottom: solid #9a0000 3px;	*/
+	transition: .3s;
 }
 #voyageNav h1:hover {
-	background-color: #9a0000;
-	color: #fffcfc;
+	color: #f23535;
 }
 
 #sideBar {
 	max-width: 100%;
 	max-height: 100%;
-	margin: 2rem 1rem;
+	margin: 1rem 1rem;
+
+	background: url('../icons/sidebar.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
-.activeDot {
-	fill: transparent;
-	stroke: #9a0000;
+.circle,.circle circle {
+	-webkit-transform-origin: 50%;
+	-moz-transform-origin: 50%;
+	-ms-transform-origin: 50%;
+	-o-transform-origin: 50%;
+	transform-origin: 50%;
+}
+.circle {
+	cursor: pointer;
+	transition: .3s;
+
+}
+.circle:hover {
+	transform: scale(1.7);
+	/*border: 2px solid #ba0000;*/
+	fill: #f23535 !important;
+
+}
+.circle:hover circle,.activeDot:hover .cls-4 {
+	fill: #f23535 !important;
+
 }
 
+.visitedDot circle {
+	transform: scale(1.5);
+	fill: #9a0000 !important;
+}
+
+.activeDot .cls-4 {
+	/*transform: scale(1.2);*/
+	fill: #9a0000 !important;
+}
 
 .redTheme h2 {
 	color: #fffcfc !important;
@@ -273,22 +329,54 @@ img {
 }
 
 #voyageNav.redTheme {
-	background: transparent;
+	background: rgba(0,0,0,0);
 	border: 0;
 	transition: 2s;
-}
-#voyageNav.redTheme * {
-	border: none;
-	color: #fffcfc;
-	transition: 2s;
-}
-.redTheme svg circle {
-	fill: #fffcfc !important;
-	transition: 2s;
+	box-shadow: none;
 }
 
-#hueBG.redTheme {
+.whiteBar {
+	filter: brightness(0) invert(.9);
+
+}
+.whiteBar .voyageLogo:hover {
+	filter: invert(.6);
+}
+ 
+.redBox {
+	background: #9a0000  !important;
 	mix-blend-mode: multiply;
+	opacity: 1 !important;
+}
+.redishBox {
+	background: #9a0000  !important;
+	mix-blend-mode: hue;
+	opacity: 1 !important;
+}
+
+.bigTitle {
+	font-family: 'Zapfino';
+	font-size: 10rem;
+	color: #fffcfc;
+	font-weight: normal;
+    text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;  
+	pointer-events: none;
+}
+
+.bigStopText {
+	color: #fffcfc;
+	width: 30rem;
+}
+.bigStopText h2 {
+	padding: 0 3rem 2rem; 
+	font-size: 1.6rem;
+}
+.bigStopText p {
+	padding: 2rem 3rem; 
 }
 
 /* MAIN */
@@ -301,14 +389,18 @@ img {
 	height: 100%;
 	z-index: -1;
 	background: url('../imgs/paper-bg.jpg');
-	background-size: cover;
+	background-size: cover;	
 	display: flex;
 	justify-content: center;
 	-ms-align-items: center;
 	align-items: center;
+	transition: 2s;
+	/*background: #000;*/
+	/*mix-blend-mode: multiply;*/
 }
 
 #titleH {
+	margin-top: 0;
 	font-size: 5rem;
 	position: relative;
 }

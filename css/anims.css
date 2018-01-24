@@ -7,7 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
@@ -15,19 +15,20 @@
     height: 100vh;
     background: url('../imgs/paper-bg.jpg');
 	background-size: cover;
+	pointer-events: none;
 }
 
 #loading img {
 	width: 30rem;
 }
 
-.hueBG {
+#hueBG {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 0;
+	z-index: 100;
 	transition: 2s;
 	background: url('../imgs/paper-bg.jpg');
 	background: #9a0000;
@@ -71,6 +72,26 @@ main {
 @keyframes fadeIn{
 	/*from{opacity: 0;}*/
 	to {opacity: 1;}
+}
+
+
+#fadeRed {
+	-webkit-animation-name: fadeRedT;
+	-o-animation-name: fadeRedT;
+	animation-name: fadeRedT;
+	-webkit-animation-delay: 4s;
+	-o-animation-delay: 4s;
+	animation-delay: 4s;
+	-webkit-animation-duration: 6s;
+	-o-animation-duration: 6s;
+	animation-duration: 6s;
+	animation-fill-mode: forwards;
+	color: #f23535;
+}
+
+@keyframes fadeRedT {
+	from {color: #f23535;} 
+	to {color: #9a0000;}
 }
 
 #shipFG {
