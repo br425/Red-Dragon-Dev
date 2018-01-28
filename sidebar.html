@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>sidebar</title>
+	<link rel="stylesheet" href="css/main-styles.css">
+</head>
+<body>
+	
+<aside id="voyageNav" style="opacity: 1;">
+<a href="index.html">
+	<h1 class="voyageLogo">The Red<span class="biggerFont"> Dragon</span></h1>
+</a>
+
+<div id="sideBar2">
+		<a href="#" onclick="scrollTo()" id="one"><span class="dot"></span><span class="title">England</span></a>
+		<a href="#" onclick="scrollTo()" id="two"><span class="dot"></span><span class="title">Fuerteventura</span></a>
+		<a href="#" onclick="scrollTo()" id="three"><span class="dot"></span><span class="title">Rio de Oro</span></a>
+		<a href="#" onclick="scrollTo()" id="four"><span class="dot"></span><span class="title">Sierraleone</span></a>
+		<a href="#" onclick="scrollTo()" id="five"><span class="dot"></span><span class="title">Rio De La Plata</span></a>
+		<a href="#" onclick="scrollTo()" id="six"><span class="dot"></span><span class="title">Isle de Lobos</span></a>
+		<a href="#" onclick="scrollTo()" id="seven"><span class="dot"></span><span class="title">Salvador</span></a>
+		<a href="#" onclick="scrollTo()" id="eight"><span class="dot"></span><span class="title">Cape Verde</span></a>
+		<a href="#" onclick="scrollTo()" id="nine"><span class="dot"></span><span class="title">Southampton</span></a>
+</div>
+</aside>
+
+<style>
+	* {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		text-decoration: none;
+	}
+	#voyageNav h1 {
+		padding: 0;
+	}
+	#voyageNav {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-between;
+		padding: 2rem 1rem;
+		box-sizing: border-box;
+	}
+	#sideBar2 {
+		width: 100%;
+		background: url('icons/sideBar.svg');
+		background-size: cover;
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		justify-content: space-around;
+		width: 8rem;
+		height: 25.3rem;
+		padding: 3rem 0;
+		box-sizing: border-box;
+	}
+	#sideBar2 a {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: center;
+	}
+	#sideBar2 a .title {
+		margin-right: -2rem;
+		padding-left: 2rem;
+		white-space: nowrap;
+		width: 0;
+		opacity: 0;
+		font-family: 'Kallos';
+		text-decoration: underline;
+		color: #9a0000;
+		pointer-events: none;
+	}
+	#sideBar2 a:hover .title {
+		opacity: 1;
+	}
+	.dot {
+		background: #9a0000;
+		border-radius: 50%;
+		height: .7rem;
+		width: .7rem;
+		margin: .5rem;
+		transition: .3s;
+		/*box-sizing: border-box;*/
+	}
+	#sideBar2 a:hover .dot {
+		opacity: 1;
+		background: transparent;
+		border: 3px solid #9a0000;
+	}
+</style>
+
+</body>
+</html>

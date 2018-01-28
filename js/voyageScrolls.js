@@ -1,26 +1,26 @@
 
-var controller = new ScrollMagic.Controller();
+// var controller = new ScrollMagic.Controller();
 
-// change behaviour of controller to animate scroll instead of jump
-controller.scrollTo(function (newpos) {
-	TweenMax.to(window, 0.5, {scrollTo: {y: newpos}});
-});
+// // change behaviour of controller to animate scroll instead of jump
+// controller.scrollTo(function (newpos) {
+// 	TweenMax.to(window, 0.5, {scrollTo: {y: newpos}});
+// });
 
-//  bind scroll to anchor links
-$(document).on("click", "a[href^='#']", function (e) {
-	var id = $(this).attr("href");
-	if ($(id).length > 0) {
-		e.preventDefault();
+// //  bind scroll to anchor links
+// $(document).on("click", "a[href^='#']", function (e) {
+// 	var id = $(this).attr("href");
+// 	if ($(id).length > 0) {
+// 		e.preventDefault();
 
-		// trigger scroll
-		controller.scrollTo(id);
+// 		// trigger scroll
+// 		controller.scrollTo(id);
 
-			// if supported by the browser we can even update the URL.
-		if (window.history && window.history.pushState) {
-			history.pushState("", document.title, id);
-		}
-	}
-});
+// 			// if supported by the browser we can even update the URL.
+// 		if (window.history && window.history.pushState) {
+// 			history.pushState("", document.title, id);
+// 		}
+// 	}
+// });
 
 
                         // init controller
@@ -141,9 +141,9 @@ new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH+ri
                 .setClassToggle("#voyageNav", "redTheme") 
                 .addTo(controller);
 
-new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH+rioDeLaPlataH})
-                .setClassToggle("#regularBG", "redBox") 
-                .addTo(controller);
+// new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH+rioDeLaPlataH})
+//                 .setClassToggle("#regularBG", "redBox") 
+//                 .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH+rioDeLaPlataH})
                 .setClassToggle("#voyageNav", "whiteBar") 
                 .addTo(controller);
@@ -242,9 +242,9 @@ new ScrollMagic.Scene({triggerElement: "#salvador", duration: salvadorH})
                 .setClassToggle("#voyageNav", "redTheme") 
                 .addTo(controller);
 
-new ScrollMagic.Scene({triggerElement: "#salvador", duration: salvadorH})
-                .setClassToggle("#regularBG", "redBox") 
-                .addTo(controller);
+// new ScrollMagic.Scene({triggerElement: "#salvador", duration: salvadorH})
+//                 .setClassToggle("#regularBG", "redBox") 
+//                 .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#salvador", duration: salvadorH})
                 .setClassToggle("#voyageNav", "whiteBar") 
                 .addTo(controller);
