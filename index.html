@@ -12,12 +12,19 @@
 	<link rel="stylesheet" href="css/normalize.css">
 </head>
 <body>
+	<aside id="homeNav">
+		<div>
+			<a href="#toVoyage" id="voyageDot"><span class="dot"><span>-</span>x</span></a>
+			<a href="#toArchive" id="archiveDot"><span class="dot"><span>-</span>x</span></a>
+			<a href="#toAbout" id="aboutDot"><span class="dot"><span>-</span>x</span></a>
+		</div>
+	</aside>
 	<div id="wrapper">
 		<div class="BGimg" id="wrapperBG"></div>
 
 	<header id="homeHeader">
 		<h1><span class="voyageLeft">The Voyage of </span><br><span class="biggerFont">The Red Dragon</span></h1>
-		<img class="logo" src="imgs/new-logo.png" alt="Logo">
+		<img class="logo" src="icons/logo-red.svg" alt="Logo">
 	</header>
 
 	<main>
@@ -25,14 +32,14 @@
 			<div class="bob"><div id="skyBG"></div></div>
 			<div class="bob"><div id="shipBG"></div></div>
 			<div class="bob"><img src="imgs/ship-fg.png" alt="ship" id="shipFG"></div>
+			<div id="rain" class="rain"></div>
 			<div id="darken"></div>
 		</section>
 
 		<section id="parallaxTriggers">
-			<div class="spacer10"></div>
-			<div class="spacer100 spaceLeft" id="toArchiveTrigger">
+			<div class="spacer100 spaceLeft" id="toVoyage">
 				<div class="textBox redTextBox" id="">
-					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
+					<!-- <img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon"> -->
 					<a href="voyage.html">
 						<h2>Experience The Voyage</h2>
 						<img src="icons/rightArrow.svg" alt="Arrow">
@@ -42,13 +49,13 @@
 							Discover the voyage of the Red Dragon, a privateering vessel which rampaged through the Atlantic for thirteen months. Relive the journey told by the Pilot Thomas Hood of how they plundered, fought, and sailed for riches to bring back to England.
 						</p>
 					</div>
-					<img class="boxBottom" src="icons/boxTop.svg" alt="Sidenav Icon">
+					<!-- <img class="boxBottom boxTop" src="icons/boxTop.svg" alt="Sidenav Icon"> -->
 				</div>
 			</div>
 
-			<div class="spacer100 spaceRight" id="toArchiveTrigger">
+			<div class="spacer100 spaceRight" id="toArchive">
 				<div class="textBox redTextBox" id="">
-					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
+					<!-- <img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon"> -->
 					<a href="">
 						<h2>Discover the Archive</h2>
 						<img src="icons/rightArrow.svg" alt="Arrow">
@@ -58,15 +65,13 @@
 							Discover the research that went into reconstructing the tale of the Red Dragon. Learn about the other ccounts of the story from those within and gainst the voyage.
 						</p>
 					</div>
-					<img class="boxBottom" src="icons/boxTop.svg" alt="Sidenav Icon">
+					<!-- <img class="boxBottom boxTop" src="icons/boxTop.svg" alt="Sidenav Icon"> -->
 				</div>				
 			</div>
 
-				<div class="spacer100" id="toAboutTrigger"></div>
-				<div class="spacer10"></div>
-				<div class="spacer100 spaceRight">
+				<div class="spacer100 spaceRight" id="toAbout">
 					<div class="textBox blackTextBox" id="">
-					<img class="boxTop" src="icons/boxTopBlack.svg" alt="Sidenav Icon">
+					<!-- <img class="" src="icons/boxTopBlack.svg" alt="Sidenav Icon"> -->
 						<div class="a">
 							<h2>Contributors</h2>
 						</div>
@@ -87,7 +92,7 @@
 								<p>Su Hnin Pwint</p>
 							</span>
 						</div>
-					<img class="boxBottom" src="icons/boxTopBlack.svg" alt="Sidenav Icon">
+					<!-- <img class="boxBottom" src="icons/boxTopBlack.svg" alt="Sidenav Icon"> -->
 					</div>
 				</div>
 		</section>

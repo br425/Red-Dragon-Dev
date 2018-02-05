@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="initial-scale=1.0, width=device-width">
 
-	<title>Home Page Alpha</title>
+	<title>Voyage Page Alpha v3</title>
 
 	<link rel="stylesheet" href="css/main-styles.css">
 	<link rel="stylesheet" href="css/anims.css">
@@ -16,46 +16,48 @@
     </style>
 
 </head>
-<body onload="drawMap('regularBG')">
+<body><!-- onload="drawMap('regularBG')" -->
     <style>#map{position:fixed;width:100%;z-index: -10;}</style>
 
 		
 
-
-<div id="regularBG"></div>
-<div id="imgBG"></div>
+<!-- <div id="blendFix" class="imgBG"></div> -->
+<div id="regularBG" class="imgBG"></div>
+<div id="redBG" class="imgBG"></div>
+<div id="rain" class="imgBG"></div>
+<div id="sierraLeonePar" class="imgBG"></div>
+<div id="rioDeLaPlataPar" class="imgBG"></div>
+<div id="salvadorPar" class="imgBG"></div>
 <div id='map'></div>
 <div id="loading"><img src="icons/loading.gif" alt="Loading..."></div>
+<div id="continue"><p>Start Scrolling to Begin</p></div>
+<div id="debug" style="display: none;"></div>
 
-					<div id="debug" style="display: none;">
-						<label>scroll direction</label>
-						<code id="scrollDirection"></code>
-						<br>
-						<label>state</label>
-						<code id="state">outside</code>
-						<br>
-						<label>last hit</label>
-						<code id="lastHit">nothing</code>
-						<br>
-						<label>progress</label>
-						<code id="progress">0</code>
-					</div>
+<div id="bannerBG" class="imgBG"></div>
+
+
 
 
 	<aside id="voyageNav">
-		<a href="index.html">
-			<h1 class="voyageLogo">The Red<span class="biggerFont"> Dragon</span></h1>
+		<div id="mobileHeader">
+		<div id="compassButton"></div>
+		<a href="index.html" id="voyageNavA">
+			<img src="icons/logo-white.svg" alt="Logo" id="voyageLogo">
+			<h1 class="voyageLogo">The Red Dragon</h1>
 		</a>
+		</div>
+		<div class="barContainer">
 		<div id="sideBar">
-				<a href="#england" id="one"><span class="dot"></span><span class="title">England</span></a>
-				<a href="#fuerteventura" id="two"><span class="dot"></span><span class="title">Fuerteventura</span></a>
-				<a href="#rioDeOro" id="three"><span class="dot"></span><span class="title">Rio de Oro</span></a>
-				<a href="#sierraLeone" id="four"><span class="dot"></span><span class="title">Sierraleone</span></a>
-				<a href="#rioDeLaPlata" id="five"><span class="dot"></span><span class="title">Rio De La Plata</span></a>
-				<a href="#islaDeLobos" id="six"><span class="dot"></span><span class="title">Isle de Lobos</span></a>
-				<a href="#salvador" id="seven"><span class="dot"></span><span class="title">Salvador</span></a>
-				<a href="#capeVerde" id="eight"><span class="dot"></span><span class="title">Cape Verde</span></a>
-				<a href="#southampton" id="nine"><span class="dot"></span><span class="title">Southampton</span></a>
+				<a href="#england" id="one"><span class="dot"><span>-</span>x</span><span class="title">England</span></a>
+				<a href="#fuerteventura" id="two"><span class="dot"><span>-</span>x</span><span class="title">Fuerteventura</span></a>
+				<a href="#rioDeOro" id="three"><span class="dot"><span>-</span>x</span><span class="title">Rio de Oro</span></a>
+				<a href="#sierraLeone" id="four"><span class="dot"><span>-</span>x</span><span class="title">Sierraleone</span></a>
+				<a href="#rioDeLaPlata" id="five"><span class="dot"><span>-</span>x</span><span class="title">Rio De La Plata</span></a>
+				<a href="#islaDeLobos" id="six"><span class="dot"><span>-</span>x</span><span class="title">Isle de Lobos</span></a>
+				<a href="#salvador" id="seven"><span class="dot"><span>-</span>x</span><span class="title">Salvador</span></a>
+				<a href="#capeVerde" id="eight"><span class="dot"><span>-</span>x</span><span class="title">Cape Verde</span></a>
+				<a href="#southampton" id="nine"><span class="dot"><span>-</span>x</span><span class="title">Southampton</span></a>
+		</div>
 		</div>
 	</aside>
 
@@ -72,24 +74,25 @@
 </div>
 
 
-<div class="spacer100 spaceCenter">
+<div id="titleCard" class="spacer100 spaceCenter">
 	<h1 id="titleH">The Voyage of The Red Dragon</h1>
 	<img src="icons/swirl.svg" alt="" style="width: 30rem;">
+	<!-- <p class="scrollPrompt">Start Scrolling to Begin</p> -->
 </div>
-<div class="spacer20"></div>
 
 		<section id="departure">
+<div class="spacer50"></div>
+<div class="spacer50"></div>
 			
 			
 			<div class="spacer100"></div>			
-			<div class="spacer50"></div>
 
-			<div class="spaceRight">
+			<div class="spaceCenter">
 
-				<div class="textBox blackTextBox">
-						<img class="boxTop" src="icons/boxTopBlack.svg" alt="Sidenav Icon">
-					<div class="a" href="">
-						<h2>Preamble</h2>
+				<div id="preludeText" class="anyText textBox blackTextBox">
+						<img src="icons/boxTopBlack.svg" alt="Sidenav Icon">
+					<div class="a">
+						<h2>Prelude</h2>
 						<!-- <img src="icons/rightArrow.svg" alt="Arrow"> -->
 					</div>
 					<div class="textArea">
@@ -110,17 +113,17 @@
 
 
 
-		<div class="spacer100"></div>
+		<div class="spacer10"></div>
 		
 		<section id="england">
 
-			<div class="spacer50"></div>
+			<div class="spacer100"></div>
 
 			<div class="spaceRight">
-				<div class="textBox redTextBox">
+				<div id="departureText" class="anyText textBox redTextBox">
 					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
 					<a href="">
-						<h2>Departing England</h2>
+						<h2>License to Piracy</h2>
 						<img src="icons/rightArrow.svg" alt="Arrow">
 					</a>
 					<div class="textArea">
@@ -133,23 +136,23 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						<h2>Departing England</h2>
 						<img src="icons/rightArrow.svg" alt="Arrow">
 					</a>
- -->					<img class="boxBottom" src="icons/boxTop.svg" alt="Sidenav Icon">
+ -->					<img class="boxBottom boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
 				</div>
 			</div>	
-			<div id="englandFade"></div>			
+			<div id="englandTrans"></div>			
 
 		</section>
 
 			
-			<div class="spacer100"></div>
+			<div id="toFuerteventura" class="spacer100"></div>
 			
 
 		<section id="fuerteventura">
-			<div class="spacer50"></div>
+			<div class="spacer100"></div>
 
 			<div class=" spaceRight">
 
-				<div class="textBox redTextBox">
+				<div id="fuerteventuraText" class="anyText textBox redTextBox">
 					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
 					<a href="">
 						<h2>The Sack of Lanzarote</h2>
@@ -166,13 +169,16 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						<h2>The Sack of Lanzarote</h2>
 						<img src="icons/rightArrow.svg" alt="Arrow">
 					</a>
- -->					<img class="boxBottom" src="icons/boxTop.svg" alt="Sidenav Icon">
+ -->					<img class="boxBottom boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
 				</div>
 			</div>	
-			<div id="fuerteventuraFade"></div>			
+			<div id="fuerteventuraTrans"></div>			
 		</section>
 
 			<div class="spacer100"></div>
+
+
+			<div id="toRioDeOro" class="spacer100"></div>
 
 		<section id="rioDeOro">
 
@@ -180,7 +186,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 			<div class="spacer100"></div>
 			<div class=" spaceRight">
 
-				<div id="rioDeOroInfo" class="textBox redTextBox">
+				<div id="rioDeOroText" class="anyText textBox redTextBox">
 					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
 					<a href="">
 						<h2>The Saharan Coast</h2>
@@ -189,58 +195,62 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 					<div class="textArea">
 						<p><img src="imgs/rio-de-oro.jpg" alt="Rio De Oro"></p>
 						<p>
-	The voyage then continued to the Rio De Oro coast of west Africa. They sought fishing vessels there as this was a popular migration spot of sardines. The Red Dragon disembarked on the Saharan coast near the Canarie Islands and were greeted by two individuals. The men were presumably Berber fishermen and “cam down wyth a flag of trus.” The captain then spoke at length with one of them and brought a small crew of men who all fished with the man. From the man they learned that there were no supplies to be had except from what the Moors bring to trade with. 
+							The voyage then continued to the Rio De Oro coast of west Africa. They sought fishing vessels there as this was a popular migration spot of sardines. The Red Dragon disembarked on the Saharan coast near the Canarie Islands and were greeted by two individuals. The men were presumably Berber fishermen and “cam down wyth a flag of trus.” The captain then spoke at length with one of them and brought a small crew of men who all fished with the man. From the man they learned that there were no supplies to be had except from what the Moors bring to trade with. 
 						</p>
 					</div>
-<!-- 					<a href="">
-						<h2>The Saharan Coast</h2>
-						<img src="icons/rightArrow.svg" alt="Arrow">
-					</a>
- -->					<img class="boxBottom" src="icons/boxTop.svg" alt="Sidenav Icon">
+					<img class="boxBottom boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
 				</div>
-			
-			<div id="rioDeOroFade"></div>			
+			</div>
+			<div id="rioDeOroTrans"></div>			
 			
 			
 		</section>
 			<div class="spacer50"></div>
 
+
+		<div id="toSierraLeone" class="spacer100"></div>
+
 		<section id="sierraLeone">
 
 			<div class="spacer100"></div>
-			<div class="spacer100 spaceCenter">
+			<div class="spacer100 spaceCenter bigTitleBG">
 				<h2 class="bigTitle" id="sierraLeoneTitle" style="transition: 1s;">Sierra Leone</h2>
 			</div>
 			<div class="spacer50"></div>
 
 			<div class="spacer100 spaceRight">
-				<div id="sierraLeoneText" class="bigStopText">
+				<div id="sierraLeoneText" class="anyText bigStopText">
 
 					<a href="">
-						<h2>Slaughter At the Watering Hole</h2>
+						<h2>Slaughter At the Watering Place</h2>
 						<img src="icons/rightArrow.svg" alt="Arrow">
 					</a>
-<p>
-After stopping at the Saharan coast the Red Dragon then moved on to Sierra Leone as Thomas Hood and others had been to the area on previous voyages. Here they would stop for the “watering place” to acquire supplies for their voyage. Previously voyages had been allowed to gather resources from the area if they presented a tribute of wine to the leader of the Zapes. Zape is actually an umbrella term for several tribes in the area but had been brought under the rule of the Manes. Unbeknownst to the crew of the voyage there had been a voyage a few weeks previous led by Thomas Cavendish. The meeting of Cavendish and the Zapes was quick and violent as Cavendish’s men, through the knowledge of a detained Portuguese man, looted and burned a Zape village. This led the Zape people to strike back against Cavendish’s men. 
-</p>
-<p>
-Cavendish’s initial attack had spoiled the goodwill between the Europeans and the Zapes. Six weeks after the skirmishes between the two parties the Red Dragon landed at the watering place. The Zapes had prepared by reinforcing the area and demanded a tribute of wine and clothes rather than just wine. Not expecting the higher demands and believing that they were being treated unfairly Negotiations broke down. After that the Red Dragon moored in the watering place and then skirmished with the local Zapes. After beating back the Zapes they then cleared the trees surrounding the area as both a defensive strategy and a source of timber. The next few days were marked by a quiet tension as the Red Dragon collected supplies of freshwater, fish, timber, and even a crocodile. The gathering of supplies without consent was a major act of provocation. 
-</p>
-<p id="sierraLeoneText2">
-The next portion is marked by extreme violence and a ominously easy tone of the narrator Thomas Hood. Hood mentions the act of bringing a woman on board while the captain was away, presumably non-consensually. The days following were mixes of gathering resources and acts of large scale atrocities. The first of which being the captain bringing one hundred and fifty men ashore to pillage rice and burn the Zape village. They returned the next day to burn the rest of the houses. 
-</p>
-</div>
+					<p>
+						After stopping at the Saharan coast the Red Dragon then moved on to Sierra Leone as Thomas Hood and others had been to the area on previous voyages. Here they would stop for the “watering place” to acquire supplies for their voyage. Previously voyages had been allowed to gather resources from the area if they presented a tribute of wine to the leader of the Zapes. Zape is actually an umbrella term for several tribes in the area but had been brought under the rule of the Manes. Unbeknownst to the crew of the voyage there had been a voyage a few weeks previous led by Thomas Cavendish. The meeting of Cavendish and the Zapes was quick and violent as Cavendish’s men, through the knowledge of a detained Portuguese man, looted and burned a Zape village. This led the Zape people to strike back against Cavendish’s men. 
+					</p>
+					<p>
+						Cavendish’s initial attack had spoiled the goodwill between the Europeans and the Zapes. Six weeks after the skirmishes between the two parties the Red Dragon landed at the watering place. The Zapes had prepared by reinforcing the area and demanded a tribute of wine and clothes rather than just wine. Not expecting the higher demands and believing that they were being treated unfairly Negotiations broke down. After that the Red Dragon moored in the watering place and then skirmished with the local Zapes. After beating back the Zapes they then cleared the trees surrounding the area as both a defensive strategy and a source of timber. The next few days were marked by a quiet tension as the Red Dragon collected supplies of freshwater, fish, timber, and even a crocodile. The gathering of supplies without consent was a major act of provocation. 
+					</p>
+					<p id="sierraLeoneText2">
+						The next portion is marked by extreme violence and a ominously easy tone of the narrator Thomas Hood. Hood mentions the act of bringing a woman on board while the captain was away, presumably non-consensually. The days following were mixes of gathering resources and acts of large scale atrocities. The first of which being the captain bringing one hundred and fifty men ashore to pillage rice and burn the Zape village. They returned the next day to burn the rest of the houses. 
+					</p>
+			</div>
 			</div>
 			
 			
 			<div id="sierraleoneImgs">
-<!-- 				<img id="sierraleone-1" src="imgs/sierraleone-1.jpg" alt="sierraleoneImg">
+				<img id="sierraleone-1" src="imgs/sierraleone-1.jpg" alt="sierraleoneImg">
 				<img id="sierraleone-2" src="imgs/sierraleone-2.jpg" alt="sierraleoneImg">
- -->			</div>
+			</div>
 
-			<div id="sierraLeoneFade"></div>			
+			<div id="sierraLeoneTrans"></div>			
+			<div class="spacer100"></div>
 			
 		</section>
+		
+		<div class="spacer10"></div>
+
+		<div id="toRioDeLaPlata" class="spacer100"></div>
 
 		<section id="rioDeLaPlata">
 
@@ -250,99 +260,98 @@ The next portion is marked by extreme violence and a ominously easy tone of the 
 				<h2 class="bigTitle" id="rioDeLaPlataTitle" style="transition: 1s;">Rio De La Plata</h2>
 			</div>
 			
-			<div class="spacer100"></div>
-			<div class="spacer50"></div>
 
-			<div class="spaceRight">
-				<div class="textBox redTextBox">
-					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
+			<div class="spacer100 spaceRight">
+				<div id="rioDeLaPlataText" class="anyText bigStopText">
+
 					<a href="">
-						<h2>Departing England</h2>
+						<h2>The Three Slavers</h2>
 						<img src="icons/rightArrow.svg" alt="Arrow">
 					</a>
-					<div class="textArea">
-						<p><img src="imgs/england.png" alt="Map of England"></p>
-						<p>
-The Red Dragon expedition was backed by the Earle of Cumberland with the blessing of Queen Elizabeth and the letter of Marque from Dom Antonio, the rival pretender to the Portuguese throne. They left Gravesend England on June 24, 1586 with four ships. Robert Wirthington led the voyage with the main pilot of the lead ship being Thomas Hood. Their goal was to sail to the strait of Magellan to the pacific in search of plunder from Spanish ships. The voyage took around thirteen months from fall 1586 to summer 1587. 
-						</p>
-					</div>
-<!-- 					<a href="">
-						<h2>Departing England</h2>
-						<img src="icons/rightArrow.svg" alt="Arrow">
-					</a>
- -->					<img class="boxBottom" src="icons/boxTop.svg" alt="Sidenav Icon">
-				</div>
-			</div>	
-			<div id="rioDeLaPlataFade"></div>			
+<p>
+	After the sack of Sierra Leone the Red Dragon crossed the Atlantic to south America in search of the strait of Magellan. It was December when Hood steered them down the coast of South America. They were now in the Rio de la Plata. In January they reported seeing a sail in the distance. The next day this became two sails, two slaving ships of three on their way to Buenos Aires. These ships were tasked by the Bishop of Tucumán to bring forced labour, evangelizing priests, and material to build sugar mills and churches. The bishop had largely been accused of being less interested in faith and more so in business. 
+</p>
+<p>
+	Notable members on the slaving ships include merchants such as Diego de Palma and Lopo Vaz Pestana as well as the clergyman friar Francisco Salzedo. The slavers held what was a large capacity of slaves at the time, totaling one hundred and twenty slaves between all of three ships. Two of the slave ships were captured by the Red Dragon and consisted of many Spaniards, Portuguese, and around eighty slaves. After taking on so many new mouths to feed the Red Dragon was running into more serious issues of provisioning. Hood then suggested they stop by a place he called “sell eyland [seal island].” 
+</p>
+</div>
+			</div>
 			
+			<div id="rioDeLaPlataTrans"></div>			
+			
+			<div class="spacer100"></div>
 			
 		</section>
+
+		<div id="toIslaDeLobos" class="spacer100"></div>
 
 		<section id="islaDeLobos">
 
 			
 			<div class="spacer100"></div>
 			<div class="spaceRight">
-				<div class="textBox redTextBox">
+				<div id="islaDeLobosText" class="anyText textBox redTextBox">
 					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
 					<a href="">
-						<h2>Departing England</h2>
+						<h2>Two Islands and the Coast</h2>
 						<img src="icons/rightArrow.svg" alt="Arrow">
 					</a>
 					<div class="textArea">
-						<p><img src="imgs/england.png" alt="Map of England"></p>
 						<p>
-The Red Dragon expedition was backed by the Earle of Cumberland with the blessing of Queen Elizabeth and the letter of Marque from Dom Antonio, the rival pretender to the Portuguese throne. They left Gravesend England on June 24, 1586 with four ships. Robert Wirthington led the voyage with the main pilot of the lead ship being Thomas Hood. Their goal was to sail to the strait of Magellan to the pacific in search of plunder from Spanish ships. The voyage took around thirteen months from fall 1586 to summer 1587. 
+							They then stopped on the Isla de Lobos a small island off the coast of present day Uruguay which sat at the cusp of the Rio de la Plata. The Red Dragon thus spent the next three days hunting seals, gathering provisions on another island which they referred to as Green Island, otherwise known as Isla de Gorriti, and on the shore of Punta del Este. After the hunting spree the crew decided it would be best to dump the sugar they had pillaged from the slavers in favor of the seal carcasses which would feed the enlarged population. They briskly hurried toward the strait of Magellan to find a Spanish port in which to sell the slaves. 
+						</p>
+						<p><img src="imgs/isledelobos-1.jpg" alt="Picture of Isle De Lobos"></p>
+						<p>
+							While the Red Dragon sailed for the strait of Magellan it was becoming obvious they may not make it in time before winter came. Apparently even though the English did not speak much with their Spanish captives, the Portuguese were willing to talk. One of the Portuguese is even mentioned as having the idea of turning back to Brazil before winter began. Not having come to a consensus on what to do they could agree that they did not have enough to provisions to provide for everyone. They then decided to strip the slave ships of parts and leave around one hundred captives stranded thirty leagues from the shore. Testimonials of the encounter do not say what befell those stranded by the voyage but there were a handful of survivors who recounted an attack by the corsair “Roberto.” Eventually the crew came to the final decision of turning back to Brazil in late February when conditions started becoming too hazardous to continue.
+
 						</p>
 					</div>
-<!-- 					<a href="">
-						<h2>Departing England</h2>
-						<img src="icons/rightArrow.svg" alt="Arrow">
-					</a>
- -->					<img class="boxBottom" src="icons/boxTop.svg" alt="Sidenav Icon">
+					<img class="boxBottom boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
+					<div class="spacer100"></div>
 				</div>
 			</div>	
 			
-			<div id="islaDeLobosFade"></div>			
-			
-			
+			<div id="islaDeLobosTrans"></div>	
 		</section>
 
+
+		<div id="toSalvador" class="spacer100"></div>
+
 		<section id="salvador">
-
-			<div class="spacer100"></div>
-
 			<div class="spacer100 spaceCenter">
 				<h2 class="bigTitle" id="salvadorTitle" style="transition: 1s;">Salvador</h2>
 			</div>
 
 			<div class="spacer100"></div>
 			
-			<div class="spaceRight">
-				<div class="textBox redTextBox">
-					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
+			<div class="spacer100 spaceRight">
+				<div id="rioDeLaPlataText" class="anyText bigStopText">
+
 					<a href="">
-						<h2>Departing England</h2>
+						<h2>War for the Colony</h2>
 						<img src="icons/rightArrow.svg" alt="Arrow">
 					</a>
-					<div class="textArea">
-						<p><img src="imgs/england.png" alt="Map of England"></p>
-						<p>
-The Red Dragon expedition was backed by the Earle of Cumberland with the blessing of Queen Elizabeth and the letter of Marque from Dom Antonio, the rival pretender to the Portuguese throne. They left Gravesend England on June 24, 1586 with four ships. Robert Wirthington led the voyage with the main pilot of the lead ship being Thomas Hood. Their goal was to sail to the strait of Magellan to the pacific in search of plunder from Spanish ships. The voyage took around thirteen months from fall 1586 to summer 1587. 
-						</p>
-					</div>
-<!-- 					<a href="">
-						<h2>Departing England</h2>
-						<img src="icons/rightArrow.svg" alt="Arrow">
-					</a>
- -->					<img class="boxBottom" src="icons/boxTop.svg" alt="Sidenav Icon">
+					<p>
+						On the journey up the coast the fleet constantly disbanded and rebanded as tensions ran high. Provisions were growing low. At the end of March a couple mariners died of malnutrition. Eventually the fleet found an island near the Camamu river which they were able to restock on many provisions such as water, fruit, beef, chicken, etc. Even Hood who was largely secular praised God for the find. After poaching the provisions the Red Dragon found that Salvador had closed its doors upon the arrival of the English fleet. There the fleet met a pair of hulks from Flushing who had arrived to trade with the Portuguese but instead agreed to fight alongside the Red Dragon. The British then picked off many ships in the bay and took others captive. One of the few Portuguese prisoners the Red Dragon had not abandoned, Lopo Vaz Pestana, then escaped and swam to Salvador. Salvador, now expecting an imminent attack, gathered a local militia as the fortress guarding the bay only accounted for thirty soldiers. Vaz then went on to lead around thirty men himself to take back a smaller ship taken by the fleet which had drifted too far from them. 
+					</p>
+					<p>
+						In the next week the Red Dragon moved with relative ease burning plantations, stealing livestock, and gathering provisions while Salvador raised enough men to combat them. They were able to muster between two hundred and three hundred men who filled a small galleon and four smaller ships. The British had set up at the mouth of the Paraguaçu River where they gathered fresh water and took over several buildings. Here would be the site of fighting between large groups of English and parts of the Salvador militia. Here the natives joined Salvador in fending off the invading pirates. Here Hood takes a break from journaling the days of the voyage, assumably while in combat, so most of the information of the battles are recorded by the merchant Saracoll. Most of the conflict took part from the gathering of provisions as the crew was ambushed attempting to restock. 
+					</p>
+					<p>
+						One major battle happened on the island of Itaparica when the crew attempted to steal cattle and were met by a group of one hundred and fifty natives and Portuguese. Through heavy losses they were still able to claim seventeen bullocks. The fighting continued through May in the bay of all Saints. The English were being starved by the Luso-Indigenous strategies which included hiding any food stuffs and cattle in places where the Red Dragon appeared. This was especially troublesome as the privateers were easily read in their conquest of beef. The attacks ended as the Red Dragon negotiated with Salvador to return the captured men, as well as the sinking of the Dorothy. The fleet then shed some of the ships in worse condition and sailed back for England. 
+					</p>
 				</div>
-			</div>	
+			</div>
 			
-			<div id="salvadorFade"></div>			
+			
+			<div id="salvadorTrans"></div>			
+			<div class="spacer100"></div>
 			
 			
 		</section>
+
+
+		<div id="toCapeVerde" class="spacer100"></div>
 
 		<section id="capeVerde">
 
@@ -351,31 +360,91 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 			<div class="spacer100"></div>
 			<div class="spacer100"></div>
 			
-			<div id="capeVerdeFade"></div>			
+			<div id="capeVerdeTrans"></div>			
 			
 		</section>
 
+		<div id="toSouthampton" class="spacer100"></div>
 		<section id="southampton">
 
 			
 			
 			<div class="spacer100"></div>
+			<div class=" spaceRight">
+
+				<div id="southamptonText" class="anyText textBox redTextBox">
+					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
+					<a href="">
+						<h2>The Return</h2>
+						<img src="icons/rightArrow.svg" alt="Arrow">
+					</a>
+					<div class="textArea">
+						<p><img src="imgs/rio-de-oro.jpg" alt="Rio De Oro"></p>
+						<p>
+							Their return voyage was a disaster. Wirthington had decided they should sail back to Cape Verde rather than ride the Gulf Stream to England. The pilots of the voyage made miscalculations and missed their mark adding two months to the voyage. Hood requited his anger at the captain for this decision. The fleet limped back to the Southampton harbor in September with little to show for their thirteen months at sea, likely with half the crew they departed with.
+						</p>
+					</div>
+					<img class="boxBottom boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
+				</div>
+			</div>
 			<div class="spacer100"></div>
-			<div class="spacer100"></div>
-			<div id="southamptonFade"></div>			
+			<div id="southamptonTrans"></div>			
 
 		</section>
+
+		<div id="toEnding" class="spacer100"></div>
 
 		<section id="ending">
 
 			<div class="spacer50"></div>
-			
-			
-			
+			<div class="spacer50 spaceCenter">
+				<div id="postludeText" class="anyText textBox redTextBox">
+					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
+					<a href="">
+						<h2>The Journey Goes Deeper</h2>
+						<img src="icons/rightArrow.svg" alt="Arrow">
+					</a>
+					<div class="textArea">
+						<p>
+							Thank you for joining us on the Voyage of the Red Dragon!
+						</p>
+						<p>
+							If you are interested in reading more about this crew and their exploits, please explore the archives for more information on each leg of the journey, as well as maps, manuscripts, and much more.
+						</p>
+					</div>
+					<img class="boxBottom boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
+				</div>
+
+			</div>	
+			<div class="spacer50"></div>
+
+			<div id="credits" class="anytext spacer100 spaceCenter">
+						<div class="a">
+							<h2>Contributors</h2>
+						</div>
+
+						<div class="flexRow textArea">
+							<span>
+								<h3>Researchers</h3>
+								<p>Gabriel Rocha</p>
+								<p>Tommy Oliver</p>
+								<p>Mario Bummer</p>
+								<p>Ted Theo</p>
+							</span>
+							<span>
+								<h3>Developers</h3>
+								<p>Ben Rodia</p>
+								<p>Axel Mortimer</p>
+								<p>Stephen Gross</p>
+								<p>Su Hnin Pwint</p>
+							</span>
+						</div>
+
+			</div>	
 		</section>
 
 		
-	<footer></footer>
+	<!-- <footer></footer> -->
 	
 	</main>
 
@@ -388,116 +457,285 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
 	<script src="js/brushstroke.min.js"></script>
 	<script src="js/voyageScrolls.js"></script>
-	<script src="js/voyageStrokes.js"></script>
-<script >
+	<!-- <script src="js/voyageStrokes.js"></script> -->
+
+<script>
+
 
   mapboxgl.accessToken = 'pk.eyJ1IjoiYXhvbmFsdCIsImEiOiJjajh1bXU0ajcxMjY2MzNwOGJvaHN0bDBjIn0.oUvMV9_vKdrLQExQnzMTXQ';
 
   var map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/axonalt/cjcsepgzf02mn2rodwhs7zzsy',
+      style: 'mapbox://styles/axonalt/cjczcjckx0h9x2sqwwjab2iiy',
       interactive: false,
       bearing: 0,
       center: [-0.14955, 51.4775],
-      zoom: 5,
-      pitch: 20
+      zoom: 7,
+      pitch: 40
   });
+
+// Create a GeoJSON source with an empty lineString.
+var gravesendToFuerteventuraGeojson = {
+    "type": "FeatureCollection",
+    "features": [{
+        "type": "Feature",
+        "geometry": {
+            "type": "LineString",
+            "coordinates": []
+        }
+    }]
+};
+var animation; // to store and cancel the animation
+var frame = 0;
+var gravesendToFuerteventuraTrip =
+                [[0.372266, 51.445877],
+                [1.187725, 51.481383],
+                [1.694298, 51.358062],
+                [1.826134, 51.193115],
+                [1.584435, 50.986099],
+                [0.978985, 50.701677],
+                [0.683556, 50.639010],
+                [-0.195351, 50.457504],
+                [-1.623573, 50.317408],
+                [-2.919960, 50.007739],
+                [-3.645058, 49.738682],
+                [-4.897499, 49.439557],
+                [-5.615387, 48.574790],
+                [-6.018105, 48.048710],
+                [-6.611366, 47.724545],
+                [-7.028847, 46.845164],
+                [-7.806717, 46.437857],
+                [-8.303261, 45.644768],
+                [-10.190506, 44.339565],
+                [-10.619293, 44.150681],
+                [-10.893631, 43.452919],
+                [-11.464920, 42.358544],
+                [-11.937576, 41.244772],
+                [-12.119293, 40.580585],
+                [-11.813358, 39.232253],
+                [-11.596756, 37.961523],
+                [-11.201248, 37.370157],
+                [-10.800934, 36.102376],
+                [-10.498123, 34.994004],
+                [-10.519217, 34.307144],
+                [-10.517850, 33.063924],
+                [-10.800934, 31.952162],
+                [-11.049843, 30.467614],
+                [-11.508865, 29.878755],
+                [-12.324257, 29.306174],
+                [-13.866186, 28.484082]];
+
 
   var chapters = {
       'departure': {
           duration: 5000,
           bearing: 0,
           center: [-0.14955, 51.4775],
-          zoom: 4,
-          pitch: 40
-      },
-      'england': {
-          duration: 26000,
-          bearing: 0,
-          center: [-0.14955, 51.4775],
-          zoom: 8,
+          zoom: 5,
           pitch: 20
       },
+      'england': {
+          duration: 6000,
+          bearing: 0,
+          center: [-0.14955, 51.4775],
+          zoom: 6,
+          pitch: 40
+      },
+      'toFuerteventura': {
+          duration: 4000,
+          center: [-24.0537, 28.3587],
+          bearing: -0,
+          zoom: 1,
+          pitch: 30
+      },
       'fuerteventura': {
-          duration: 40000,
+          duration: 5000,
           center: [-14.0537, 28.3587],
-          bearing: -180,
-          zoom: 10,
-          pitch: 55
+          bearing: -0,
+          zoom: 6,
+          pitch: 40
+      },
+      'toRioDeOro': {
+          duration: 6000,
+          center: [-15.796667, 23.711389],
+          bearing: -0,
+          zoom: 7,
+          pitch: 40
       },
       'rioDeOro': {
-          duration: 36000,
+          duration: 6000,
           center: [-15.796667, 23.711389],
-          bearing: -90,
-          zoom: 10,
-          pitch: 45
+          bearing: -0,
+          zoom: 7,
+          pitch: 40
+      },
+      'toSierraLeone': {
+          duration: 6000,
+          center: [-13.0289, 8.3308],
+          bearing: 0,
+          zoom: 7,
+          pitch: 40
       },
       'sierraLeone': {
-          duration: 16000,
+          duration: 6000,
           center: [-13.0289, 8.3308],
-          bearing: 90,
+          bearing: 0,
           zoom: 7,
-          pitch: 65
+          pitch: 40
+      },
+      'toRioDeLaPlata': {
+          duration: 12000,
+          bearing: 0,
+          center: [-56.7412, -35.1945],
+          zoom: 7,
+          pitch: 40
       },
       'rioDeLaPlata': {
           duration: 12000,
-          bearing: 30,
+          bearing: 0,
           center: [-56.7412, -35.1945],
-          zoom: 9,
-          pitch: 70
+          zoom: 7,
+          pitch: 40
+      },
+      'toIslaDeLobos': {
+          bearing: 0,
+          center: [-54.8834, -35.0267],
+          zoom: 7,
+          duration: 5000,
+          pitch: 40
       },
       'islaDeLobos': {
-          bearing: 30,
+          bearing: 0,
           center: [-54.8834, -35.0267],
-          zoom: 8,
-          duration: 2000,
+          zoom: 7,
+          duration: 5000,
+          pitch: 40
+      },
+      'toSalvador': {
+          bearing: 0,
+          center: [-38.365938, -12.802113],
+          zoom: 7,
+          duration: 10000,
           pitch: 40
       },
       'salvador': {
-          bearing: 30,
+          bearing: 0,
           center: [-38.365938, -12.802113],
-          zoom: 9,
+          zoom: 7,
           duration: 10000,
-          pitch: 80
+          pitch: 40
+      },
+      'toCapeVerde': {
+          bearing: 0,
+          center: [-23.0418, 16.5388],
+          zoom: 7,
+          duration: 10000,
+          pitch: 40
       },
       'capeVerde': {
-          bearing: 50,
+          bearing: 0,
           center: [-23.0418, 16.5388],
-          zoom: 6,
-          duration: 6000,
-          pitch: 100
+          zoom: 7,
+          duration: 10000,
+          pitch: 40
+      },
+      'toSouthampton': {
+          bearing: 0,
+          center: [-1.4044, 50.9097],
+          zoom: 7,
+          duration: 8000,
+          pitch: 40
       },
       'southampton': {
-          bearing: 30,
+          bearing: 0,
           center: [-1.4044, 50.9097],
-          zoom: 5,
-          duration: 6000,
+          zoom: 7,
+          duration: 8000,
           pitch: 40
       }
   };
 
-  // On every scroll event, check which element is on screen
+
+// Get textboxes
+
+var textBoxArray = new Array;
+
+textBoxes = document.getElementsByClassName('anyText');
+for (var i = 0; i < textBoxes.length; i++) {
+    var textBoxId = textBoxes[i].getAttribute('id');
+    textBoxArray.push(textBoxId);
+}
+
+
+// On every scroll event, check which element is on screen
   window.onscroll = function() {
       var chapterNames = Object.keys(chapters);
+      // console.log(chapterNames);
       for (var i = 0; i < chapterNames.length; i++) {
           var chapterName = chapterNames[i];
           if (isElementOnScreen(chapterName)) {
               setActiveChapter(chapterName);
               break;
           }
+      } 
+// On every scroll event, See if a textBox is on screen
+	  var textBoxes = textBoxArray;
+      for (var i = 0; i < textBoxes.length; i++) {
+          var textBox = textBoxes[i];
+            // console.log(textBox);
+          if (isElementOnScreen(textBox)) {
+              // console.log('textBox is ' +textBox);
+            $('#continue').addClass('ifScrolling');
+              break;
+          } else 
+          	$('#continue').removeClass('ifScrolling');
+	      	$('#continue p').html('Continue Scrolling');
+          
       }
   };
+
+
+
+
+
 
   var activeChapterName = 'england';
   function setActiveChapter(chapterName) {
       if (chapterName === activeChapterName) return;
 
-      map.flyTo(chapters[chapterName]);
+      map.easeTo(chapters[chapterName]);
 
       document.getElementById(chapterName).setAttribute('class', 'active');
       document.getElementById(activeChapterName).setAttribute('class', '');
-
       activeChapterName = chapterName;
+      // gravesendToFuerteventura();
+      if (chapterName === 'toFuerteventura') {
+      	gravesendToFuerteventura();
+      }
+      else if (chapterName === 'toRioDeOro') {
+      	gravesendToRioDeOro();
+      }
+      else if (chapterName === 'toSierraLeone') {
+      	gravesendToSierraLeone();
+      }
+      else if (chapterName === 'toRioDeLaPlata') {
+      	gravesendToRioDeLaPlata();
+      }
+      else if (chapterName === 'toIslaDeLobos') {
+      	gravesendToIsleDeLobos();
+      }
+  
+      else if (chapterName === 'toSalvador') {
+      	gravesendSalvador();
+      }
+  
+      else if (chapterName === 'toCapeVerde') {
+      	gravesendCapeVerde();
+      }
+  
+      else if (chapterName === 'toSouthampton') {
+      	gravesendToSouthampton();
+      }
   }
 
   function isElementOnScreen(id) {
@@ -506,64 +744,62 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
       return bounds.top < window.innerHeight && bounds.bottom > 0;
   }
 
-  map.on('load', function () {
 
+    var tripFns = {
+    	'fuerteventura': gravesendToFuerteventura
+    	// 'rioDeOro': gravesendToRioDeOro
+    };
+
+
+map.on('load', function() {
+
+    // add the line which will be modified in the animation
     map.addLayer({
-        "id": "route",
-        "type": "line",
-        "source": {
-            "type": "geojson",
-            "data": {
-                "type": "Feature",
-                "properties": {},
-                "geometry": {
-                    "type": "LineString",
-                    "coordinates": [
-                    // ENGLAND
-                        [-0.3708, 51.4419],
-                    // THE REST
-                        [-0.3708, 51.4419],
-                        [-14.0537, 28.3587],
-                        [-15.796667, 23.711389],                                             
-                        [-13.0289, 8.3308],
-                        [-56.7412, -35.1945],
-                        [-54.8834, -35.0267],
-                        [-38.365938, -12.802113],
-                        [-23.0418, 16.5388],
-                        [-1.4044, 50.9097]
-                    ]
-                }
-            }
+        'id': 'gravesendToFuerteventuraId',
+        'type': 'line',
+        'source': {
+            'type': 'geojson',
+            'data': gravesendToFuerteventuraGeojson
         },
-        "layout": {
-            "line-join": "round",
-            "line-cap": "round"
+        'layout': {
+            'line-cap': 'round',
+            'line-join': 'round',
         },
-        "paint": {
-            "line-color": "#9a0000",
-            "line-width": 5,
+        'paint': {
+            'line-color': '#9A0000',
+            'line-width': 5,
+            'line-opacity': 0.9,
+            'line-dasharray': [1, 2],
+            'line-blur': 1
         }
     });
+
+
+
+
+
+
+    
 });
 
-// var controller = new ScrollMagic.Controller();
+function gravesendToFuerteventura() {
+      if (frame <= gravesendToFuerteventuraTrip.length - 1) {
 
-// var scene = new ScrollMagic.Scene({triggerElement: "#intro", duration: 20})
-// 				.addTo(controller)
-// 				.on("leave", function (e) {
-// 					console.log('ITS HERE');
-// 					$("#scrollDirection").text(e.target.controller().info("scrollDirection"));
-// 				})
-				// .on("enter leave", function (e) {
-				// 	$("#state").text(e.type == "enter" ? "inside" : "outside");
-				// })
-				// .on("start end", function (e) {
-				// 	$("#lastHit").text(e.type == "start" ? "top" : "bottom");
-				// })
-				// .on("progress", function (e) {
-				// 	$("#progress").text(e.progress.toFixed(3));
-				// })
-				;
+        setTimeout(function() {
+
+          gravesendToFuerteventuraGeojson.features[0].geometry.coordinates.push(gravesendToFuerteventuraTrip[frame]);
+          // console.log(map.isSourceLoaded('gravesendToFuerteventuraId'));
+          // console.log(gravesendToFuerteventuraGeojson);
+          map.getSource('gravesendToFuerteventuraId').setData(gravesendToFuerteventuraGeojson);
+          // map.getSource('gravesendToFuerteventuraId').setCoordinates(gravesendToFuerteventuraGeojson);
+          frame++;
+          animation = requestAnimationFrame(gravesendToFuerteventura);
+    	console.log('gravesendToFuerteventura called');
+    	console.log('frame equals '+ frame);
+        }, 80);
+      }
+    }
+
 
 
 </script>

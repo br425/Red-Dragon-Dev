@@ -1,0 +1,31 @@
+*{
+	
+}
+
+.category-icons{
+	width: 70vw;
+	height: 90vh;
+}
+
+.sidebar{
+	width: 25vw;
+	height: 90vh;
+}
+
+.sidebar > *{
+	max-width: 25vw;
+}
+
+.location-category{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.content-category{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}

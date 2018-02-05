@@ -20,6 +20,8 @@ body {
 h1 {
 	font-family: 'Zapfino';
 	font-weight: bold;
+	word-spacing: -.5rem;
+
 }
 
 @font-face {
@@ -44,14 +46,15 @@ p {
 }
 
 .textBox {
-	width: 25rem;
+	width: 33rem;
 	display: flex;
 	flex-flow: column;
 	align-items: center;
 }
 
 .textArea img {
-	box-shadow: 0 0 5px #200000;
+	filter: drop-shadow(0px 0px 3px #200000);
+	/*box-shadow: 0 0 5px #200000;*/
 }
 
 .png {
@@ -60,6 +63,7 @@ p {
 
 .redTextBox .textArea {
 	border: solid #9a0000 2px;
+	box-shadow: 0px 0 10px rgba(100,80,80,.5);
 	background: rgba(250, 245, 245,.9);
 	display: flex;
 	flex-flow: column;
@@ -67,7 +71,8 @@ p {
 }
 .blackTextBox .textArea {
 	border: solid #000 2px;
-	background: rgba(50, 40, 40,.9);
+	/*background: rgba(50, 40, 40,.9);*/
+	background: rgba(250, 245, 245,.9);
 	display: flex;
 	flex-flow: column;
 	align-items: center;
@@ -80,6 +85,7 @@ p {
 	display: flex;
 	align-items: center;
 	transition: .3s;
+	box-shadow: 0px 0 10px rgba(100,80,80,.5);
 }
 .textBox a img {
 	margin-right: .5rem;
@@ -113,8 +119,8 @@ p {
 }
 
 .blackTextBox p {
-	color: #fffcfc;
-	padding: 1rem 1rem 1rem;
+/*	color: #fffcfc;
+*/	padding: 1rem 1rem 1rem;
 }
 .blackTextBox h2 {
 	color: #fffcfc;
@@ -142,8 +148,11 @@ p {
 
 .flexRow {
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: row nowrap !important;
+	width: 100%;
+	justify-content: space-around;
 }
+
 
 /* IMAGES */
 
@@ -170,6 +179,7 @@ img {
 	flex-flow: column;
 	justify-content: center;
 	align-items: center;
+	margin-left: -10rem;
 }
 .spaceLeft {
 	display: flex;
@@ -192,7 +202,7 @@ img {
 	color: #9a0000;
 
 	position: fixed;
-	left: 15rem;
+	left: 12rem;
 	top: 2rem;
 	opacity: 0;
 	pointer-events: none;
@@ -212,6 +222,7 @@ img {
 	width: 30rem;
 	opacity: 0;
 	transition: 1s;
+	pointer-events: none;
 }
 
 .show {
@@ -232,26 +243,13 @@ img {
 
 /* HEADER */
 
-#homeHeader {
-	position: fixed;
-	display: flex;
-	z-index: 4;
-	flex-flow: row nowrap;
-	height: 10rem;
-	width: 27rem;
-	padding: 1rem;
-	background: rgba(250, 245, 245,.9);
-	border-right: solid #9a0000 2px;
-	border-bottom: solid #9a0000 2px;
-}
 
 
  h1 {
-	/*max-width: 50%;*/
 	color: #9a0000;
 }
 
-.voyageLogo {
+/*.voyageLogo {
 	text-align: center;
 	margin-bottom: 2rem;
 }
@@ -259,14 +257,13 @@ img {
 .voyageLeft {
 	margin-left: 3rem;
 }
-.biggerFont {
+*/.biggerFont {
 	font-size: 3.5rem;
 	line-height: .5rem;
 }
 
-#homeHeader .logo {
-	max-height: 100%;
-	margin-left: -7rem;
+#homeHeader h1 {
+	font-size: 3rem;
 }
 
 
@@ -278,32 +275,41 @@ img {
 	height: 100%;
 	width: 10rem;
 	padding: 0rem;
-	/*border-right: solid #9a0000 3px;*/
-	box-shadow: inset -5px 0 5px gray;
-	background: url('../imgs/paper-bg.jpg');
-	background: #200000;
+	box-shadow: 0px 0 8px #544;
+	background: rgba(50,50,50,.7);
+	/*mix-blend-mode: hue;*/
 	opacity: 0;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	padding: 2rem 1rem 0;
+	box-sizing: border-box;
 }
 
 #voyageNav h1 {
-	padding: 1.5rem 1rem;
+	padding: 0rem;
 	margin: 0;
 	/*border-bottom: solid #9a0000 3px;	*/
 	transition: .3s;
+	color: #fffcfc;
+	text-align: center;
+	white-space: nowrap;
+	word-spacing: -.5rem;
+	font-size: 1.8rem;
 }
 #voyageNav h1:hover {
 	color: #f23535;
 }
 
-	#voyageNav h1 {
-		padding: 0;
-	}
-	#voyageNav {
+#compassButton {
+	display: none;
+}
+
+	.barContainer {
 		display: flex;
-		flex-flow: column nowrap;
-		justify-content: space-between;
-		padding: 2rem 1rem;
-		box-sizing: border-box;
+		flex-flow: column;
+		justify-content: center;
+		flex-grow: 1;
 	}
 	#sideBar {
 		width: 100%;
@@ -340,78 +346,135 @@ img {
 		opacity: 1;
 	}
 	.dot {
-		background: #9a0000;
+		border: 2px solid #fffcfc;
+		background: transparent;
 		border-radius: 50%;
-		height: .7rem;
-		width: .7rem;
+		height: .6rem;
+		width: .6rem;
 		margin: .5rem;
 		transition: .3s;
+		font-size: .25rem;
+		font-family: 'Kallos';
+		font-weight: bolder;
+		color: rgba(0,0,0,0);
+		line-height: .1;
+		white-space: nowrap;
+		letter-spacing: -60px;
 	}
+	.dot span {color: transparent;text-shadow: none;}
+
 	#sideBar a:hover .dot {
 		opacity: 1;
 		background: #f23535;
-		border-color: #9a0000;
+		border-color: #fffcfc;
+		transform: scale(1.4);
+	}
+
+	#four .dot, #five .dot, #seven .dot {
+		transform: scale(1.4);
+	}
+	#four:hover .dot, #five:hover .dot, #seven:hover .dot {
+		transform: scale(2) translateX(-.25rem);
 	}
 
 
 .visitedDot .dot {
-	transform: scale(1.5);
-	fill: #9a0000 !important;
+	/*transform: scale(1.5);*/
+	background: #fffcfc;
 }
 
 .activeDot .dot {
-	transform: scale(1.5);
 	background: transparent;
-	border: 2px solid #9a0000;
+	/*border: 2px solid #9a0000;*/
+	font-size: 2rem;
+	color: #fffcfc;
+	line-height: 0;
+	border: none;
+	transform: translateX(-.2rem) !important;
+	letter-spacing: -80px;
 }
-
-.redTheme h2 {
-	color: #fffcfc !important;
-	transition: 2s;
+.activeDot:hover .dot {
+	background: transparent !important;
+	color: #f23535;
+	line-height: .33;
+	transform: scale(1.7) translateX(-.15rem) !important;
+	/*position: absolute;*/
+    text-shadow:
+    -1px -1px 0 #fffcfc,
+    1px -1px 0 #fffcfc,
+    -1px 1px 0 #fffcfc,
+    1px 1px 0 #fffcfc;  
 }
 
 #voyageNav.redTheme {
-	background: rgba(0,0,0,0);
+	background: transparent;
 	border: 0;
-	transition: 2s;
+	transition: .5s all 1s;
 	box-shadow: none;
 }
-
-.whiteBar {
+.redTheme #sideBar a .title {
+	color: #fffcfc;
+} 
+/*.whiteBar {
 	filter: brightness(0) invert(.9);
 
 }
 .whiteBar .voyageLogo:hover {
 	filter: invert(.6);
 }
- 
+*/ 
+
+
+#blendFix {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	visibility: hidden;
+	background: red;
+	mix-blend-mode: overlay;
+}
+
+
 .redBox {
-	background: #6a0000  !important;
-	mix-blend-mode: multiply;
+	/*background: rgba(102,0,0,1);*/
+	/*background: url("../imgs/paper.jpg");*/
+	/*mix-blend-mode: multiply;*/
+	opacity: 1 !important;
+	filter: brightness(.3);
+}
+
+.raining {
+	/*filter: brightness(0) invert(1);*/
 	opacity: 1 !important;
 }
-.redishBox {
-	background: #9a0000  !important;
-	mix-blend-mode: hue;
+.darkRain {
+	filter: hue-rotate(100deg) brightness(.7);
 	opacity: 1 !important;
 }
+
+.blackBox {
+	filter: invert(.9);
+}
+
 
 .bigTitle {
 	font-family: 'Zapfino';
 	font-size: 10rem;
-	color: #fffcfc;
 	font-weight: normal;
+	color: #fffcfc;
     text-shadow:
     -1px -1px 0 #fff,
     1px -1px 0 #fff,
     -1px 1px 0 #fff,
     1px 1px 0 #fff;  
 	pointer-events: none;
+	font-kerning: 1px;
 }
 
 .bigStopText {
 	color: #fffcfc;
-	width: 30rem;
+	width: 35rem;
+	border-bottom: 2px solid white;
 }
 .bigStopText h2 {
 	padding: 0rem 0rem 2rem; 
@@ -425,6 +488,7 @@ img {
 	flex-flow: row nowrap;
 	justify-content: space-between;
 	align-items: center;
+	transition: .3s;
 	height: 5rem;
 	border-bottom: 2px solid white;
 }
@@ -442,26 +506,106 @@ img {
 	line-height: 1.7;
 	letter-spacing: 1px;
 	border-left: 2px solid white;
+	transition: .3s;
+}
+.bigStopText p:last-child {
+	padding-bottom: 2rem;
 }
 
+.bigStopHover,.bigStopHover p, .bigStopHover  {
+	border-color: #f23535 !important;
+	/*border-bottom: none;*/
+}
+
+.bigStopHover h2 {
+	color: #f23535 !important;
+}
+
+#credits .textArea {
+	width: 60%;
+	justify-content: space-between;
+	padding: 5rem 0;
+}
+
+#credits h2 {
+	font-size: 5rem;
+	color: white;
+	font-family: 'Zapfino';
+}
+
+#credits .textArea h3 {
+	font-size: 2rem;
+}
+
+#credits .textArea span {
+	color: white;
+	height: 10rem;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+	align-items: center;
+}
 /* MAIN */
 
-#regularBG {
+.imgBG {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: -1;
-	background: url('../imgs/paper-bg.jpg');
+	z-index: -5;
 	background-size: cover;	
-	display: flex;
-	justify-content: center;
-	-ms-align-items: center;
-	align-items: center;
-	transition: 2s;
-	/*background: #000;*/
-	/*mix-blend-mode: multiply;*/
+	transition: opacity 1s;
+	transition: filter 1s;
+	opacity: 0;
+}
+
+#regularBG {
+	background: url('../imgs/paper-bg.jpg');
+	opacity: 1;
+}
+
+#bannerBG {
+	background: url('../imgs/banner-bg.jpg');
+	opacity: .2;
+	width: 150%;
+	left: -20%;
+}
+
+#rain {
+	background: url('../imgs/rain.gif');	
+}
+
+#map {
+	transition: 4s;
+}
+.darken {
+	filter: brightness(.6);
+}
+
+#continue {
+	position: fixed;
+	bottom: 0;
+	padding-bottom: 2rem;
+	width: 100%;
+	text-shadow: 0 0 5px rgba(255,250,250,.5);
+	font-size: 1.5rem;
+
+	opacity: 1;
+	pointer-events: none;
+	z-index: 12;
+	transition: .6s .3s;
+}
+
+#continue p {
+	text-align: center;
+	width: auto;
+	margin: 0 auto;
+}
+
+.ifScrolling {
+	opacity: 0 !important;
+	transition: .3s 0s !important;
 }
 
 #titleH {
@@ -470,8 +614,32 @@ img {
 	position: relative;
 }
 
+#content {
+	padding-left: 10rem;
+	/*background: url('../imgs/paper-bg.jpg');*/
+	background-size: cover;	
+	transition: 2s;
+}
 
 /* SECTION */
+
+
+#homeHeader {
+	position: fixed;
+	top: 0;
+	left: 2rem;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	z-index: 4;
+	height: 10rem;
+	width: 33rem;
+	/*padding: 1rem;*/
+	/*background: rgba(250, 245, 245,.9);*/
+	/*border-right: solid #9a0000 2px;*/
+	/*border-bottom: solid #9a0000 2px;*/
+}
+
 
 #skyBG {
 	position: fixed;
@@ -481,7 +649,7 @@ img {
 	background-position: center;
 	width: 120vw;
 	height: 110vh;
-	right: -20%;
+	right: -10%;
 	z-index: -10;
 }
 #shipBG {
@@ -500,7 +668,7 @@ img {
 	position: fixed;
 	bottom: -70px;
 	height: 110%;
-	right: 100px;
+	right: 20px;
 	z-index: 1;
 }
 
@@ -514,23 +682,24 @@ img {
 }
 
 
-#voyageInfo {
-/*	position: fixed;
-	z-index: 30;
-	top: 15rem;
-*/}
-#archiveInfo {
-/*	position: fixed;
-	z-index: 30;
-	top: 15rem;
-	right: 0;
-*/}
-#aboutInfo {
-/*	position: fixed;
+#homeNav {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 5rem;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
 	z-index: 20;
-	top: 0rem;
-	right: 0;
-*/}
+	background: linear-gradient(transparent,rgba(50,0,0,.3))
+}
+#homeNav div {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	width: 10rem;
+}
 
 /* FOOTER */
 
@@ -544,11 +713,24 @@ img {
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TABLET */
 
-@media screen and (min-width: 500px) {
+@media screen and (max-width: 900px) {
 	
 /* HEADER */
+
+
 /* MAIN */
+
 /* SECTION */
+
+.spaceCenter {
+	margin-left: 0rem !important;
+}
+
+#titleCard {
+	margin-left: -10rem !important;
+}
+
+
 /* FOOTER */
 /* MISC */
 
@@ -556,13 +738,108 @@ img {
 
 
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DESKTOP */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MOBILE */
 
-@media screen and (min-width: 900px) {
+@media screen and (max-width: 500px) {
 	
 /* HEADER */
+
+
+
+#content {
+	width: 100%;
+	padding: .5rem;
+	overflow-x: hidden;
+	box-sizing: border-box;
+}
+
+#mobileHeader {	
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	width: 100%;
+	height: 10rem;
+	box-sizing: border-box;
+}
+
+#voyageNav {
+	width: 100%;
+	height: 10rem;
+	padding: 1rem;
+	display: block;
+	/*background: red;*/
+	transition: .5s linear;
+	z-index: 100;
+}
+
+.hideNav {
+	top: -10rem !important;
+}
+
+#voyageNavA {
+	width: 50%;
+	height: 100%;
+}
+
+#mobileHeader img {
+	max-height: 8rem;
+}
+.voyageLogo {
+	display: none;
+}
+
+#compassButton {
+	display: block;
+	cursor: pointer;
+	height: 8rem;
+	width: 8rem;
+	background: url('../icons/compass-white.svg');
+	background-size: cover;
+	transition: transform .3s;
+}
+
+.barContainer {
+	width: 100%;
+	margin: 0 auto;
+	opacity: 0;
+	transition: opacity .5s .5s;
+}
+
+.sideBar a .title {
+	color: #fffcfc;
+}
+
+.openMenu {
+	opacity: 1 !important;
+}
+
+.fullMenu {
+	height: 100vh !important;
+}
+
+.activeCompass {
+	background: url('../icons/compass-hover.svg') !important;
+	transform-origin: 50% 50%;
+	transform: rotateZ(45deg);
+	background-repeat: no-repeat;
+
+}
+
+
 /* MAIN */
 /* SECTION */
+
+.textBox {
+	max-width: 100%; 
+}
+
+.spaceLeft,.spaceRight {
+	padding: 0;
+}
+
+.locationTitle {
+	left: .5rem;
+}
 /* FOOTER */
 /* MISC */
 
@@ -573,7 +850,9 @@ img {
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ LARGER */
 
 @media screen and (min-width: 1700px) {
-	
+	html {
+		font-size: 150% !important;
+	}
 /* HEADER */
 /* MAIN */
 /* SECTION */
