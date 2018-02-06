@@ -473,7 +473,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
   });
 
 // Create a GeoJSON source with an empty lineString.
-var gravesendToFuerteventuraGeojson = {
+var fuerteventuraGeojson = {
     "type": "FeatureCollection",
     "features": [{
         "type": "Feature",
@@ -485,7 +485,7 @@ var gravesendToFuerteventuraGeojson = {
 };
 var animation; // to store and cancel the animation
 var frame = 0;
-var gravesendToFuerteventuraTrip =
+var fuerteventuraTrip =
                 [[1.187725, 51.481383],
                 [1.694298, 51.358062],
                 [1.826134, 51.193115],
@@ -705,34 +705,9 @@ for (var i = 0; i < textBoxes.length; i++) {
       document.getElementById(chapterName).setAttribute('class', 'active');
       document.getElementById(activeChapterName).setAttribute('class', '');
       activeChapterName = chapterName;
-      // gravesendToFuerteventura();
-      if (chapterName === 'toFuerteventura') {
-      	gravesendToFuerteventura();
-      }
-      else if (chapterName === 'toRioDeOro') {
-      	gravesendToRioDeOro();
-      }
-      else if (chapterName === 'toSierraLeone') {
-      	gravesendToSierraLeone();
-      }
-      else if (chapterName === 'toRioDeLaPlata') {
-      	gravesendToRioDeLaPlata();
-      }
-      else if (chapterName === 'toIslaDeLobos') {
-      	gravesendToIsleDeLobos();
-      }
-
-      else if (chapterName === 'toSalvador') {
-      	gravesendSalvador();
-      }
-
-      else if (chapterName === 'toCapeVerde') {
-      	gravesendCapeVerde();
-      }
-
-      else if (chapterName === 'toSouthampton') {
-      	gravesendToSouthampton();
-      }
+      if (startTrip[chapterName]) {
+				startTrip[chapterName]();
+			}
   }
 
   function isElementOnScreen(id) {
@@ -741,22 +716,58 @@ for (var i = 0; i < textBoxes.length; i++) {
       return bounds.top < window.innerHeight && bounds.bottom > 0;
   }
 
+<<<<<<< HEAD
 
     var tripFns = {
     	'fuerteventura': gravesendToFuerteventura
      	// 'rioDeOro': gravesendToRioDeOro
     };
 
+=======
+	var startTrip = {
+		'fuerteventura': function() {
+			  if (frame <= fuerteventuraTrip.length - 1) {
+			      setTimeout(function() {
+			        fuerteventuraGeojson.features[0].geometry.coordinates.push(fuerteventuraTrip[frame]);
+			        map.getSource('fuerteventuraId').setData(fuerteventuraGeojson);
+			        frame++;
+			        animation = requestAnimationFrame(startTrip['fuerteventura']);
+			      }, 80);
+			  }
+		},
+		'rioDeOro': function() {
+			console.log('Rio De Oro triggered');
+		},
+		'sierraLeone': function() {
+			console.log('Sierra Leone triggered');
+		},
+		'rioDeLaPlata': function() {
+			console.log('Rio De La Plata triggered');
+		},
+		'islaDeLobos': function() {
+			console.log('Isla De Lobos triggered');
+		},
+		'salvador': function() {
+			console.log('Salvador triggered');
+		},
+		'capeVerde': function() {
+			console.log('Cape Verde triggered');
+		},
+		'southampton': function() {
+			console.log('Southhampton triggered');
+		}
+	};
+>>>>>>> origin/master
 
 map.on('load', function() {
 
     // add the line which will be modified in the animation
     map.addLayer({
-        'id': 'gravesendToFuerteventuraId',
+        'id': 'fuerteventuraId',
         'type': 'line',
         'source': {
             'type': 'geojson',
-            'data': gravesendToFuerteventuraGeojson
+            'data': fuerteventuraGeojson
         },
         'layout': {
             'line-cap': 'round',
@@ -771,19 +782,6 @@ map.on('load', function() {
         }
     });
 });
-
-function gravesendToFuerteventura() {
-      if (frame <= gravesendToFuerteventuraTrip.length - 1) {
-        setTimeout(function() {
-          gravesendToFuerteventuraGeojson.features[0].geometry.coordinates.push(gravesendToFuerteventuraTrip[frame]);
-          map.getSource('gravesendToFuerteventuraId').setData(gravesendToFuerteventuraGeojson);
-          frame++;
-          animation = requestAnimationFrame(gravesendToFuerteventura);
-        }, 80);
-      }
-    }
-
-
 
 </script>
 
