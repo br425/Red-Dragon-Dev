@@ -2,40 +2,39 @@
 
 
 
-var controller = new ScrollMagic.Controller();
-
-// change behaviour of controller to animate scroll instead of jump
-controller.scrollTo(function (newpos) {
- TweenMax.to(window, 0.5, {scrollTo: {y: newpos}});
-});
-
-//  bind scroll to anchor links
-$(document).on("click", "a[href^='#']", function (e) {
- var id = $(this).attr("href");
- if ($(id).length > 0) {
-     e.preventDefault();
-
-     // trigger scroll
-     controller.scrollTo(id);
-
-         // if supported by the browser we can even update the URL.
-     if (window.history && window.history.pushState) {
-         history.pushState("", document.title, id);
-     }
- }
-});
-
-
-
-
                         // init controller
 var controller = new ScrollMagic.Controller();
+
+    // change behaviour of controller to animate scroll instead of jump
+    controller.scrollTo(function (newpos) {
+     TweenMax.to(window, 0.5, {scrollTo: {y: newpos}});
+    });
+
+    //  bind scroll to anchor links
+    $(document).on("click", "a[href^='#']", function (e) {
+        // console.log('clicked');
+     var id = $(this).attr("href");
+     if ($(id).length > 0) {
+         e.preventDefault();
+
+         // trigger scroll
+         controller.scrollTo(id);
+
+             // if supported by the browser we can even update the URL.
+         if (window.history && window.history.pushState) {
+             history.pushState("", document.title, id);
+         }
+     }
+    });
+
+
+
 
 
 // Transition to Archive Section
 
 var tween = TweenMax.to("#shipBG", 0.5, {right:0});
-var scene = new ScrollMagic.Scene({triggerElement: "#toArchiveTrigger", duration: "200%"})
+var scene = new ScrollMagic.Scene({triggerElement: "#toArchive", duration: "200%"})
                 .setTween(tween)
                 .addTo(controller);
 // var tween = TweenMax.to("#voyageInfo", 0.5, {opacity:0});
@@ -50,7 +49,7 @@ var scene = new ScrollMagic.Scene({triggerElement: "#toArchiveTrigger", duration
 
 
 var tween = TweenMax.to("#shipFG", 0.5, {left:0});
-var scene = new ScrollMagic.Scene({triggerElement: "#toArchiveTrigger", duration: "200%"})
+var scene = new ScrollMagic.Scene({triggerElement: "#toArchive", duration: "200%"})
                 .setTween(tween)
                 .addTo(controller);
 

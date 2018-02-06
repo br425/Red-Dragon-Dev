@@ -16,13 +16,13 @@ var scene = new ScrollMagic.Scene({triggerElement: "#debug", duration: 200})
                     // console.log(e.target.controller().info("scrollDirection"));
                     $("#scrollDirection").text(e.target.controller().info("scrollDirection"));
                     if (e.target.controller().info("scrollDirection") === 'FORWARD') {
-                        console.log('You going down');
+                        // console.log('You going down');
                         $('#voyageNav').addClass('hideNav');
                         $(".barContainer").removeClass("openMenu");
                         $('#voyageNav').removeClass('fullMenu');
                         $("#compassButton").removeClass("activeCompass");
                     } else {        
-                        console.log('You going up');
+                        // console.log('You going up');
                         $('#voyageNav').removeClass('hideNav');
                     }
                 })

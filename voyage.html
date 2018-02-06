@@ -76,15 +76,13 @@
 
 <div id="titleCard" class="spacer100 spaceCenter">
 	<h1 id="titleH">The Voyage of The Red Dragon</h1>
-	<img src="icons/swirl.svg" alt="" style="width: 30rem;">
+	<img src="icons/swirl.svg" alt="swirl" style="width: 30rem;">
 	<!-- <p class="scrollPrompt">Start Scrolling to Begin</p> -->
 </div>
 
 		<section id="departure">
-<div class="spacer50"></div>
-<div class="spacer50"></div>
-
-
+			<div class="spacer50"></div>
+			<div class="spacer50"></div>
 			<div class="spacer100"></div>
 
 			<div class="spaceCenter">
@@ -550,9 +548,9 @@ var gravesendToFuerteventuraTrip =
       'fuerteventura': {
           duration: 5000,
           center: [-14.0537, 28.3587],
-          bearing: -0,
-          zoom: 6,
-          pitch: 40
+          bearing: 20,
+          zoom: 4.5,
+          pitch: 100
       },
       'toRioDeOro': {
           duration: 6000,
@@ -744,10 +742,10 @@ for (var i = 0; i < textBoxes.length; i++) {
   }
 
 
-    // var tripFns = {
-    // 	'fuerteventura': gravesendToFuerteventura
-    //  'rioDeOro': gravesendToRioDeOro
-    // };
+    var tripFns = {
+    	'fuerteventura': gravesendToFuerteventura
+     	// 'rioDeOro': gravesendToRioDeOro
+    };
 
 
 map.on('load', function() {

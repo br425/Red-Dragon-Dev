@@ -46,6 +46,7 @@ p {
 }
 
 .textBox {
+	max-width: 100%; 
 	width: 33rem;
 	display: flex;
 	flex-flow: column;
@@ -180,6 +181,7 @@ img {
 	justify-content: center;
 	align-items: center;
 	margin-left: -10rem;
+	padding: 2rem;
 }
 .spaceLeft {
 	display: flex;
@@ -206,7 +208,7 @@ img {
 	top: 2rem;
 	opacity: 0;
 	pointer-events: none;
-	z-index: 10;
+	z-index: -1;
 
 }
 
@@ -276,7 +278,7 @@ img {
 	width: 10rem;
 	padding: 0rem;
 	box-shadow: 0px 0 8px #544;
-	background: rgba(50,50,50,.7);
+	background: #5a0000;
 	/*mix-blend-mode: hue;*/
 	opacity: 0;
 	display: flex;
@@ -726,6 +728,11 @@ img {
 	margin-left: 0rem !important;
 }
 
+.spaceLeft,.spaceCenter,.spaceRight {
+	padding: 1rem;
+
+}
+
 #titleCard {
 	margin-left: -10rem !important;
 }
@@ -764,35 +771,45 @@ img {
 
 #voyageNav {
 	width: 100%;
-	height: 10rem;
-	padding: 1rem;
+	height: 5rem;
+	padding: .5rem;
 	display: block;
 	/*background: red;*/
-	transition: .5s linear;
+	transition: .5s;
 	z-index: 100;
+
 }
 
 .hideNav {
-	top: -10rem !important;
+	top: -6rem !important;
 }
 
 #voyageNavA {
-	width: 50%;
-	height: 100%;
+	width: 10rem;
+	height: 4rem;
+	display: flex;
+	flex: 1 0 50%;
+	flex-flow: row-reverse;
+	justify-content: flex-start;
+	align-items: center;
+
 }
 
 #mobileHeader img {
-	max-height: 8rem;
+	max-height: 4rem;
 }
-.voyageLogo {
-	display: none;
+#voyageNav h1 {
+	margin-top: 1rem;
+	width: 6rem;
+	white-space: normal;
+	line-height: 1.5rem;
 }
 
 #compassButton {
 	display: block;
 	cursor: pointer;
-	height: 8rem;
-	width: 8rem;
+	height: 4rem;
+	width: 4rem;
 	background: url('../icons/compass-white.svg');
 	background-size: cover;
 	transition: transform .3s;
@@ -803,13 +820,20 @@ img {
 	margin: 0 auto;
 	opacity: 0;
 	transition: opacity .5s .5s;
+	pointer-events: none;
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+
 }
 
 .sideBar a .title {
-	color: #fffcfc;
+	color: #fffcfc !important;
+	opacity: 1;
 }
 
 .openMenu {
+	pointer-events: all;
 	opacity: 1 !important;
 }
 
@@ -822,19 +846,16 @@ img {
 	transform-origin: 50% 50%;
 	transform: rotateZ(45deg);
 	background-repeat: no-repeat;
-
 }
 
 
 /* MAIN */
 /* SECTION */
 
-.textBox {
-	max-width: 100%; 
-}
 
-.spaceLeft,.spaceRight {
+.spaceLeft,.spaceRight, .spaceCenter {
 	padding: 0;
+	max-width: 100%;
 }
 
 .locationTitle {
