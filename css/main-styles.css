@@ -201,7 +201,7 @@ img {
 	font-family: 'Zapfino';
 	font-size: 5rem;
 	font-weight: bold;
-	color: #9a0000;
+	color: #5f0000;
 
 	position: fixed;
 	left: 12rem;
@@ -278,9 +278,9 @@ img {
 	width: 10rem;
 	padding: 0rem;
 	box-shadow: 0px 0 8px #544;
-	background: #5a0000;
+	background: #5f0000;
 	/*mix-blend-mode: hue;*/
-	opacity: 0;
+	/*opacity: 0;*/
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: space-between;
@@ -447,8 +447,16 @@ img {
 
 .raining {
 	/*filter: brightness(0) invert(1);*/
-	opacity: 1 !important;
+	opacity: .7 !important;
 }
+
+.rainier {
+	filter: brightness(0) invert(.4);
+	opacity: 1 !important;
+	transform-origin: 50% 50%;
+	transform: rotateZ(20deg) scale(1.8);
+}
+
 .darkRain {
 	filter: hue-rotate(100deg) brightness(.7);
 	opacity: 1 !important;
@@ -471,6 +479,7 @@ img {
     1px 1px 0 #fff;  
 	pointer-events: none;
 	font-kerning: 1px;
+	line-height: .7;
 }
 
 .bigStopText {
@@ -562,7 +571,7 @@ img {
 	opacity: 0;
 }
 
-#regularBG {
+#paperBG {
 	background: url('../imgs/paper-bg.jpg');
 	opacity: 1;
 }
@@ -576,6 +585,7 @@ img {
 
 #rain {
 	background: url('../imgs/rain.gif');	
+	transition: 3s;
 }
 
 #map {
@@ -671,7 +681,7 @@ img {
 	bottom: -70px;
 	height: 110%;
 	right: 20px;
-	z-index: 1;
+	z-index: -1;
 }
 
 #darken {
@@ -715,7 +725,7 @@ img {
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TABLET */
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
 	
 /* HEADER */
 
@@ -731,6 +741,10 @@ img {
 .spaceLeft,.spaceCenter,.spaceRight {
 	padding: 1rem;
 
+}
+
+.textBox {
+	width: 30rem;
 }
 
 #titleCard {
@@ -765,7 +779,7 @@ img {
 	flex-flow: row nowrap;
 	justify-content: space-between;
 	width: 100%;
-	height: 10rem;
+	/*height: 10rem;*/
 	box-sizing: border-box;
 }
 
@@ -775,9 +789,13 @@ img {
 	padding: .5rem;
 	display: block;
 	/*background: red;*/
-	transition: .5s;
+	transition: .5s all 0s;
 	z-index: 100;
+}
 
+#voyageNav.redTheme {
+	transition: .5s all 0s;
+	background: #5f0000;
 }
 
 .hideNav {
@@ -817,19 +835,22 @@ img {
 
 .barContainer {
 	width: 100%;
+	height: 100%;
 	margin: 0 auto;
 	opacity: 0;
-	transition: opacity .5s .5s;
+	transition: opacity .5s;
 	pointer-events: none;
 	display: flex;
 	flex-flow: row;
-	justify-content: center;
+	justify-content: flex-start;
+	align-items: center;
 
 }
 
-.sideBar a .title {
-	color: #fffcfc !important;
+#sideBar a .title {
+	color: #fffcfc;
 	opacity: 1;
+	pointer-events: inherit;
 }
 
 .openMenu {
@@ -850,6 +871,18 @@ img {
 
 
 /* MAIN */
+
+#titleCard {
+	margin-left: 0rem !important;
+}
+
+#titleH {
+	margin-top: 0;
+	margin-bottom: .5rem;
+	font-size: 20vw;
+	position: relative;
+}
+
 /* SECTION */
 
 
@@ -859,8 +892,28 @@ img {
 }
 
 .locationTitle {
+	top: 6rem;
 	left: .5rem;
 }
+.bigTitle {
+	font-size: 6rem;
+	font-weight: normal;
+    text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;  
+	pointer-events: none;
+	font-kerning: 1px;
+	line-height: .7;
+}
+
+.bigStopText p {
+	border-left: none;
+	padding: 1rem 0;
+}
+
+
 /* FOOTER */
 /* MISC */
 

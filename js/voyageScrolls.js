@@ -15,15 +15,15 @@ var scene = new ScrollMagic.Scene({triggerElement: "#debug", duration: 200})
                 .on("update", function (e) {
                     // console.log(e.target.controller().info("scrollDirection"));
                     $("#scrollDirection").text(e.target.controller().info("scrollDirection"));
-                    if (e.target.controller().info("scrollDirection") === 'FORWARD') {
-                        // console.log('You going down');
+                    if (e.target.controller().info("scrollDirection") === 'REVERSE') {
+                        $('#voyageNav').removeClass('hideNav');
+                        // console.log('You going up');
+                    } else {        
                         $('#voyageNav').addClass('hideNav');
                         $(".barContainer").removeClass("openMenu");
                         $('#voyageNav').removeClass('fullMenu');
                         $("#compassButton").removeClass("activeCompass");
-                    } else {        
-                        // console.log('You going up');
-                        $('#voyageNav').removeClass('hideNav');
+                        // console.log('You going down');
                     }
                 })
                 // .on("enter leave", function (e) {
@@ -47,12 +47,18 @@ var scene = new ScrollMagic.Scene({triggerElement: "#departure", duration: "100%
                 .addTo(controller);
 
 
-var tween = TweenMax.to("#voyageNav", 0.5, {opacity:1});
+var w = $(window).width();
+var tabletPlusOnly = false;
+if (w > 500) {tabletPlusOnly = true;}
+
+if (tabletPlusOnly) {
+var tween = TweenMax.from("#voyageNav", 0.5, {opacity:0});
 var scene = new ScrollMagic.Scene({triggerElement: "#departure", duration: "100%"})
                 .setTween(tween)
                 .addTo(controller);
+}
 
-var tween = TweenMax.to("#regularBG", 0.5, {opacity:0});
+var tween = TweenMax.to("#paperBG", 0.5, {opacity:0});
 var scene = new ScrollMagic.Scene({triggerElement: "#departure", duration: "200%"})
                 .setTween(tween)
                 .addTo(controller);
@@ -123,7 +129,7 @@ var scene = new ScrollMagic.Scene({triggerElement: "#rioDeOro", duration: rioDeO
 
 
 // new ScrollMagic.Scene({triggerElement: "#rioDeOroInfo",duration:rioDeOroInfoH})
-//                 .setClassToggle("#regularBG", "redishBox") 
+//                 .setClassToggle("#paperBG", "redishBox") 
 //                 .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#rioDeOro",duration:rioDeOroH})
                 .setClassToggle("#three", "activeDot") 
@@ -136,7 +142,7 @@ new ScrollMagic.Scene({triggerElement: "#rioDeOro",duration:rioDeOroH})
                 .setClassToggle("#rain", "raining") 
                 .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#rioDeOro",duration:rioDeOroH})
-                .setClassToggle("#map", "storm") 
+                .setClassToggle("#map", "storm1") 
                 .addTo(controller);
 
 
@@ -169,10 +175,10 @@ new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
                 .addTo(controller);
 
 new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
-                .setClassToggle("#map", "redBox") 
+                .setClassToggle("#map", "storm2") 
                 .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
-                .setClassToggle("#rain", "darkRain") 
+                .setClassToggle("#rain", "rainier") 
                 .addTo(controller);
 
 
@@ -214,11 +220,11 @@ new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: rioDeLaPlataH}
                 .addTo(controller);
 
 new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: rioDeLaPlataH})
-                .setClassToggle("#map", "redBox") 
+                .setClassToggle("#map", "storm2") 
                 .addTo(controller);
 
 new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: rioDeLaPlataH})
-                .setClassToggle("#rain", "darkRain") 
+                .setClassToggle("#rain", "rainier") 
                 .addTo(controller);
 
 
@@ -252,12 +258,12 @@ new ScrollMagic.Scene({triggerElement: "#islaDeLobosTrans"})
                 .addTo(controller);
 
 
-new ScrollMagic.Scene({triggerElement: "#islaDeLobos",duration:islaDeLobosH})
-                .setClassToggle("#rain", "raining") 
-                .addTo(controller);
-new ScrollMagic.Scene({triggerElement: "#islaDeLobos",duration:islaDeLobosH})
-                .setClassToggle("#map", "storm") 
-                .addTo(controller);
+// new ScrollMagic.Scene({triggerElement: "#islaDeLobos",duration:islaDeLobosH})
+//                 .setClassToggle("#rain", "raining") 
+//                 .addTo(controller);
+// new ScrollMagic.Scene({triggerElement: "#islaDeLobos",duration:islaDeLobosH})
+//                 .setClassToggle("#map", "storm1") 
+//                 .addTo(controller);
 
 //  Salvador
 
@@ -290,10 +296,10 @@ new ScrollMagic.Scene({triggerElement: "#salvadorTrans"})
 
 
 new ScrollMagic.Scene({triggerElement: "#salvador",duration:salvadorH})
-                .setClassToggle("#rain", "raining") 
+                .setClassToggle("#rain", "rainier") 
                 .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#salvador",duration:salvadorH})
-                .setClassToggle("#map", "storm") 
+                .setClassToggle("#map", "storm2") 
                 .addTo(controller);
 
 //  Cape Verde
@@ -341,7 +347,7 @@ new ScrollMagic.Scene({triggerElement: "#southamptonTrans"})
 
 //  Ending
 
-var tween = TweenMax.to("#regularBG", 0.5, {opacity:1});
+var tween = TweenMax.to("#paperBG", 0.5, {opacity:1});
 var scene = new ScrollMagic.Scene({triggerElement: "#ending", duration: "100%"})
                 .setTween(tween)
                 .addTo(controller);
@@ -349,7 +355,7 @@ var scene = new ScrollMagic.Scene({triggerElement: "#ending", duration: "100%"})
 
 var creditsH = document.getElementById('credits').offsetHeight;
 var scene = new ScrollMagic.Scene({triggerElement: "#credits", duration: creditsH})
-                .setClassToggle("#regularBG", "blackBox") 
+                .setClassToggle("#paperBG", "blackBox") 
                 .addTo(controller);
 
 
