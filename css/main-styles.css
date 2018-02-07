@@ -566,9 +566,12 @@ img {
 	height: 100%;
 	z-index: -5;
 	background-size: cover;	
+	background-repeat: no-repeat;
 	transition: opacity 1s;
 	transition: filter 1s;
+	pointer-events: none;
 	opacity: 0;
+	transition: opacity 1s;
 }
 
 #paperBG {
@@ -581,6 +584,29 @@ img {
 	opacity: .2;
 	width: 150%;
 	left: -20%;
+}
+
+#sierraLeoneParBG {
+	background: url('../imgs/barcha-del-hercole-bg.jpg');
+	width: 150%;
+	z-index: -6;
+	filter: invert(1);
+}
+
+#sierraLeoneParFG {
+	background: url('../imgs/barcha-del-hercole-fg.png');
+	background-repeat: no-repeat;
+	width: 150%;
+	left: -30%;
+	z-index: -1;
+	filter: invert(1);
+}
+
+.bigParaShowBG {
+	opacity: 1 !important;
+}
+.bigParaShowFG {
+	opacity: .5 !important;
 }
 
 #rain {
@@ -895,6 +921,7 @@ img {
 	top: 6rem;
 	left: .5rem;
 }
+
 .bigTitle {
 	font-size: 6rem;
 	font-weight: normal;
