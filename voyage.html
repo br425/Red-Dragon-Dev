@@ -247,7 +247,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 
 		<div id="toRioDeLaPlata" class="spacer100"></div>
 
-		
+
 		<section id="rioDeLaPlata">
 
 			<div class="spacer100"></div>
@@ -757,11 +757,13 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
   		}
 		};
 
+	var chapterNames = Object.keys(chapters);
+	var chapterName;
+
   window.onscroll = function() {
-      var chapterNames = Object.keys(chapters);
       // console.log(chapterNames);
       for (var i = 0; i < chapterNames.length; i++) {
-          var chapterName = chapterNames[i];
+          chapterName = chapterNames[i];
           if (isElementOnScreen(chapterName)) {
               setActiveChapter(chapterName);
               break;
@@ -841,30 +843,29 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 		// Holds all the functions that produce the line animations
 		var startTrip = {
 			'fuerteventura': function() {
+					// setTimeout(function() {
+					// 		firstPointX = geojsonData['fuerteventura'][frame][0];
+					// 		firstPointY = geojsonData['fuerteventura'][frame][1];
+					// 		secondPointX = geojsonData['fuerteventura'][frame+1][0];
+					// 		firstPointY = geojsonData['fuerteventura'][frame+1][1];
+					// 		differenceX = secondPointX - firstPointX;
+					// 		differenceY = secondPointY - firstPointY;
+					// 		for (var i = 0; i < tripSpeed['fuerteventura']; i++) {
+					//
+					// 		}
+					//     geojsonLine['fuerteventura'].features[0].geometry.coordinates.push(geojsonData['fuerteventura'][frame]);
+					//     map.getSource('lineToFuerteventura').setData(geojsonLine['fuerteventura']);
+					//     frame++;
+					//     animation = requestAnimationFrame(startTrip['fuerteventura']);
+					//   }, 80);
+					console.log('GOTTEM');
 					if (frame <= geojsonData['fuerteventura'].length - 1) {
-							// setTimeout(function() {
-							// 		firstPointX = geojsonData['fuerteventura'][frame][0];
-							// 		firstPointY = geojsonData['fuerteventura'][frame][1];
-							// 		secondPointX = geojsonData['fuerteventura'][frame+1][0];
-							// 		firstPointY = geojsonData['fuerteventura'][frame+1][1];
-							// 		differenceX = secondPointX - firstPointX;
-							// 		differenceY = secondPointY - firstPointY;
-							// 		for (var i = 0; i < tripSpeed['fuerteventura']; i++) {
-							//
-							// 		}
-							//     geojsonLine['fuerteventura'].features[0].geometry.coordinates.push(geojsonData['fuerteventura'][frame]);
-							//     map.getSource('lineToFuerteventura').setData(geojsonLine['fuerteventura']);
-							//     frame++;
-							//     animation = requestAnimationFrame(startTrip['fuerteventura']);
-							//   }, 80);
-							if (frame <= geojsonData['fuerteventura'].length - 1) {
-									setTimeout(function() {
-											geojsonLine['fuerteventura'].features[0].geometry.coordinates.push(geojsonData['fuerteventura'][frame]);
-											map.getSource('lineToFuerteventura').setData(geojsonLine['fuerteventura']);
-											frame++;
-											animation = requestAnimationFrame(startTrip['fuerteventura']);
-										}, 80);
-							}
+							setTimeout(function() {
+									geojsonLine['fuerteventura'].features[0].geometry.coordinates.push(geojsonData['fuerteventura'][frame]);
+									map.getSource('lineToFuerteventura').setData(geojsonLine['fuerteventura']);
+									frame++;
+									animation = requestAnimationFrame(startTrip['fuerteventura']);
+								}, 80);
 					}
 			},
 			'rioDeOro': function() {
@@ -1102,7 +1103,56 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 					}
 	    });
 
+			// var populateLine = {
+			// 	'fuerteventura': function() {
+			// 			geojsonLine['fuerteventura'].features.geometry.coordinates.push(geojsonData['fuerteventura']);
+			// 			map.getSource('lineToFuerteventura').setData(geojsonLine['fuerteventura']);
+			// 			frame++;
+			// 			animation = requestAnimationFrame(startTrip['fuerteventura']);
+			// 	},
+			// 	'rioDeOro': function() {
+			// 			console.log('populate trigger');
+			// 	},
+			// 	'sierraLeone': function() {
+			// 			console.log('populate trigger');
+			// 	},
+			// 	'rioDeLaPlata': function() {
+			// 			console.log('populate trigger');
+			// 	},
+			// 	'islaDeLobos': function() {
+			// 			console.log('populate trigger');
+			// 	},
+			// 	'salvador': function() {
+			// 			console.log('populate trigger');
+			// 	},
+			// 	'capeVerde': function() {
+			// 			console.log('populate trigger');
+			// 	},
+			// 	'southampton': function() {
+			// 			console.log('populate trigger');
+			// 	};
+
+			var activeChapterNumber = chapterNames.indexOf(activeChapterName);
+			if (!isOdd(activeChapterNumber)) {
+				activeChapterNumber++;
+			}
+			var selectedChapter;
+
+			preloadTrips();
+
+			function preloadTrips() {
+					if (activeChapterNumber > 0) {
+							for (var i = activeChapterNumber; i > 1; i-=2) {
+								console.log(i);
+								selectedChapter = chapterNames[i];
+								console.log(selectedChapter, ' automatically populated');
+								startTrip[selectedChapter]();
+							}
+					}
+			}
 	  });
+
+function isOdd(num) { return num % 2; }
 
 </script>
 </body>
