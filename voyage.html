@@ -251,7 +251,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 
 		<div id="toRioDeLaPlata" class="spacer100"></div>
 
-
+		
 		<section id="rioDeLaPlata">
 
 			<div class="spacer100"></div>
@@ -621,7 +621,6 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 
 	};
 
-<<<<<<< HEAD
 	var tripSpeed = {
 		'fuerteventura':	10,
 		'rioDeOro': 10,
@@ -634,10 +633,6 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 	}
 
 	var chapters = {
-=======
-
-var chapters = {
->>>>>>> origin/master
     	'departure': {
           duration: 5000,
           bearing: 0,
@@ -764,29 +759,40 @@ var chapters = {
           duration: 8000,
           pitch: 40
   		}
-<<<<<<< HEAD
 		};
 
-		// On every scroll event, check which element is on screen
-		window.onscroll = function() {
-				var chapterNames = Object.keys(chapters);
-				for (var i = 0; i < chapterNames.length; i++) {
-						var chapterName = chapterNames[i];
-						if (isElementOnScreen(chapterName)) {
-								setActiveChapter(chapterName);
-								break;
-				}
-		}
-=======
-	};
->>>>>>> origin/master
+  window.onscroll = function() {
+      var chapterNames = Object.keys(chapters);
+      // console.log(chapterNames);
+      for (var i = 0; i < chapterNames.length; i++) {
+          var chapterName = chapterNames[i];
+          if (isElementOnScreen(chapterName)) {
+              setActiveChapter(chapterName);
+              break;
+          }
+      }
+// On every scroll event, See if a textBox is on screen
+	  var textBoxes = textBoxArray;
+      for (var i = 0; i < textBoxes.length; i++) {
+          var textBox = textBoxes[i];
+            // console.log(textBox);
+          if (isElementOnScreen(textBox)) {
+              // console.log('textBox is ' +textBox);
+            $('#continue').addClass('ifScrolling');
+              break;
+          } else
+          	$('#continue').removeClass('ifScrolling');
+	      	$('#continue p').html('Continue Scrolling');
+
+      }
+  };
+
 
 		// If element on screen changes, change the active chapter
 		var activeChapterName = 'england';
 		function setActiveChapter(chapterName) {
 				if (chapterName === activeChapterName) return;
 
-<<<<<<< HEAD
 				map.easeTo(chapters[chapterName]);
 
 				document.getElementById(chapterName).setAttribute('class', 'active');
@@ -826,7 +832,6 @@ var chapters = {
 						$('#continue').removeClass('ifScrolling');
 					$('#continue p').html('Continue Scrolling');
 
-			}
 		};
 
 		var firstPointX = 0;
@@ -865,239 +870,6 @@ var chapters = {
 										}, 80);
 							}
 					}
-=======
-	// Get textboxes
-
-map.on('load', function() {
-
-    map.addLayer({
-        'id': 'lineToFuerteventura',
-        'type': 'line',
-        'source': {
-            'type': 'geojson',
-            'data': geojsonLine['fuerteventura']
-        },
-        'layout': {
-            'line-cap': 'round',
-            'line-join': 'round',
-        },
-        'paint': {
-            'line-color': '#9A0000',
-            'line-width': 5,
-            'line-opacity': 0.9,
-            'line-dasharray': [1, 2],
-            'line-blur': 1
-        }
-    });
-
-		map.addLayer({
-        'id': 'lineToRioDeOro',
-        'type': 'line',
-        'source': {
-            'type': 'geojson',
-            'data': geojsonLine['rioDeOro']
-        },
-        'layout': {
-            'line-cap': 'round',
-            'line-join': 'round',
-        },
-        'paint': {
-            'line-color': '#9A0000',
-            'line-width': 5,
-            'line-opacity': 0.9,
-            'line-dasharray': [1, 2],
-            'line-blur': 1
-        }
-    });
-
-		map.addLayer({
-        'id': 'lineToSierraLeone',
-        'type': 'line',
-        'source': {
-            'type': 'geojson',
-            'data': geojsonLine['sierraLeone']
-        },
-        'layout': {
-            'line-cap': 'round',
-            'line-join': 'round',
-        },
-        'paint': {
-            'line-color': '#9A0000',
-            'line-width': 5,
-            'line-opacity': 0.9,
-            'line-dasharray': [1, 2],
-            'line-blur': 1
-        }
-    });
-
-		map.addLayer({
-        'id': 'lineToRioDeLaPlata',
-        'type': 'line',
-        'source': {
-            'type': 'geojson',
-            'data': geojsonLine['rioDeLaPlata']
-        },
-        'layout': {
-            'line-cap': 'round',
-            'line-join': 'round',
-        },
-        'paint': {
-            'line-color': '#9A0000',
-            'line-width': 5,
-            'line-opacity': 0.9,
-            'line-dasharray': [1, 2],
-            'line-blur': 1
-        }
-    });
-
-		map.addLayer({
-        'id': 'lineToIslaDeLobos',
-        'type': 'line',
-        'source': {
-            'type': 'geojson',
-            'data': geojsonLine['islaDeLobos']
-        },
-        'layout': {
-            'line-cap': 'round',
-            'line-join': 'round',
-        },
-        'paint': {
-            'line-color': '#9A0000',
-            'line-width': 5,
-            'line-opacity': 0.9,
-            'line-dasharray': [1, 2],
-            'line-blur': 1
-        }
-    });
-
-		map.addLayer({
-        'id': 'lineToSalvador',
-        'type': 'line',
-        'source': {
-            'type': 'geojson',
-            'data': geojsonLine['salvador']
-        },
-        'layout': {
-            'line-cap': 'round',
-            'line-join': 'round',
-        },
-        'paint': {
-            'line-color': '#9A0000',
-            'line-width': 5,
-            'line-opacity': 0.9,
-            'line-dasharray': [1, 2],
-            'line-blur': 1
-        }
-    });
-
-		map.addLayer({
-        'id': 'lineToCapeVerde',
-        'type': 'line',
-        'source': {
-            'type': 'geojson',
-            'data': geojsonLine['capeVerde']
-        },
-        'layout': {
-            'line-cap': 'round',
-            'line-join': 'round',
-        },
-        'paint': {
-            'line-color': '#9A0000',
-            'line-width': 5,
-            'line-opacity': 0.9,
-            'line-dasharray': [1, 2],
-            'line-blur': 1
-        }
-    });
-
-		map.addLayer({
-        'id': 'lineToSouthampton',
-        'type': 'line',
-        'source': {
-            'type': 'geojson',
-            'data': geojsonLine['southampton']
-        },
-        'layout': {
-            'line-cap': 'round',
-            'line-join': 'round',
-        },
-        'paint': {
-            'line-color': '#9A0000',
-            'line-width': 5,
-            'line-opacity': 0.9,
-            'line-dasharray': [1, 2],
-            'line-blur': 1
-				}
-    });
-
-		var textBoxArray = new Array;
-
-		textBoxes = document.getElementsByClassName('anyText');
-		for (var i = 0; i < textBoxes.length; i++) {
-				var textBoxId = textBoxes[i].getAttribute('id');
-			  textBoxArray.push(textBoxId);
-		}
-
-		// On every scroll event, check which element is on screen
-		window.onscroll = function() {
-				var chapterNames = Object.keys(chapters);
-		  // console.log(chapterNames);
-		  	for (var i = 0; i < chapterNames.length; i++) {
-			  		var chapterName = chapterNames[i];
-			  		if (isElementOnScreen(chapterName)) {
-			      		setActiveChapter(chapterName);
-			      		break;
-	    	}
-		}
-
-		  // On every scroll event, See if a textBox is on screen
-		  var textBoxes = textBoxArray;
-	    	for (var i = 0; i < textBoxes.length; i++) {
-	          var textBox = textBoxes[i];
-	            // console.log(textBox);
-	          if (isElementOnScreen(textBox)) {
-	              // console.log('textBox is ' +textBox);
-	            $('#continue').addClass('ifScrolling');
-	              break;
-	          } else
-	          	$('#continue').removeClass('ifScrolling');
-		      	$('#continue p').html('Continue Scrolling');
-
-	      }
-		  };
-
-	  var activeChapterName = 'england';
-	  function setActiveChapter(chapterName) {
-	      if (chapterName === activeChapterName) return;
-
-	      map.easeTo(chapters[chapterName]);
-
-	      document.getElementById(chapterName).setAttribute('class', 'active');
-	      document.getElementById(activeChapterName).setAttribute('class', '');
-	      activeChapterName = chapterName;
-	      if (startTrip[chapterName]) {
-					frame = 1;
-					startTrip[chapterName]();
-				}
-	  }
-
-	  function isElementOnScreen(id) {
-	      var element = document.getElementById(id);
-	      var bounds = element.getBoundingClientRect();
-	      return bounds.top < window.innerHeight && bounds.bottom > 0;
-	  }
-
-		var startTrip = {
-			'fuerteventura': function() {
-				  if (frame <= geojsonData['fuerteventura'].length - 1) {
-				      setTimeout(function() {
-					        geojsonLine['fuerteventura'].features[0].geometry.coordinates.push(geojsonData['fuerteventura'][frame]);
-					        map.getSource('lineToFuerteventura').setData(geojsonLine['fuerteventura']);
-					        frame++;
-					        animation = requestAnimationFrame(startTrip['fuerteventura']);
-					      }, 80);
-				  }
->>>>>>> origin/master
 			},
 			'rioDeOro': function() {
 					if (frame <= geojsonData['rioDeOro'].length - 1) {
@@ -1170,7 +942,6 @@ map.on('load', function() {
 					}
 				}
 			};
-<<<<<<< HEAD
 
 	// Get textboxes
 	map.on('load', function() {
@@ -1336,9 +1107,6 @@ map.on('load', function() {
 	    });
 
 	  });
-=======
-  });
->>>>>>> origin/master
 
 </script>
 </body>
