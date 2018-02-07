@@ -753,147 +753,7 @@ var chapters = {
 	};
 
 
-// Get textboxes
-
-	var textBoxArray = new Array;
-
-	textBoxes = document.getElementsByClassName('anyText');
-	for (var i = 0; i < textBoxes.length; i++) {
-			var textBoxId = textBoxes[i].getAttribute('id');
-		  textBoxArray.push(textBoxId);
-	}
-
-	// On every scroll event, check which element is on screen
-	window.onscroll = function() {
-			var chapterNames = Object.keys(chapters);
-	  // console.log(chapterNames);
-	  	for (var i = 0; i < chapterNames.length; i++) {
-		  		var chapterName = chapterNames[i];
-		  		if (isElementOnScreen(chapterName)) {
-		      		setActiveChapter(chapterName);
-		      		break;
-    	}
-	}
-
-	  // On every scroll event, See if a textBox is on screen
-	  var textBoxes = textBoxArray;
-    	for (var i = 0; i < textBoxes.length; i++) {
-          var textBox = textBoxes[i];
-            // console.log(textBox);
-          if (isElementOnScreen(textBox)) {
-              // console.log('textBox is ' +textBox);
-            $('#continue').addClass('ifScrolling');
-              break;
-          } else
-          	$('#continue').removeClass('ifScrolling');
-	      	$('#continue p').html('Continue Scrolling');
-
-      }
-	  };
-
-  var activeChapterName = 'england';
-  function setActiveChapter(chapterName) {
-      if (chapterName === activeChapterName) return;
-
-      map.easeTo(chapters[chapterName]);
-
-      document.getElementById(chapterName).setAttribute('class', 'active');
-      document.getElementById(activeChapterName).setAttribute('class', '');
-      activeChapterName = chapterName;
-      if (startTrip[chapterName]) {
-				frame = 1;
-				startTrip[chapterName]();
-			}
-  }
-
-  function isElementOnScreen(id) {
-      var element = document.getElementById(id);
-      var bounds = element.getBoundingClientRect();
-      return bounds.top < window.innerHeight && bounds.bottom > 0;
-  }
-
-	var startTrip = {
-		'fuerteventura': function() {
-			  if (frame <= geojsonData['fuerteventura'].length - 1) {
-			      setTimeout(function() {
-				        geojsonLine['fuerteventura'].features[0].geometry.coordinates.push(geojsonData['fuerteventura'][frame]);
-				        map.getSource('lineToFuerteventura').setData(geojsonLine['fuerteventura']);
-				        frame++;
-				        animation = requestAnimationFrame(startTrip['fuerteventura']);
-				      }, 80);
-			  }
-		},
-		'rioDeOro': function() {
-				if (frame <= geojsonData['rioDeOro'].length - 1) {
-						setTimeout(function() {
-								geojsonLine['rioDeOro'].features[0].geometry.coordinates.push(geojsonData['rioDeOro'][frame]);
-								map.getSource('lineToRioDeOro').setData(geojsonLine['rioDeOro']);
-								frame++;
-								animation = requestAnimationFrame(startTrip['rioDeOro']);
-							}, 80);
-				}
-		},
-		'sierraLeone': function() {
-				if (frame <= geojsonData['sierraLeone'].length - 1) {
-						setTimeout(function() {
-								geojsonLine['sierraLeone'].features[0].geometry.coordinates.push(geojsonData['sierraLeone'][frame]);
-								map.getSource('lineToSierraLeone').setData(geojsonLine['sierraLeone']);
-								frame++;
-								animation = requestAnimationFrame(startTrip['sierraLeone']);
-							}, 80);
-				}
-		},
-		'rioDeLaPlata': function() {
-				if (frame <= geojsonData['rioDeLaPlata'].length - 1) {
-						setTimeout(function() {
-								geojsonLine['rioDeLaPlata'].features[0].geometry.coordinates.push(geojsonData['rioDeLaPlata'][frame]);
-								map.getSource('lineToRioDeLaPlata').setData(geojsonLine['rioDeLaPlata']);
-								frame++;
-								animation = requestAnimationFrame(startTrip['rioDeLaPlata']);
-							}, 80);
-				}
-		},
-		'islaDeLobos': function() {
-				if (frame <= geojsonData['islaDeLobos'].length - 1) {
-						setTimeout(function() {
-								geojsonLine['islaDeLobos'].features[0].geometry.coordinates.push(geojsonData['islaDeLobos'][frame]);
-								map.getSource('lineToIslaDeLobos').setData(geojsonLine['islaDeLobos']);
-								frame++;
-								animation = requestAnimationFrame(startTrip['islaDeLobos']);
-							}, 80);
-				}
-		},
-		'salvador': function() {
-				if (frame <= geojsonData['salvador'].length - 1) {
-						setTimeout(function() {
-								geojsonLine['salvador'].features[0].geometry.coordinates.push(geojsonData['salvador'][frame]);
-								map.getSource('lineToSalvador').setData(geojsonLine['salvador']);
-								frame++;
-								animation = requestAnimationFrame(startTrip['salvador']);
-							}, 80);
-				}
-		},
-		'capeVerde': function() {
-				if (frame <= geojsonData['capeVerde'].length - 1) {
-						setTimeout(function() {
-								geojsonLine['capeVerde'].features[0].geometry.coordinates.push(geojsonData['capeVerde'][frame]);
-								map.getSource('lineToCapeVerde').setData(geojsonLine['capeVerde']);
-								frame++;
-								animation = requestAnimationFrame(startTrip['capeVerde']);
-							}, 80);
-				}
-		},
-		'southampton': function() {
-				if (frame <= geojsonData['southampton'].length - 1) {
-						setTimeout(function() {
-								geojsonLine['southampton'].features[0].geometry.coordinates.push(geojsonData['southampton'][frame]);
-								map.getSource('lineToSouthampton').setData(geojsonLine['southampton']);
-								frame++;
-								animation = requestAnimationFrame(startTrip['southampton']);
-							}, 80);
-				}
-		}
-	};
+	// Get textboxes
 
 map.on('load', function() {
 
@@ -1054,12 +914,149 @@ map.on('load', function() {
             'line-opacity': 0.9,
             'line-dasharray': [1, 2],
             'line-blur': 1
-        }
+				}
     });
 
-		console.log(geojsonLine['fuerteventura']);
+		var textBoxArray = new Array;
 
-});
+		textBoxes = document.getElementsByClassName('anyText');
+		for (var i = 0; i < textBoxes.length; i++) {
+				var textBoxId = textBoxes[i].getAttribute('id');
+			  textBoxArray.push(textBoxId);
+		}
+
+		// On every scroll event, check which element is on screen
+		window.onscroll = function() {
+				var chapterNames = Object.keys(chapters);
+		  // console.log(chapterNames);
+		  	for (var i = 0; i < chapterNames.length; i++) {
+			  		var chapterName = chapterNames[i];
+			  		if (isElementOnScreen(chapterName)) {
+			      		setActiveChapter(chapterName);
+			      		break;
+	    	}
+		}
+
+		  // On every scroll event, See if a textBox is on screen
+		  var textBoxes = textBoxArray;
+	    	for (var i = 0; i < textBoxes.length; i++) {
+	          var textBox = textBoxes[i];
+	            // console.log(textBox);
+	          if (isElementOnScreen(textBox)) {
+	              // console.log('textBox is ' +textBox);
+	            $('#continue').addClass('ifScrolling');
+	              break;
+	          } else
+	          	$('#continue').removeClass('ifScrolling');
+		      	$('#continue p').html('Continue Scrolling');
+
+	      }
+		  };
+
+	  var activeChapterName = 'england';
+	  function setActiveChapter(chapterName) {
+	      if (chapterName === activeChapterName) return;
+
+	      map.easeTo(chapters[chapterName]);
+
+	      document.getElementById(chapterName).setAttribute('class', 'active');
+	      document.getElementById(activeChapterName).setAttribute('class', '');
+	      activeChapterName = chapterName;
+	      if (startTrip[chapterName]) {
+					frame = 1;
+					startTrip[chapterName]();
+				}
+	  }
+
+	  function isElementOnScreen(id) {
+	      var element = document.getElementById(id);
+	      var bounds = element.getBoundingClientRect();
+	      return bounds.top < window.innerHeight && bounds.bottom > 0;
+	  }
+
+		var startTrip = {
+			'fuerteventura': function() {
+				  if (frame <= geojsonData['fuerteventura'].length - 1) {
+				      setTimeout(function() {
+					        geojsonLine['fuerteventura'].features[0].geometry.coordinates.push(geojsonData['fuerteventura'][frame]);
+					        map.getSource('lineToFuerteventura').setData(geojsonLine['fuerteventura']);
+					        frame++;
+					        animation = requestAnimationFrame(startTrip['fuerteventura']);
+					      }, 80);
+				  }
+			},
+			'rioDeOro': function() {
+					if (frame <= geojsonData['rioDeOro'].length - 1) {
+							setTimeout(function() {
+									geojsonLine['rioDeOro'].features[0].geometry.coordinates.push(geojsonData['rioDeOro'][frame]);
+									map.getSource('lineToRioDeOro').setData(geojsonLine['rioDeOro']);
+									frame++;
+									animation = requestAnimationFrame(startTrip['rioDeOro']);
+								}, 80);
+					}
+			},
+			'sierraLeone': function() {
+					if (frame <= geojsonData['sierraLeone'].length - 1) {
+							setTimeout(function() {
+									geojsonLine['sierraLeone'].features[0].geometry.coordinates.push(geojsonData['sierraLeone'][frame]);
+									map.getSource('lineToSierraLeone').setData(geojsonLine['sierraLeone']);
+									frame++;
+									animation = requestAnimationFrame(startTrip['sierraLeone']);
+								}, 80);
+					}
+			},
+			'rioDeLaPlata': function() {
+					if (frame <= geojsonData['rioDeLaPlata'].length - 1) {
+							setTimeout(function() {
+									geojsonLine['rioDeLaPlata'].features[0].geometry.coordinates.push(geojsonData['rioDeLaPlata'][frame]);
+									map.getSource('lineToRioDeLaPlata').setData(geojsonLine['rioDeLaPlata']);
+									frame++;
+									animation = requestAnimationFrame(startTrip['rioDeLaPlata']);
+								}, 80);
+					}
+			},
+			'islaDeLobos': function() {
+					if (frame <= geojsonData['islaDeLobos'].length - 1) {
+							setTimeout(function() {
+									geojsonLine['islaDeLobos'].features[0].geometry.coordinates.push(geojsonData['islaDeLobos'][frame]);
+									map.getSource('lineToIslaDeLobos').setData(geojsonLine['islaDeLobos']);
+									frame++;
+									animation = requestAnimationFrame(startTrip['islaDeLobos']);
+								}, 80);
+					}
+			},
+			'salvador': function() {
+					if (frame <= geojsonData['salvador'].length - 1) {
+							setTimeout(function() {
+									geojsonLine['salvador'].features[0].geometry.coordinates.push(geojsonData['salvador'][frame]);
+									map.getSource('lineToSalvador').setData(geojsonLine['salvador']);
+									frame++;
+									animation = requestAnimationFrame(startTrip['salvador']);
+								}, 80);
+					}
+			},
+			'capeVerde': function() {
+					if (frame <= geojsonData['capeVerde'].length - 1) {
+							setTimeout(function() {
+									geojsonLine['capeVerde'].features[0].geometry.coordinates.push(geojsonData['capeVerde'][frame]);
+									map.getSource('lineToCapeVerde').setData(geojsonLine['capeVerde']);
+									frame++;
+									animation = requestAnimationFrame(startTrip['capeVerde']);
+								}, 80);
+					}
+			},
+			'southampton': function() {
+					if (frame <= geojsonData['southampton'].length - 1) {
+							setTimeout(function() {
+									geojsonLine['southampton'].features[0].geometry.coordinates.push(geojsonData['southampton'][frame]);
+									map.getSource('lineToSouthampton').setData(geojsonLine['southampton']);
+									frame++;
+									animation = requestAnimationFrame(startTrip['southampton']);
+								}, 80);
+					}
+				}
+			};
+  });
 
 </script>
 
