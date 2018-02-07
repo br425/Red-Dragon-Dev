@@ -462,11 +462,10 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 
 <script>
 
-
   mapboxgl.accessToken = 'pk.eyJ1IjoiYXhvbmFsdCIsImEiOiJjajh1bXU0ajcxMjY2MzNwOGJvaHN0bDBjIn0.oUvMV9_vKdrLQExQnzMTXQ';
 
   var map = new mapboxgl.Map({
-      container: 'map',
+  		container: 'map',
       style: 'mapbox://styles/axonalt/cjczcjckx0h9x2sqwwjab2iiy',
       interactive: false,
       bearing: 0,
@@ -475,59 +474,166 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
       pitch: 40
   });
 
-// Create a GeoJSON source with an empty lineString.
-var fuerteventuraGeojson = {
-    "type": "FeatureCollection",
-    "features": [{
-        "type": "Feature",
-        "geometry": {
-            "type": "LineString",
-            "coordinates": [[0.372266, 51.445877]]
-        }
-    }]
-};
-var animation; // to store and cancel the animation
-var frame = 0;
-var fuerteventuraTrip =
-                [[1.187725, 51.481383],
-                [1.694298, 51.358062],
-                [1.826134, 51.193115],
-                [1.584435, 50.986099],
-                [0.978985, 50.701677],
-                [0.683556, 50.639010],
-                [-0.195351, 50.457504],
-                [-1.623573, 50.317408],
-                [-2.919960, 50.007739],
-                [-3.645058, 49.738682],
-                [-4.897499, 49.439557],
-                [-5.615387, 48.574790],
-                [-6.018105, 48.048710],
-                [-6.611366, 47.724545],
-                [-7.028847, 46.845164],
-                [-7.806717, 46.437857],
-                [-8.303261, 45.644768],
-                [-10.190506, 44.339565],
-                [-10.619293, 44.150681],
-                [-10.893631, 43.452919],
-                [-11.464920, 42.358544],
-                [-11.937576, 41.244772],
-                [-12.119293, 40.580585],
-                [-11.813358, 39.232253],
-                [-11.596756, 37.961523],
-                [-11.201248, 37.370157],
-                [-10.800934, 36.102376],
-                [-10.498123, 34.994004],
-                [-10.519217, 34.307144],
-                [-10.517850, 33.063924],
-                [-10.800934, 31.952162],
-                [-11.049843, 30.467614],
-                [-11.508865, 29.878755],
-                [-12.324257, 29.306174],
-                [-13.866186, 28.484082]];
+	var animation; // to store and cancel the animation
+	var frame = 0;
 
+	// Create a GeoJSON source with an empty lineString.
+	var geojsonLine = {
+			'fuerteventura': {
+					"type": "FeatureCollection",
+			    "features": [{
+			        "type": "Feature",
+			        "geometry": {
+			            "type": "LineString",
+			            "coordinates": [[0.372266, 51.445877]]
+			        }
+			    }]
+			},
+			'rioDeOro': {
+					"type": "FeatureCollection",
+					"features": [{
+							"type": "Feature",
+							"geometry": {
+									"type": "LineString",
+									"coordinates": [[-13.866186, 28.484082]]
+							}
+					}]
+			},
+			'sierraLeone': {
+					"type": "FeatureCollection",
+					"features": [{
+							"type": "Feature",
+							"geometry": {
+									"type": "LineString",
+									"coordinates": [[-15.796667, 23.711389]]
+							}
+					}]
+			},
+			'rioDeLaPlata':{
+					"type": "FeatureCollection",
+					"features": [{
+							"type": "Feature",
+							"geometry": {
+									"type": "LineString",
+									"coordinates": [[-13.0289, 8.3308]]
+							}
+					}]
+			},
+			'islaDeLobos': {
+					"type": "FeatureCollection",
+					"features": [{
+							"type": "Feature",
+							"geometry": {
+									"type": "LineString",
+									"coordinates": [[-56.7412, -35.1945]]
+							}
+					}]
+			},
+			'salvador': 	{
+					"type": "FeatureCollection",
+					"features": [{
+							"type": "Feature",
+							"geometry": {
+									"type": "LineString",
+									"coordinates": [[-54.8834, -35.0267]]
+							}
+					}]
+			},
+			'capeVerde': 	{
+					"type": "FeatureCollection",
+					"features": [{
+							"type": "Feature",
+							"geometry": {
+									"type": "LineString",
+									"coordinates": [[-38.365938, -12.802113]]
+							}
+					}]
+			},
+			'southampton': {
+					"type": "FeatureCollection",
+					"features": [{
+							"type": "Feature",
+							"geometry": {
+									"type": "LineString",
+									"coordinates": [[-23.0418, 16.5388]]
+							}
+					}]
+			}
+	};
 
-  var chapters = {
-      'departure': {
+	var geojsonData = {
+			'fuerteventura':	[[1.187725, 51.481383],
+				                [1.694298, 51.358062],
+				                [1.826134, 51.193115],
+				                [1.584435, 50.986099],
+				                [0.978985, 50.701677],
+				                [0.683556, 50.639010],
+				                [-0.195351, 50.457504],
+				                [-1.623573, 50.317408],
+				                [-2.919960, 50.007739],
+				                [-3.645058, 49.738682],
+				                [-4.897499, 49.439557],
+				                [-5.615387, 48.574790],
+				                [-6.018105, 48.048710],
+				                [-6.611366, 47.724545],
+				                [-7.028847, 46.845164],
+				                [-7.806717, 46.437857],
+				                [-8.303261, 45.644768],
+				                [-10.190506, 44.339565],
+				                [-10.619293, 44.150681],
+				                [-10.893631, 43.452919],
+				                [-11.464920, 42.358544],
+				                [-11.937576, 41.244772],
+				                [-12.119293, 40.580585],
+				                [-11.813358, 39.232253],
+				                [-11.596756, 37.961523],
+				                [-11.201248, 37.370157],
+				                [-10.800934, 36.102376],
+				                [-10.498123, 34.994004],
+				                [-10.519217, 34.307144],
+				                [-10.517850, 33.063924],
+				                [-10.800934, 31.952162],
+				                [-11.049843, 30.467614],
+				                [-11.508865, 29.878755],
+				                [-12.324257, 29.306174],
+				                [-13.866186, 28.484082]],
+
+			'rioDeOro': 			[[-13.866186, 28.484082],
+												[-15.796667, 23.711389]],
+
+			'sierraLeone': 		[[-15.796667, 23.711389],
+												[-13.0289, 8.3308]],
+
+			'rioDeLaPlata': 	[[-13.0289, 8.3308],
+												[-56.7412, -35.1945]],
+
+			'islaDeLobos': 		[[-56.7412, -35.1945],
+												[-54.8834, -35.0267]],
+
+			'salvador': 			[[-54.8834, -35.0267],
+												[-38.365938, -12.802113]],
+
+			'capeVerde': 			[[-38.365938, -12.802113],
+												[-23.0418, 16.5388]],
+
+			'southampton': 		[[-23.0418, 16.5388],
+												[-1.4044, 50.9097]]
+
+	};
+
+	var tripSpeed = {
+		'fuerteventura':	10,
+		'rioDeOro': 10,
+		'sierraLeone': 10,
+		'rioDeLaPlata': 10,
+		'islaDeLobos': 10,
+		'salvador': 10,
+		'capeVerde': 10,
+		'southampton': 10
+	}
+
+	var chapters = {
+    	'departure': {
           duration: 5000,
           bearing: 0,
           center: [-0.14955, 51.4775],
@@ -652,141 +758,341 @@ var fuerteventuraTrip =
           zoom: 7,
           duration: 8000,
           pitch: 40
-      }
-  };
+  		}
+		};
 
-
-// Get textboxes
-
-var textBoxArray = new Array;
-
-textBoxes = document.getElementsByClassName('anyText');
-for (var i = 0; i < textBoxes.length; i++) {
-    var textBoxId = textBoxes[i].getAttribute('id');
-    textBoxArray.push(textBoxId);
-}
-
-
-// On every scroll event, check which element is on screen
-  window.onscroll = function() {
-      var chapterNames = Object.keys(chapters);
-      // console.log(chapterNames);
-      for (var i = 0; i < chapterNames.length; i++) {
-          var chapterName = chapterNames[i];
-          if (isElementOnScreen(chapterName)) {
-              setActiveChapter(chapterName);
-              break;
-          }
-      }
-// On every scroll event, See if a textBox is on screen
-	  var textBoxes = textBoxArray;
-      for (var i = 0; i < textBoxes.length; i++) {
-          var textBox = textBoxes[i];
-            // console.log(textBox);
-          if (isElementOnScreen(textBox)) {
-              // console.log('textBox is ' +textBox);
-            $('#continue').addClass('ifScrolling');
-              break;
-          } else
-          	$('#continue').removeClass('ifScrolling');
-	      	$('#continue p').html('Continue Scrolling');
-
-      }
-  };
-
-
-
-
-
-
-  var activeChapterName = 'england';
-  function setActiveChapter(chapterName) {
-      if (chapterName === activeChapterName) return;
-
-      map.easeTo(chapters[chapterName]);
-
-      document.getElementById(chapterName).setAttribute('class', 'active');
-      document.getElementById(activeChapterName).setAttribute('class', '');
-      activeChapterName = chapterName;
-      if (startTrip[chapterName]) {
-				startTrip[chapterName]();
-			}
-  }
-
-  function isElementOnScreen(id) {
-      var element = document.getElementById(id);
-      var bounds = element.getBoundingClientRect();
-      return bounds.top < window.innerHeight && bounds.bottom > 0;
-  }
-
-// <<<<<<< HEAD
-
-    var tripFns = {
-    	'fuerteventura': gravesendToFuerteventura
-     	// 'rioDeOro': gravesendToRioDeOro
-    };
-
-// =======
-	var startTrip = {
-		'fuerteventura': function() {
-			  if (frame <= fuerteventuraTrip.length - 1) {
-			      setTimeout(function() {
-			        fuerteventuraGeojson.features[0].geometry.coordinates.push(fuerteventuraTrip[frame]);
-			        map.getSource('fuerteventuraId').setData(fuerteventuraGeojson);
-			        frame++;
-			        animation = requestAnimationFrame(startTrip['fuerteventura']);
-			      }, 80);
-			  }
-		},
-		'rioDeOro': function() {
-			console.log('Rio De Oro triggered');
-		},
-		'sierraLeone': function() {
-			console.log('Sierra Leone triggered');
-		},
-		'rioDeLaPlata': function() {
-			console.log('Rio De La Plata triggered');
-		},
-		'islaDeLobos': function() {
-			console.log('Isla De Lobos triggered');
-		},
-		'salvador': function() {
-			console.log('Salvador triggered');
-		},
-		'capeVerde': function() {
-			console.log('Cape Verde triggered');
-		},
-		'southampton': function() {
-			console.log('Southhampton triggered');
+		// On every scroll event, check which element is on screen
+		window.onscroll = function() {
+				var chapterNames = Object.keys(chapters);
+				for (var i = 0; i < chapterNames.length; i++) {
+						var chapterName = chapterNames[i];
+						if (isElementOnScreen(chapterName)) {
+								setActiveChapter(chapterName);
+								break;
+				}
 		}
-	};
-// >>>>>>> origin/master
 
-map.on('load', function() {
+		// If element on screen changes, change the active chapter
+		var activeChapterName = 'england';
+		function setActiveChapter(chapterName) {
+				if (chapterName === activeChapterName) return;
 
-    // add the line which will be modified in the animation
-    map.addLayer({
-        'id': 'fuerteventuraId',
-        'type': 'line',
-        'source': {
-            'type': 'geojson',
-            'data': fuerteventuraGeojson
-        },
-        'layout': {
-            'line-cap': 'round',
-            'line-join': 'round',
-        },
-        'paint': {
-            'line-color': '#9A0000',
-            'line-width': 5,
-            'line-opacity': 0.9,
-            'line-dasharray': [1, 2],
-            'line-blur': 1
-        }
-    });
-});
+				map.easeTo(chapters[chapterName]);
+
+				document.getElementById(chapterName).setAttribute('class', 'active');
+				document.getElementById(activeChapterName).setAttribute('class', '');
+				activeChapterName = chapterName;
+				if (startTrip[chapterName]) {
+					frame = 1;
+					startTrip[chapterName]();
+				}
+		}
+
+		// Checks to see if element is within the viewport
+		function isElementOnScreen(id) {
+				var element = document.getElementById(id);
+				var bounds = element.getBoundingClientRect();
+				return bounds.top < window.innerHeight && bounds.bottom > 0;
+		}
+
+		var textBoxArray = new Array;
+
+		textBoxes = document.getElementsByClassName('anyText');
+		for (var i = 0; i < textBoxes.length; i++) {
+				var textBoxId = textBoxes[i].getAttribute('id');
+				textBoxArray.push(textBoxId);
+		}
+
+		// On every scroll event, See if a textBox is on screen
+		var textBoxes = textBoxArray;
+			for (var i = 0; i < textBoxes.length; i++) {
+					var textBox = textBoxes[i];
+						// console.log(textBox);
+					if (isElementOnScreen(textBox)) {
+							// console.log('textBox is ' +textBox);
+						$('#continue').addClass('ifScrolling');
+							break;
+					} else
+						$('#continue').removeClass('ifScrolling');
+					$('#continue p').html('Continue Scrolling');
+
+			}
+		};
+
+		var firstPointX = 0;
+		var firstPointY = 0;
+		var secondPointX = 0;
+		var secondPointY = 0;
+		var differenceX = 0;
+		var differenceY = 0;
+		var incrementX = 0;
+		var incrementY = 0;
+		// Holds all the functions that produce the line animations
+		var startTrip = {
+			'fuerteventura': function() {
+					if (frame <= geojsonData['fuerteventura'].length - 1) {
+							// setTimeout(function() {
+							// 		firstPointX = geojsonData['fuerteventura'][frame][0];
+							// 		firstPointY = geojsonData['fuerteventura'][frame][1];
+							// 		secondPointX = geojsonData['fuerteventura'][frame+1][0];
+							// 		firstPointY = geojsonData['fuerteventura'][frame+1][1];
+							// 		differenceX = secondPointX - firstPointX;
+							// 		differenceY = secondPointY - firstPointY;
+							// 		for (var i = 0; i < tripSpeed['fuerteventura']; i++) {
+							//
+							// 		}
+							//     geojsonLine['fuerteventura'].features[0].geometry.coordinates.push(geojsonData['fuerteventura'][frame]);
+							//     map.getSource('lineToFuerteventura').setData(geojsonLine['fuerteventura']);
+							//     frame++;
+							//     animation = requestAnimationFrame(startTrip['fuerteventura']);
+							//   }, 80);
+							if (frame <= geojsonData['fuerteventura'].length - 1) {
+									setTimeout(function() {
+											geojsonLine['fuerteventura'].features[0].geometry.coordinates.push(geojsonData['fuerteventura'][frame]);
+											map.getSource('lineToFuerteventura').setData(geojsonLine['fuerteventura']);
+											frame++;
+											animation = requestAnimationFrame(startTrip['fuerteventura']);
+										}, 80);
+							}
+					}
+			},
+			'rioDeOro': function() {
+					if (frame <= geojsonData['rioDeOro'].length - 1) {
+							setTimeout(function() {
+									geojsonLine['rioDeOro'].features[0].geometry.coordinates.push(geojsonData['rioDeOro'][frame]);
+									map.getSource('lineToRioDeOro').setData(geojsonLine['rioDeOro']);
+									frame++;
+									animation = requestAnimationFrame(startTrip['rioDeOro']);
+								}, 80);
+					}
+			},
+			'sierraLeone': function() {
+					if (frame <= geojsonData['sierraLeone'].length - 1) {
+							setTimeout(function() {
+									geojsonLine['sierraLeone'].features[0].geometry.coordinates.push(geojsonData['sierraLeone'][frame]);
+									map.getSource('lineToSierraLeone').setData(geojsonLine['sierraLeone']);
+									frame++;
+									animation = requestAnimationFrame(startTrip['sierraLeone']);
+								}, 80);
+					}
+			},
+			'rioDeLaPlata': function() {
+					if (frame <= geojsonData['rioDeLaPlata'].length - 1) {
+							setTimeout(function() {
+									geojsonLine['rioDeLaPlata'].features[0].geometry.coordinates.push(geojsonData['rioDeLaPlata'][frame]);
+									map.getSource('lineToRioDeLaPlata').setData(geojsonLine['rioDeLaPlata']);
+									frame++;
+									animation = requestAnimationFrame(startTrip['rioDeLaPlata']);
+								}, 80);
+					}
+			},
+			'islaDeLobos': function() {
+					if (frame <= geojsonData['islaDeLobos'].length - 1) {
+							setTimeout(function() {
+									geojsonLine['islaDeLobos'].features[0].geometry.coordinates.push(geojsonData['islaDeLobos'][frame]);
+									map.getSource('lineToIslaDeLobos').setData(geojsonLine['islaDeLobos']);
+									frame++;
+									animation = requestAnimationFrame(startTrip['islaDeLobos']);
+								}, 80);
+					}
+			},
+			'salvador': function() {
+					if (frame <= geojsonData['salvador'].length - 1) {
+							setTimeout(function() {
+									geojsonLine['salvador'].features[0].geometry.coordinates.push(geojsonData['salvador'][frame]);
+									map.getSource('lineToSalvador').setData(geojsonLine['salvador']);
+									frame++;
+									animation = requestAnimationFrame(startTrip['salvador']);
+								}, 80);
+					}
+			},
+			'capeVerde': function() {
+					if (frame <= geojsonData['capeVerde'].length - 1) {
+							setTimeout(function() {
+									geojsonLine['capeVerde'].features[0].geometry.coordinates.push(geojsonData['capeVerde'][frame]);
+									map.getSource('lineToCapeVerde').setData(geojsonLine['capeVerde']);
+									frame++;
+									animation = requestAnimationFrame(startTrip['capeVerde']);
+								}, 80);
+					}
+			},
+			'southampton': function() {
+					if (frame <= geojsonData['southampton'].length - 1) {
+							setTimeout(function() {
+									geojsonLine['southampton'].features[0].geometry.coordinates.push(geojsonData['southampton'][frame]);
+									map.getSource('lineToSouthampton').setData(geojsonLine['southampton']);
+									frame++;
+									animation = requestAnimationFrame(startTrip['southampton']);
+								}, 80);
+					}
+				}
+			};
+
+	// Get textboxes
+	map.on('load', function() {
+
+	    map.addLayer({
+	        'id': 'lineToFuerteventura',
+	        'type': 'line',
+	        'source': {
+	            'type': 'geojson',
+	            'data': geojsonLine['fuerteventura']
+	        },
+	        'layout': {
+	            'line-cap': 'round',
+	            'line-join': 'round',
+	        },
+	        'paint': {
+	            'line-color': '#9A0000',
+	            'line-width': 5,
+	            'line-opacity': 0.9,
+	            'line-dasharray': [1, 2],
+	            'line-blur': 1
+	        }
+	    });
+
+			map.addLayer({
+	        'id': 'lineToRioDeOro',
+	        'type': 'line',
+	        'source': {
+	            'type': 'geojson',
+	            'data': geojsonLine['rioDeOro']
+	        },
+	        'layout': {
+	            'line-cap': 'round',
+	            'line-join': 'round',
+	        },
+	        'paint': {
+	            'line-color': '#9A0000',
+	            'line-width': 5,
+	            'line-opacity': 0.9,
+	            'line-dasharray': [1, 2],
+	            'line-blur': 1
+	        }
+	    });
+
+			map.addLayer({
+	        'id': 'lineToSierraLeone',
+	        'type': 'line',
+	        'source': {
+	            'type': 'geojson',
+	            'data': geojsonLine['sierraLeone']
+	        },
+	        'layout': {
+	            'line-cap': 'round',
+	            'line-join': 'round',
+	        },
+	        'paint': {
+	            'line-color': '#9A0000',
+	            'line-width': 5,
+	            'line-opacity': 0.9,
+	            'line-dasharray': [1, 2],
+	            'line-blur': 1
+	        }
+	    });
+
+			map.addLayer({
+	        'id': 'lineToRioDeLaPlata',
+	        'type': 'line',
+	        'source': {
+	            'type': 'geojson',
+	            'data': geojsonLine['rioDeLaPlata']
+	        },
+	        'layout': {
+	            'line-cap': 'round',
+	            'line-join': 'round',
+	        },
+	        'paint': {
+	            'line-color': '#9A0000',
+	            'line-width': 5,
+	            'line-opacity': 0.9,
+	            'line-dasharray': [1, 2],
+	            'line-blur': 1
+	        }
+	    });
+
+			map.addLayer({
+	        'id': 'lineToIslaDeLobos',
+	        'type': 'line',
+	        'source': {
+	            'type': 'geojson',
+	            'data': geojsonLine['islaDeLobos']
+	        },
+	        'layout': {
+	            'line-cap': 'round',
+	            'line-join': 'round',
+	        },
+	        'paint': {
+	            'line-color': '#9A0000',
+	            'line-width': 5,
+	            'line-opacity': 0.9,
+	            'line-dasharray': [1, 2],
+	            'line-blur': 1
+	        }
+	    });
+
+			map.addLayer({
+	        'id': 'lineToSalvador',
+	        'type': 'line',
+	        'source': {
+	            'type': 'geojson',
+	            'data': geojsonLine['salvador']
+	        },
+	        'layout': {
+	            'line-cap': 'round',
+	            'line-join': 'round',
+	        },
+	        'paint': {
+	            'line-color': '#9A0000',
+	            'line-width': 5,
+	            'line-opacity': 0.9,
+	            'line-dasharray': [1, 2],
+	            'line-blur': 1
+	        }
+	    });
+
+			map.addLayer({
+	        'id': 'lineToCapeVerde',
+	        'type': 'line',
+	        'source': {
+	            'type': 'geojson',
+	            'data': geojsonLine['capeVerde']
+	        },
+	        'layout': {
+	            'line-cap': 'round',
+	            'line-join': 'round',
+	        },
+	        'paint': {
+	            'line-color': '#9A0000',
+	            'line-width': 5,
+	            'line-opacity': 0.9,
+	            'line-dasharray': [1, 2],
+	            'line-blur': 1
+	        }
+	    });
+
+			map.addLayer({
+	        'id': 'lineToSouthampton',
+	        'type': 'line',
+	        'source': {
+	            'type': 'geojson',
+	            'data': geojsonLine['southampton']
+	        },
+	        'layout': {
+	            'line-cap': 'round',
+	            'line-join': 'round',
+	        },
+	        'paint': {
+	            'line-color': '#9A0000',
+	            'line-width': 5,
+	            'line-opacity': 0.9,
+	            'line-dasharray': [1, 2],
+	            'line-blur': 1
+					}
+	    });
+
+	  });
 
 </script>
-
 </body>
 </html>
