@@ -15,14 +15,16 @@ var scene = new ScrollMagic.Scene({triggerElement: "#debug", duration: 200})
                 .on("update", function (e) {
                     // console.log(e.target.controller().info("scrollDirection"));
                     $("#scrollDirection").text(e.target.controller().info("scrollDirection"));
-                    if (e.target.controller().info("scrollDirection") === 'REVERSE') {
-                        $('#voyageNav').removeClass('hideNav');
-                        // console.log('You going up');
-                    } else {        
+                    if (e.target.controller().info("scrollDirection") === 'FORWARD') {
                         $('#voyageNav').addClass('hideNav');
                         $(".barContainer").removeClass("openMenu");
                         $('#voyageNav').removeClass('fullMenu');
                         $("#compassButton").removeClass("activeCompass");
+                        $('.locationTitle').removeClass('locPushDown');
+                        // console.log('You going up');
+                    } else {        
+                        $('#voyageNav').removeClass('hideNav');
+                        $('.locationTitle').addClass('locPushDown');
                         // console.log('You going down');
                     }
                 })
@@ -52,7 +54,7 @@ var tabletPlusOnly = false;
 if (w > 500) {tabletPlusOnly = true;}
 
 if (tabletPlusOnly) {
-var tween = TweenMax.from("#voyageNav", 0.5, {opacity:0});
+var tween = TweenMax.from("#voyageNav", 0.5, {left:-360});
 var scene = new ScrollMagic.Scene({triggerElement: "#departure", duration: "100%"})
                 .setTween(tween)
                 .addTo(controller);
@@ -195,6 +197,10 @@ var scene = new ScrollMagic.Scene({triggerElement: "#sierraLeoneText", duration:
                 .setTween(tween)
                 .addTo(controller);
 
+new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
+                .setClassToggle("#continue", "invert") 
+                .addTo(controller);
+
 
 
 new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration:sierraLeoneH})
@@ -250,6 +256,12 @@ new ScrollMagic.Scene({triggerElement: "#rioDeLaPlataTrans"})
                 .addTo(controller);
 
 
+new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: rioDeLaPlataH})
+                .setClassToggle("#continue", "invert") 
+                .addTo(controller);
+
+
+
 //  Isle De Lobos
 
 var islaDeLobosH = document.getElementById('islaDeLobos').offsetHeight;
@@ -272,12 +284,8 @@ new ScrollMagic.Scene({triggerElement: "#islaDeLobosTrans"})
                 .addTo(controller);
 
 
-// new ScrollMagic.Scene({triggerElement: "#islaDeLobos",duration:islaDeLobosH})
-//                 .setClassToggle("#rain", "raining") 
-//                 .addTo(controller);
-// new ScrollMagic.Scene({triggerElement: "#islaDeLobos",duration:islaDeLobosH})
-//                 .setClassToggle("#map", "storm1") 
-//                 .addTo(controller);
+
+
 
 //  Salvador
 
@@ -315,6 +323,12 @@ new ScrollMagic.Scene({triggerElement: "#salvador",duration:salvadorH})
 new ScrollMagic.Scene({triggerElement: "#salvador",duration:salvadorH})
                 .setClassToggle("#map", "storm2") 
                 .addTo(controller);
+
+new ScrollMagic.Scene({triggerElement: "#salvador", duration: salvadorH})
+                .setClassToggle("#continue", "invert") 
+                .addTo(controller);
+
+
 
 //  Cape Verde
 

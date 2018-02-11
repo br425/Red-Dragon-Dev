@@ -113,21 +113,45 @@ main {
 	100% {transform: rotateZ(0deg);}
 }
 
-.bob {
-/*	-webkit-animation-name: bob;
-	-o-animation-name: bob;
-	animation-name: bob;
-*/
-	-webkit-animation-duration: 3s;
-	-o-animation-duration: 3s;
-	animation-duration: 3s;
+#shipBGCont {
+	-webkit-animation-name: bobOne;
+	-o-animation-name: bobOne;
+	animation-name: bobOne;
 
-	/*animation-iteration-count: infinite;*/
+	-webkit-animation-duration: 13s;
+	-o-animation-duration: 13s;
+	animation-duration: 13s;
+	-webkit-transform-origin: 50% 50%;
+	-o-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+
+	animation-iteration-count: infinite;
 }
 
-@keyframes bob {
+@keyframes bobOne {
 	0% {transform: translateY(0px);}
-	50% {transform: translateY(5px);}
+	50% {transform: translateY(10px);}
+	100% {transform: translateY(0px);}
+}
+
+#shipFGCont {
+	-webkit-animation-name: bobTwo;
+	-o-animation-name: bobTwo;
+	animation-name: bobTwo;
+
+	-webkit-animation-duration: 13s;
+	-o-animation-duration: 13s;
+	animation-duration: 13s;
+	-webkit-transform-origin: 50% 50%;
+	-o-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+
+	animation-iteration-count: infinite;
+}
+
+@keyframes bobTwo {
+	0% {transform: translateY(0px);}
+	50% {transform: translateY(25px);}
 	100% {transform: translateY(0px);}
 }
 
@@ -138,18 +162,20 @@ main {
 	-o-animation-name: flicker;
 	animation-name: flicker;
 
-	-webkit-animation-duration: 6s;
-	-o-animation-duration: 6s;
-	animation-duration: 6s;
+	-webkit-animation-duration: 3s;
+	-o-animation-duration: 3s;
+	animation-duration: 3s;
 	-webkit-animation-iteration-count: infinite;
 	-o-animation-iteration-count: infinite;
 	animation-iteration-count: infinite;
 }
 
+.invert {filter: invert(1);}
+
 @keyframes flicker {
-	0% {filter: invert(0);}
-	50% {filter: invert(1);}
-	100% {filter: invert(0);}
+	0% {opacity: 1;}
+	50% {opacity: .2;}
+	100% {opacity: 1;}
 }
 
 .storm1 {

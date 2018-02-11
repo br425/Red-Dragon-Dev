@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="initial-scale=1.0, width=device-width">
 
-	<title>Voyage Page Alpha v4</title>
+	<title>Voyage Page Beta v1</title>
 
 	<link rel="stylesheet" href="css/main-styles.css">
 	<link rel="stylesheet" href="css/anims.css">
@@ -36,7 +36,7 @@
 <div id='map'></div>
 
 <div id="loading"><img src="icons/loading.gif" alt="Loading..."></div>
-<div id="continue"><p>Start Scrolling to Begin</p></div>
+<div id="continue"><p>Scroll to Continue</p></div>
 
 <div id="debug" style="display: none;"></div>
 
@@ -48,8 +48,9 @@
 		<div id="mobileHeader">
 		<div id="compassButton"></div>
 		<a href="index.html" id="voyageNavA">
-			<img src="icons/logo-white.svg" alt="Logo" id="voyageLogo">
-			<h1 class="voyageLogo">The Red Dragon</h1>
+			<!-- <img src="icons/logo-white.svg" alt="Logo" id="voyageLogo"> -->
+			<img src="icons/title-logo.svg" alt="Title" id="voyageTitle">
+			<!-- <h1 class="voyageLogo">The Red Dragon</h1> -->
 		</a>
 		</div>
 		<div class="barContainer">
@@ -415,7 +416,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 			</div>
 			<div class="spacer50"></div>
 
-			<div id="credits" class="anyText spacer100 spaceCenter">
+			<div id="credits" class="credits anyText spacer100 spaceCenter">
 						<div class="a">
 							<h2>Contributors</h2>
 						</div>
@@ -686,14 +687,14 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
           pitch: 40
       },
       'toRioDeLaPlata': {
-          duration: 12000,
+          duration: 10000,
           bearing: 0,
           center: [-56.7412, -35.1945],
           zoom: 7,
           pitch: 40
       },
       'rioDeLaPlata': {
-          duration: 12000,
+          duration: 10000,
           bearing: 0,
           center: [-56.7412, -35.1945],
           zoom: 7,
@@ -776,11 +777,10 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
             // console.log(textBox);
           if (isElementOnScreen(textBox)) {
               // console.log('textBox is ' +textBox);
-            $('#continue').addClass('ifScrolling');
+            $('#continue').css({'display':'none'});
               break;
           } else
-          	$('#continue').removeClass('ifScrolling');
-	      	$('#continue p').html('Continue Scrolling');
+            $('#continue').css({'display':'block'});
 
       }
   };
@@ -828,7 +828,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 							break;
 					} else
 						$('#continue').removeClass('ifScrolling');
-					$('#continue p').html('Continue Scrolling');
+					// $('#continue p').html('Continue Scrolling');
 
 		};
 
