@@ -751,10 +751,11 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 		var textBoxId;
 		var element;
 		var bounds;
-		var frame = 0;
-		var iframe = [];
+		var frame = [];
+		var lineDrawn = [];
 		for (var i = 0; i < chapterNames.length; i++) {
-			iframe[i] = 0;
+			frame[i] = 0;
+			lineDrawn[i] = false;
 		}
 	  window.onscroll = function() {
 	  		// console.log(chapterNames);
@@ -789,7 +790,6 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 				document.getElementById(activeChapterName).setAttribute('class', '');
 				activeChapterName = chapterName;
 				if (startTrip[chapterName] && isMapLoaded) {
-					frame = 0;
 					startTrip[chapterName]();
 				}
 		}
@@ -838,107 +838,107 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						//     frame++;
 						//     animation = requestAnimationFrame(startTrip['fuerteventura']);
 						//   }, 80);
-						if (iframe[3] <= geojsonData['fuerteventura'].length - 1) {
+						if (frame[3] <= geojsonData['fuerteventura'].length - 1) {
 								setTimeout(function() {
-										geojsonLine['fuerteventura'].features[0].geometry.coordinates.push(geojsonData['fuerteventura'][iframe[3]]);
-										console.log('Frame #' + iframe[3] + ': Added ' + geojsonData['fuerteventura'][iframe[3]] + ' to line fuerteventura ', map.getSource('lineToFuerteventura'));
+										geojsonLine['fuerteventura'].features[0].geometry.coordinates.push(geojsonData['fuerteventura'][frame[3]]);
+										console.log('Frame #' + frame[3] + ': Added ' + geojsonData['fuerteventura'][frame[3]] + ' to line fuerteventura ', map.getSource('lineToFuerteventura'));
 										map.getSource('lineToFuerteventura').setData(geojsonLine['fuerteventura']);
-										iframe[3]++;
+										frame[3]++;
 										animation = requestAnimationFrame(startTrip['fuerteventura']);
 								}, 30);
 						} else {
-								iframe[3] = 0;
+								frame[3] = 0;
 						}
 				},
 				'rioDeOro': function() {
-						if (iframe[5] <= geojsonData['rioDeOro'].length - 1) {
+						if (frame[5] <= geojsonData['rioDeOro'].length - 1) {
 								setTimeout(function() {
-										geojsonLine['rioDeOro'].features[0].geometry.coordinates.push(geojsonData['rioDeOro'][iframe[5]]);
-										console.log('Frame #' + iframe[5] + ': Added ' + geojsonData['rioDeOro'][iframe[5]] + ' to line rioDeOro ', map.getSource('lineToRioDeOro'));
+										geojsonLine['rioDeOro'].features[0].geometry.coordinates.push(geojsonData['rioDeOro'][frame[5]]);
+										console.log('Frame #' + frame[5] + ': Added ' + geojsonData['rioDeOro'][frame[5]] + ' to line rioDeOro ', map.getSource('lineToRioDeOro'));
 										map.getSource('lineToRioDeOro').setData(geojsonLine['rioDeOro']);
-										iframe[5]++;
+										frame[5]++;
 										animation = requestAnimationFrame(startTrip['rioDeOro']);
 								}, 30);
 						} else {
-								iframe[5] = 0;
+								frame[5] = 0;
 						}
 				},
 				'sierraLeone': function() {
-						if (iframe[7] <= geojsonData['sierraLeone'].length - 1) {
+						if (frame[7] <= geojsonData['sierraLeone'].length - 1) {
 								setTimeout(function() {
-										geojsonLine['sierraLeone'].features[0].geometry.coordinates.push(geojsonData['sierraLeone'][iframe[7]]);
-										console.log('Frame #' + iframe[7] + ': Added ' + geojsonData['sierraLeone'][iframe[7]] + ' to line sierraLeone ', map.getSource('lineToSierraLeone'));
+										geojsonLine['sierraLeone'].features[0].geometry.coordinates.push(geojsonData['sierraLeone'][frame[7]]);
+										console.log('Frame #' + frame[7] + ': Added ' + geojsonData['sierraLeone'][frame[7]] + ' to line sierraLeone ', map.getSource('lineToSierraLeone'));
 										map.getSource('lineToSierraLeone').setData(geojsonLine['sierraLeone']);
-										iframe[7]++;
+										frame[7]++;
 										animation = requestAnimationFrame(startTrip['sierraLeone']);
 								}, 30);
 						} else {
-								iframe[7] = 0;
+								frame[7] = 0;
 						}
 				},
 				'rioDeLaPlata': function() {
-						if (iframe[9] <= geojsonData['rioDeLaPlata'].length - 1) {
+						if (frame[9] <= geojsonData['rioDeLaPlata'].length - 1) {
 								setTimeout(function() {
-										geojsonLine['rioDeLaPlata'].features[0].geometry.coordinates.push(geojsonData['rioDeLaPlata'][iframe[9]]);
-										console.log('Frame #' + iframe[9] + ': Added ' + geojsonData['rioDeLaPlata'][iframe[9]] + ' to line rioDeLaPlata ', map.getSource('lineToRioDeLaPlata'));
+										geojsonLine['rioDeLaPlata'].features[0].geometry.coordinates.push(geojsonData['rioDeLaPlata'][frame[9]]);
+										console.log('Frame #' + frame[9] + ': Added ' + geojsonData['rioDeLaPlata'][frame[9]] + ' to line rioDeLaPlata ', map.getSource('lineToRioDeLaPlata'));
 										map.getSource('lineToRioDeLaPlata').setData(geojsonLine['rioDeLaPlata']);
-										iframe[9]++;
+										frame[9]++;
 										animation = requestAnimationFrame(startTrip['rioDeLaPlata']);
 								}, 30);
 						} else {
-								iframe[9] = 0;
+								frame[9] = 0;
 						}
 				},
 				'islaDeLobos': function() {
-						if (iframe[11] <= geojsonData['islaDeLobos'].length - 1) {
+						if (frame[11] <= geojsonData['islaDeLobos'].length - 1) {
 								setTimeout(function() {
-										geojsonLine['islaDeLobos'].features[0].geometry.coordinates.push(geojsonData['islaDeLobos'][iframe[11]]);
-										console.log('Frame #' + iframe[11] + ': Added ' + geojsonData['islaDeLobos'][iframe[11]] + ' to line islaDeLobos ', map.getSource('lineToIslaDeLobos'));
+										geojsonLine['islaDeLobos'].features[0].geometry.coordinates.push(geojsonData['islaDeLobos'][frame[11]]);
+										console.log('Frame #' + frame[11] + ': Added ' + geojsonData['islaDeLobos'][frame[11]] + ' to line islaDeLobos ', map.getSource('lineToIslaDeLobos'));
 										map.getSource('lineToIslaDeLobos').setData(geojsonLine['islaDeLobos']);
-										iframe[11]++;
+										frame[11]++;
 										animation = requestAnimationFrame(startTrip['islaDeLobos']);
 								}, 30);
 						} else {
-								iframe[11] = 0;
+								frame[11] = 0;
 						}
 				},
 				'salvador': function() {
-						if (iframe[13] <= geojsonData['salvador'].length - 1) {
+						if (frame[13] <= geojsonData['salvador'].length - 1) {
 								setTimeout(function() {
-										geojsonLine['salvador'].features[0].geometry.coordinates.push(geojsonData['salvador'][iframe[13]]);
-										console.log('Frame #' + iframe[13] + ': Added ' + geojsonData['salvador'][iframe[13]] + ' to line salvador ', map.getSource('lineToSalvador'));
+										geojsonLine['salvador'].features[0].geometry.coordinates.push(geojsonData['salvador'][frame[13]]);
+										console.log('Frame #' + frame[13] + ': Added ' + geojsonData['salvador'][frame[13]] + ' to line salvador ', map.getSource('lineToSalvador'));
 										map.getSource('lineToSalvador').setData(geojsonLine['salvador']);
-										iframe[13]++;
+										frame[13]++;
 										animation = requestAnimationFrame(startTrip['salvador']);
 								}, 30);
 						} else {
-								iframe[13] = 0;
+								frame[13] = 0;
 						}
 				},
 				'capeVerde': function() {
-						if (iframe[15] <= geojsonData['capeVerde'].length - 1) {
+						if (frame[15] <= geojsonData['capeVerde'].length - 1) {
 								setTimeout(function() {
-										geojsonLine['capeVerde'].features[0].geometry.coordinates.push(geojsonData['capeVerde'][iframe[15]]);
-										console.log('Frame #' + iframe[15] + ': Added ' + geojsonData['capeVerde'][iframe[15]] + ' to line capeVerde ', map.getSource('lineToCapeVerde'));
+										geojsonLine['capeVerde'].features[0].geometry.coordinates.push(geojsonData['capeVerde'][frame[15]]);
+										console.log('Frame #' + frame[15] + ': Added ' + geojsonData['capeVerde'][frame[15]] + ' to line capeVerde ', map.getSource('lineToCapeVerde'));
 										map.getSource('lineToCapeVerde').setData(geojsonLine['capeVerde']);
-										iframe[15]++;
+										frame[15]++;
 										animation = requestAnimationFrame(startTrip['capeVerde']);
 								}, 30);
 						} else {
-								iframe[15] = 0;
+								frame[15] = 0;
 						}
 				},
 				'southampton': function() {
-						if (iframe[17] <= geojsonData['southampton'].length - 1) {
+						if (frame[17] <= geojsonData['southampton'].length - 1) {
 								setTimeout(function() {
-										geojsonLine['southampton'].features[0].geometry.coordinates.push(geojsonData['southampton'][iframe[17]]);
-										console.log('Frame #' + iframe[17] + ': Added ' + geojsonData['southampton'][iframe[17]] + ' to line southampton ', map.getSource('lineToSouthampton'));
+										geojsonLine['southampton'].features[0].geometry.coordinates.push(geojsonData['southampton'][frame[17]]);
+										console.log('Frame #' + frame[17] + ': Added ' + geojsonData['southampton'][frame[17]] + ' to line southampton ', map.getSource('lineToSouthampton'));
 										map.getSource('lineToSouthampton').setData(geojsonLine['southampton']);
-										iframe[17]++;
+										frame[17]++;
 										animation = requestAnimationFrame(startTrip['southampton']);
 								}, 30);
 						} else {
-								iframe[17] = 0;
+								frame[17] = 0;
 						}
 				}
 		};
@@ -1107,7 +1107,9 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 				if (activeChapterNumber > 0) {
 						for (var i = activeChapterNumber; i > 1; i-=2) {
 							selectedChapter = chapterNames[i];
-							startTrip[selectedChapter]();
+							if (lineDrawn[i] === false) {
+								startTrip[selectedChapter]();
+							}
 							console.log(selectedChapter + ' ' + i + ' automatically populated');
 						}
 				}
