@@ -618,16 +618,16 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
     	'departure': {
           duration: 5000,
           bearing: 0,
-          center: [-0.14955, 51.4775],
-          zoom: 4,
-          pitch: 20
+          center: [-39.971008, 19.642588],
+          zoom: 2,
+          pitch: 0
       },
       'england': {
           duration: 6000,
-          bearing: 0,
+          bearing: 5,
           center: [-0.14955, 51.4775],
           zoom: 4,
-          pitch: 40
+          pitch: 10
       },
       'toFuerteventura': {
           duration: 4000,
@@ -639,9 +639,9 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
       'fuerteventura': {
           duration: 5000,
           center: [-14.0537, 28.3587],
-          bearing: 20,
-          zoom: 4,
-          pitch: 100
+          bearing: 0,
+          zoom: 4.15,
+          pitch: 20
       },
       'toRioDeOro': {
           duration: 6000,
@@ -653,9 +653,9 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
       'rioDeOro': {
           duration: 6000,
           center: [-15.796667, 23.711389],
-          bearing: -0,
-          zoom: 4,
-          pitch: 40
+          bearing: -5,
+          zoom: 4.25,
+          pitch: 10
       },
       'toSierraLeone': {
           duration: 6000,
@@ -679,11 +679,11 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
           pitch: 40
       },
       'rioDeLaPlata': {
-          duration: 12000,
-          bearing: 0,
+          duration: 8000,
+          bearing: 20,
           center: [-56.7412, -35.1945],
-          zoom: 4,
-          pitch: 40
+          zoom: 3.5,
+          pitch: 10
       },
       'toIslaDeLobos': {
           bearing: 0,
@@ -707,11 +707,11 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
           pitch: 40
       },
       'salvador': {
-          bearing: 0,
+          bearing: 10,
           center: [-38.365938, -12.802113],
           zoom: 4,
           duration: 10000,
-          pitch: 40
+          pitch: 20
       },
       'toCapeVerde': {
           bearing: 0,
@@ -737,9 +737,9 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
       'southampton': {
           bearing: 0,
           center: [-1.4044, 50.9097],
-          zoom: 4,
+          zoom: 4.5,
           duration: 8000,
-          pitch: 40
+          pitch: 0
   		}
 		};
 		var isMapLoaded = false;
@@ -758,6 +758,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 			frame[i] = 0;
 			lineDrawn[i] = false;
 		}
+		var lineIdRef = ['','','','lineToFuerteventura','','lineToRioDeOro','','lineToSierraLeone','','lineToRioDeLaPlata','','lineToIslaDeLobos','','lineToSalvador','','lineToCapeVerde','','lineToSouthampton'];
 	  window.onscroll = function() {
 	  		// console.log(chapterNames);
       	for (var i = 0; i < chapterNames.length; i++) {
@@ -864,6 +865,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						//     frame++;
 						//     animation = requestAnimationFrame(startTrip['fuerteventura']);
 						//   }, 80);
+
 						// if (lineDrawn[3]) {
 						// 	geojsonLine['fuerteventura'].features[0].geometry.coordinates = [geojsonData['fuerteventura'][0]];
 						// 	map.getSource('lineToFuerteventura').setData(geojsonLine['fuerteventura']);
@@ -884,11 +886,6 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						}
 				},
 				'rioDeOro': function() {
-						// if (lineDrawn[5]) {
-						// 	geojsonLine['rioDeOro'].features[0].geometry.coordinates = [geojsonData['rioDeOro'][0]];
-						// 	map.getSource('lineToRioDeOro').setData(geojsonLine['rioDeOro']);
-						// 	lineDrawn[5] = false;
-						// }
 						if (frame[5] <= geojsonData['rioDeOro'].length - 1 && !lineDrawn[5]) {
 								setTimeout(function() {
 										geojsonLine['rioDeOro'].features[0].geometry.coordinates.push(geojsonData['rioDeOro'][frame[5]]);
@@ -903,7 +900,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						}
 				},
 				'sierraLeone': function() {
-						if (frame[7] <= geojsonData['sierraLeone'].length - 1) {
+						if (frame[7] <= geojsonData['sierraLeone'].length - 1 && !lineDrawn[7]) {
 								setTimeout(function() {
 										geojsonLine['sierraLeone'].features[0].geometry.coordinates.push(geojsonData['sierraLeone'][frame[7]]);
 										console.log('Frame #' + frame[7] + ': Added ' + geojsonData['sierraLeone'][frame[7]] + ' to line sierraLeone ', map.getSource('lineToSierraLeone'));
@@ -917,7 +914,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						}
 				},
 				'rioDeLaPlata': function() {
-						if (frame[9] <= geojsonData['rioDeLaPlata'].length - 1) {
+						if (frame[9] <= geojsonData['rioDeLaPlata'].length - 1 && !lineDrawn[9]) {
 								setTimeout(function() {
 										geojsonLine['rioDeLaPlata'].features[0].geometry.coordinates.push(geojsonData['rioDeLaPlata'][frame[9]]);
 										console.log('Frame #' + frame[9] + ': Added ' + geojsonData['rioDeLaPlata'][frame[9]] + ' to line rioDeLaPlata ', map.getSource('lineToRioDeLaPlata'));
@@ -931,7 +928,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						}
 				},
 				'islaDeLobos': function() {
-						if (frame[11] <= geojsonData['islaDeLobos'].length - 1) {
+						if (frame[11] <= geojsonData['islaDeLobos'].length - 1 && !lineDrawn[11]) {
 								setTimeout(function() {
 										geojsonLine['islaDeLobos'].features[0].geometry.coordinates.push(geojsonData['islaDeLobos'][frame[11]]);
 										console.log('Frame #' + frame[11] + ': Added ' + geojsonData['islaDeLobos'][frame[11]] + ' to line islaDeLobos ', map.getSource('lineToIslaDeLobos'));
@@ -945,7 +942,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						}
 				},
 				'salvador': function() {
-						if (frame[13] <= geojsonData['salvador'].length - 1) {
+						if (frame[13] <= geojsonData['salvador'].length - 1 && !lineDrawn[13]) {
 								setTimeout(function() {
 										geojsonLine['salvador'].features[0].geometry.coordinates.push(geojsonData['salvador'][frame[13]]);
 										console.log('Frame #' + frame[13] + ': Added ' + geojsonData['salvador'][frame[13]] + ' to line salvador ', map.getSource('lineToSalvador'));
@@ -959,7 +956,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						}
 				},
 				'capeVerde': function() {
-						if (frame[15] <= geojsonData['capeVerde'].length - 1) {
+						if (frame[15] <= geojsonData['capeVerde'].length - 1 && !lineDrawn[15]) {
 								setTimeout(function() {
 										geojsonLine['capeVerde'].features[0].geometry.coordinates.push(geojsonData['capeVerde'][frame[15]]);
 										console.log('Frame #' + frame[15] + ': Added ' + geojsonData['capeVerde'][frame[15]] + ' to line capeVerde ', map.getSource('lineToCapeVerde'));
@@ -973,7 +970,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						}
 				},
 				'southampton': function() {
-						if (frame[17] <= geojsonData['southampton'].length - 1) {
+						if (frame[17] <= geojsonData['southampton'].length - 1 && !lineDrawn[17]) {
 								setTimeout(function() {
 										geojsonLine['southampton'].features[0].geometry.coordinates.push(geojsonData['southampton'][frame[17]]);
 										console.log('Frame #' + frame[17] + ': Added ' + geojsonData['southampton'][frame[17]] + ' to line southampton ', map.getSource('lineToSouthampton'));
@@ -1142,11 +1139,18 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						}
 		    });
 
-				preloadTrips();
+				if (activeChapterName !== 'departure' && activeChapterName !== 'england') {
+					reloadTrips();
+				} else {
+					console.log('reloadTrips() not called');
+				}
+
+				// Allows global functions to run
+				isMapLoaded = true;
 
 		});
 
-function preloadTrips() {
+function reloadTrips() {
 		// Find the number of the chapter which the user has refreshed on
 		activeChapterNumber = chapterNames.indexOf(activeChapterName);
 		// If it is an intermediary chapter, switch to real chapter
@@ -1156,16 +1160,21 @@ function preloadTrips() {
 		var selectedChapter;
 		// If not one of the first two stops, loop through and populate lines
 		if (activeChapterNumber > 0) {
-				for (var i = activeChapterNumber; i > 1; i-=2) {
-					selectedChapter = chapterNames[i];
-					if (lineDrawn[i] === false) {
-						startTrip[selectedChapter]();
-					}
-					console.log(selectedChapter + ' ' + i + ' automatically populated');
+				// Increments backwards through stops and draws lines
+				for (var i = 3; i < chapterNames.length; i+=2) {
+						selectedChapter = chapterNames[i];
+						if (i <= activeChapterNumber && lineDrawn[i] === false) {
+								geojsonLine[selectedChapter].features[0].geometry.coordinates = geojsonData[selectedChapter];
+								lineDrawn[i] = true;
+								console.log(selectedChapter + ' ' + i + ' automatically populated');
+						} else if (i > activeChapterNumber && lineDrawn[i] === true) {
+								geojsonLine[selectedChapter].features[0].geometry.coordinates = [geojsonData[selectedChapter][0]];
+								lineDrawn[i] = false;
+								console.log(selectedChapter + ' ' + i + ' automatically erased');
+						}
+						map.getSource(lineIdRef[i]).setData(geojsonLine[selectedChapter]);
 				}
 		}
-		// Allows global functions to run
-		isMapLoaded = true;
 }
 
 function isOdd(num) { return num % 2; }
