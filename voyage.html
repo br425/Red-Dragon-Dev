@@ -55,15 +55,15 @@
 		</div>
 		<div class="barContainer">
 		<div id="sideBar">
-				<a href="#england" id="one"><span class="dot"><span>-</span>x</span><span class="title">England</span></a>
-				<a href="#fuerteventura" id="two"><span class="dot"><span>-</span>x</span><span class="title">Fuerteventura</span></a>
-				<a href="#rioDeOro" id="three"><span class="dot"><span>-</span>x</span><span class="title">Rio de Oro</span></a>
-				<a href="#sierraLeone" id="four"><span class="dot"><span>-</span>x</span><span class="title">Sierraleone</span></a>
-				<a href="#rioDeLaPlata" id="five"><span class="dot"><span>-</span>x</span><span class="title">Rio De La Plata</span></a>
-				<a href="#islaDeLobos" id="six"><span class="dot"><span>-</span>x</span><span class="title">Isle de Lobos</span></a>
-				<a href="#salvador" id="seven"><span class="dot"><span>-</span>x</span><span class="title">Salvador</span></a>
-				<a href="#capeVerde" id="eight"><span class="dot"><span>-</span>x</span><span class="title">Cape Verde</span></a>
-				<a href="#southampton" id="nine"><span class="dot"><span>-</span>x</span><span class="title">Southampton</span></a>
+				<a href="#england" onclick="reloadTrips(1);" id="one"><span class="dot"><span>-</span>x</span><span class="title">England</span></a>
+				<a href="#fuerteventura" onclick="reloadTrips(3);" id="two"><span class="dot"><span>-</span>x</span><span class="title">Fuerteventura</span></a>
+				<a href="#rioDeOro" onclick="reloadTrips(5);" id="three"><span class="dot"><span>-</span>x</span><span class="title">Rio de Oro</span></a>
+				<a href="#sierraLeone" onclick="reloadTrips(7);" id="four"><span class="dot"><span>-</span>x</span><span class="title">Sierraleone</span></a>
+				<a href="#rioDeLaPlata" onclick="reloadTrips(9);" id="five"><span class="dot"><span>-</span>x</span><span class="title">Rio De La Plata</span></a>
+				<a href="#islaDeLobos" onclick="reloadTrips(11);" id="six"><span class="dot"><span>-</span>x</span><span class="title">Isle de Lobos</span></a>
+				<a href="#salvador" onclick="reloadTrips(13);" id="seven"><span class="dot"><span>-</span>x</span><span class="title">Salvador</span></a>
+				<a href="#capeVerde" onclick="reloadTrips(15);" id="eight"><span class="dot"><span>-</span>x</span><span class="title">Cape Verde</span></a>
+				<a href="#southampton" onclick="reloadTrips(17);" id="nine"><span class="dot"><span>-</span>x</span><span class="title">Southampton</span></a>
 		</div>
 		</div>
 	</aside>
@@ -1150,9 +1150,13 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 
 		});
 
-function reloadTrips() {
+function reloadTrips(chN) {
 		// Find the number of the chapter which the user has refreshed on
-		activeChapterNumber = chapterNames.indexOf(activeChapterName);
+		if (chN) {
+			activeChapterNumber = chN;
+		} else {
+			activeChapterNumber = chapterNames.indexOf(activeChapterName);
+		}
 		// If it is an intermediary chapter, switch to real chapter
 		if (!isOdd(activeChapterNumber)) {
 			activeChapterNumber++;
