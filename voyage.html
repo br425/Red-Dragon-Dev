@@ -55,15 +55,15 @@
 		</div>
 		<div class="barContainer">
 		<div id="sideBar">
-				<a href="#england" id="one"><span class="dot"><span>-</span>x</span><span class="title">England</span></a>
-				<a href="#fuerteventura" id="two"><span class="dot"><span>-</span>x</span><span class="title">Fuerteventura</span></a>
-				<a href="#rioDeOro" id="three"><span class="dot"><span>-</span>x</span><span class="title">Rio de Oro</span></a>
-				<a href="#sierraLeone" id="four"><span class="dot"><span>-</span>x</span><span class="title">Sierraleone</span></a>
-				<a href="#rioDeLaPlata" id="five"><span class="dot"><span>-</span>x</span><span class="title">Rio De La Plata</span></a>
-				<a href="#islaDeLobos" id="six"><span class="dot"><span>-</span>x</span><span class="title">Isle de Lobos</span></a>
-				<a href="#salvador" id="seven"><span class="dot"><span>-</span>x</span><span class="title">Salvador</span></a>
-				<a href="#capeVerde" id="eight"><span class="dot"><span>-</span>x</span><span class="title">Cape Verde</span></a>
-				<a href="#southampton" id="nine"><span class="dot"><span>-</span>x</span><span class="title">Southampton</span></a>
+				<a href="#england" onclick="reloadTrips(1);" id="one"><span class="dot"><span>-</span>x</span><span class="title">England</span></a>
+				<a href="#fuerteventura" onclick="reloadTrips(3);" id="two"><span class="dot"><span>-</span>x</span><span class="title">Fuerteventura</span></a>
+				<a href="#rioDeOro" onclick="reloadTrips(5);" id="three"><span class="dot"><span>-</span>x</span><span class="title">Rio de Oro</span></a>
+				<a href="#sierraLeone" onclick="reloadTrips(7);" id="four"><span class="dot"><span>-</span>x</span><span class="title">Sierraleone</span></a>
+				<a href="#rioDeLaPlata" onclick="reloadTrips(9);" id="five"><span class="dot"><span>-</span>x</span><span class="title">Rio De La Plata</span></a>
+				<a href="#islaDeLobos" onclick="reloadTrips(11);" id="six"><span class="dot"><span>-</span>x</span><span class="title">Isle de Lobos</span></a>
+				<a href="#salvador" onclick="reloadTrips(13);" id="seven"><span class="dot"><span>-</span>x</span><span class="title">Salvador</span></a>
+				<a href="#capeVerde" onclick="reloadTrips(15);" id="eight"><span class="dot"><span>-</span>x</span><span class="title">Cape Verde</span></a>
+				<a href="#southampton" onclick="reloadTrips(17);" id="nine"><span class="dot"><span>-</span>x</span><span class="title">Southampton</span></a>
 		</div>
 		</div>
 	</aside>
@@ -560,7 +560,8 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 			}
 	};
 	var geojsonData = {
-			'fuerteventura':	[[1.187725, 51.481383],
+			'fuerteventura':	[[0.372266, 51.445877],
+												[1.187725, 51.481383],
 				                [1.694298, 51.358062],
 				                [1.826134, 51.193115],
 				                [1.584435, 50.986099],
@@ -624,16 +625,16 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
     	'departure': {
           duration: 5000,
           bearing: 0,
-          center: [-0.14955, 51.4775],
-          zoom: 4,
-          pitch: 20
+          center: [-39.971008, 19.642588],
+          zoom: 2,
+          pitch: 0
       },
       'england': {
           duration: 6000,
-          bearing: 0,
+          bearing: 5,
           center: [-0.14955, 51.4775],
           zoom: 4,
-          pitch: 40
+          pitch: 10
       },
       'toFuerteventura': {
           duration: 4000,
@@ -644,10 +645,17 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
       },
       'fuerteventura': {
           duration: 5000,
+<<<<<<< HEAD
           center: [-10.0537, 33.3587],
           bearing: 20,
           zoom: 4.6,
           pitch: 100
+=======
+          center: [-14.0537, 28.3587],
+          bearing: 0,
+          zoom: 4.15,
+          pitch: 20
+>>>>>>> origin/master
       },
       'toRioDeOro': {
           duration: 6000,
@@ -659,9 +667,15 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
       'rioDeOro': {
           duration: 6000,
           center: [-15.796667, 23.711389],
+<<<<<<< HEAD
           bearing: 30,
           zoom: 7,
           pitch: 70
+=======
+          bearing: -5,
+          zoom: 4.25,
+          pitch: 10
+>>>>>>> origin/master
       },
       'toSierraLeone': {
           duration: 6000,
@@ -685,11 +699,19 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
           pitch: 40
       },
       'rioDeLaPlata': {
+<<<<<<< HEAD
           duration: 12000,
           bearing: 30,
           center: [-46.7412, -28.1945],
           zoom: 4,
           pitch: 70
+=======
+          duration: 8000,
+          bearing: 20,
+          center: [-56.7412, -35.1945],
+          zoom: 3.5,
+          pitch: 10
+>>>>>>> origin/master
       },
       'toIslaDeLobos': {
           bearing: 0,
@@ -713,11 +735,11 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
           pitch: 40
       },
       'salvador': {
-          bearing: 0,
+          bearing: 10,
           center: [-38.365938, -12.802113],
           zoom: 4,
           duration: 10000,
-          pitch: 40
+          pitch: 20
       },
       'toCapeVerde': {
           bearing: 0,
@@ -743,9 +765,13 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
       'southampton': {
           bearing: 0,
           center: [-1.4044, 50.9097],
+<<<<<<< HEAD
           zoom: 6,
+=======
+          zoom: 4.5,
+>>>>>>> origin/master
           duration: 8000,
-          pitch: 40
+          pitch: 0
   		}
 		};
 		var isMapLoaded = false;
@@ -758,11 +784,13 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 		var textBoxId;
 		var element;
 		var bounds;
-		var frame = 0;
-		var iframe = [];
+		var frame = [];
+		var lineDrawn = [];
 		for (var i = 0; i < chapterNames.length; i++) {
-			iframe[i] = 0;
+			frame[i] = 0;
+			lineDrawn[i] = false;
 		}
+		var lineIdRef = ['','','','lineToFuerteventura','','lineToRioDeOro','','lineToSierraLeone','','lineToRioDeLaPlata','','lineToIslaDeLobos','','lineToSalvador','','lineToCapeVerde','','lineToSouthampton'];
 	  window.onscroll = function() {
 	  		// console.log(chapterNames);
       	for (var i = 0; i < chapterNames.length; i++) {
@@ -796,7 +824,6 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 				document.getElementById(activeChapterName).setAttribute('class', '');
 				activeChapterName = chapterName;
 				if (startTrip[chapterName] && isMapLoaded) {
-					frame = 0;
 					startTrip[chapterName]();
 				}
 		}
@@ -828,6 +855,31 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 		// var incrementX = 0;
 		// var incrementY = 0;
 		// Holds all the functions that produce the line animations
+
+		// 'fuerteventura': function() {
+		// 		if (lineDrawn[3]) {
+		// 				geojsonLine['fuerteventura'].features[0].geometry.coordinates = [geojsonData['fuerteventura'][0]];
+		// 				map.getSource('lineToFuerteventura').setData(geojsonLine['fuerteventura']);
+		// 				lineDrawn[3] = false;
+		// 		} else if (){
+		// 				frame[3] = 0;
+		// 				incrementLine();
+		// 				lineDrawn[3] = true;
+		// 		}
+    //
+		// 		function incrementLine() {
+		// 				if (frame[3] <= geojsonData['fuerteventura'].length - 1 && !lineDrawn[3]) {
+		// 						setTimeout(function() {
+		// 								geojsonLine['fuerteventura'].features[0].geometry.coordinates.push(geojsonData['fuerteventura'][frame[3]]);
+		// 								console.log('Frame #' + frame[3] + ': Added ' + geojsonData['fuerteventura'][frame[3]] + ' to line fuerteventura ', map.getSource('lineToFuerteventura'));
+		// 								map.getSource('lineToFuerteventura').setData(geojsonLine['fuerteventura']);
+		// 								frame[3]++;
+		// 								console.log(lineDrawn[3]);
+		// 								animation = requestAnimationFrame(incrementLine);
+		// 						}, 30);
+		// 				}
+		// 		}
+
 		var startTrip = {
 				'fuerteventura': function() {
 						// setTimeout(function() {
@@ -845,107 +897,122 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						//     frame++;
 						//     animation = requestAnimationFrame(startTrip['fuerteventura']);
 						//   }, 80);
-						if (iframe[3] <= geojsonData['fuerteventura'].length - 1) {
+
+						// if (lineDrawn[3]) {
+						// 	geojsonLine['fuerteventura'].features[0].geometry.coordinates = [geojsonData['fuerteventura'][0]];
+						// 	map.getSource('lineToFuerteventura').setData(geojsonLine['fuerteventura']);
+						// 	lineDrawn[3] = false;
+						// }
+
+						if (frame[3] <= geojsonData['fuerteventura'].length - 1 && !lineDrawn[3]) {
 								setTimeout(function() {
-										geojsonLine['fuerteventura'].features[0].geometry.coordinates.push(geojsonData['fuerteventura'][iframe[3]]);
-										console.log('Frame #' + iframe[3] + ': Added ' + geojsonData['fuerteventura'][iframe[3]] + ' to line fuerteventura ', map.getSource('lineToFuerteventura'));
+										geojsonLine['fuerteventura'].features[0].geometry.coordinates.push(geojsonData['fuerteventura'][frame[3]]);
+										console.log('Frame #' + frame[3] + ': Added ' + geojsonData['fuerteventura'][frame[3]] + ' to line fuerteventura ', map.getSource('lineToFuerteventura'));
 										map.getSource('lineToFuerteventura').setData(geojsonLine['fuerteventura']);
-										iframe[3]++;
+										frame[3]++;
 										animation = requestAnimationFrame(startTrip['fuerteventura']);
 								}, 30);
 						} else {
-								iframe[3] = 0;
+								frame[3] = 0;
+								lineDrawn[3] = true;
 						}
 				},
 				'rioDeOro': function() {
-						if (iframe[5] <= geojsonData['rioDeOro'].length - 1) {
+						if (frame[5] <= geojsonData['rioDeOro'].length - 1 && !lineDrawn[5]) {
 								setTimeout(function() {
-										geojsonLine['rioDeOro'].features[0].geometry.coordinates.push(geojsonData['rioDeOro'][iframe[5]]);
-										console.log('Frame #' + iframe[5] + ': Added ' + geojsonData['rioDeOro'][iframe[5]] + ' to line rioDeOro ', map.getSource('lineToRioDeOro'));
+										geojsonLine['rioDeOro'].features[0].geometry.coordinates.push(geojsonData['rioDeOro'][frame[5]]);
+										console.log('Frame #' + frame[5] + ': Added ' + geojsonData['rioDeOro'][frame[5]] + ' to line rioDeOro ', map.getSource('lineToRioDeOro'));
 										map.getSource('lineToRioDeOro').setData(geojsonLine['rioDeOro']);
-										iframe[5]++;
+										frame[5]++;
 										animation = requestAnimationFrame(startTrip['rioDeOro']);
 								}, 30);
 						} else {
-								iframe[5] = 0;
+								frame[5] = 0;
+								lineDrawn[5] = true;
 						}
 				},
 				'sierraLeone': function() {
-						if (iframe[7] <= geojsonData['sierraLeone'].length - 1) {
+						if (frame[7] <= geojsonData['sierraLeone'].length - 1 && !lineDrawn[7]) {
 								setTimeout(function() {
-										geojsonLine['sierraLeone'].features[0].geometry.coordinates.push(geojsonData['sierraLeone'][iframe[7]]);
-										console.log('Frame #' + iframe[7] + ': Added ' + geojsonData['sierraLeone'][iframe[7]] + ' to line sierraLeone ', map.getSource('lineToSierraLeone'));
+										geojsonLine['sierraLeone'].features[0].geometry.coordinates.push(geojsonData['sierraLeone'][frame[7]]);
+										console.log('Frame #' + frame[7] + ': Added ' + geojsonData['sierraLeone'][frame[7]] + ' to line sierraLeone ', map.getSource('lineToSierraLeone'));
 										map.getSource('lineToSierraLeone').setData(geojsonLine['sierraLeone']);
-										iframe[7]++;
+										frame[7]++;
 										animation = requestAnimationFrame(startTrip['sierraLeone']);
 								}, 30);
 						} else {
-								iframe[7] = 0;
+								frame[7] = 0;
+								lineDrawn[7] = true;
 						}
 				},
 				'rioDeLaPlata': function() {
-						if (iframe[9] <= geojsonData['rioDeLaPlata'].length - 1) {
+						if (frame[9] <= geojsonData['rioDeLaPlata'].length - 1 && !lineDrawn[9]) {
 								setTimeout(function() {
-										geojsonLine['rioDeLaPlata'].features[0].geometry.coordinates.push(geojsonData['rioDeLaPlata'][iframe[9]]);
-										console.log('Frame #' + iframe[9] + ': Added ' + geojsonData['rioDeLaPlata'][iframe[9]] + ' to line rioDeLaPlata ', map.getSource('lineToRioDeLaPlata'));
+										geojsonLine['rioDeLaPlata'].features[0].geometry.coordinates.push(geojsonData['rioDeLaPlata'][frame[9]]);
+										console.log('Frame #' + frame[9] + ': Added ' + geojsonData['rioDeLaPlata'][frame[9]] + ' to line rioDeLaPlata ', map.getSource('lineToRioDeLaPlata'));
 										map.getSource('lineToRioDeLaPlata').setData(geojsonLine['rioDeLaPlata']);
-										iframe[9]++;
+										frame[9]++;
 										animation = requestAnimationFrame(startTrip['rioDeLaPlata']);
 								}, 30);
 						} else {
-								iframe[9] = 0;
+								frame[9] = 0;
+								lineDrawn[9] = true;
 						}
 				},
 				'islaDeLobos': function() {
-						if (iframe[11] <= geojsonData['islaDeLobos'].length - 1) {
+						if (frame[11] <= geojsonData['islaDeLobos'].length - 1 && !lineDrawn[11]) {
 								setTimeout(function() {
-										geojsonLine['islaDeLobos'].features[0].geometry.coordinates.push(geojsonData['islaDeLobos'][iframe[11]]);
-										console.log('Frame #' + iframe[11] + ': Added ' + geojsonData['islaDeLobos'][iframe[11]] + ' to line islaDeLobos ', map.getSource('lineToIslaDeLobos'));
+										geojsonLine['islaDeLobos'].features[0].geometry.coordinates.push(geojsonData['islaDeLobos'][frame[11]]);
+										console.log('Frame #' + frame[11] + ': Added ' + geojsonData['islaDeLobos'][frame[11]] + ' to line islaDeLobos ', map.getSource('lineToIslaDeLobos'));
 										map.getSource('lineToIslaDeLobos').setData(geojsonLine['islaDeLobos']);
-										iframe[11]++;
+										frame[11]++;
 										animation = requestAnimationFrame(startTrip['islaDeLobos']);
 								}, 30);
 						} else {
-								iframe[11] = 0;
+								frame[11] = 0;
+								lineDrawn[11] = true;
 						}
 				},
 				'salvador': function() {
-						if (iframe[13] <= geojsonData['salvador'].length - 1) {
+						if (frame[13] <= geojsonData['salvador'].length - 1 && !lineDrawn[13]) {
 								setTimeout(function() {
-										geojsonLine['salvador'].features[0].geometry.coordinates.push(geojsonData['salvador'][iframe[13]]);
-										console.log('Frame #' + iframe[13] + ': Added ' + geojsonData['salvador'][iframe[13]] + ' to line salvador ', map.getSource('lineToSalvador'));
+										geojsonLine['salvador'].features[0].geometry.coordinates.push(geojsonData['salvador'][frame[13]]);
+										console.log('Frame #' + frame[13] + ': Added ' + geojsonData['salvador'][frame[13]] + ' to line salvador ', map.getSource('lineToSalvador'));
 										map.getSource('lineToSalvador').setData(geojsonLine['salvador']);
-										iframe[13]++;
+										frame[13]++;
 										animation = requestAnimationFrame(startTrip['salvador']);
 								}, 30);
 						} else {
-								iframe[13] = 0;
+								frame[13] = 0;
+								lineDrawn[13] = true;
 						}
 				},
 				'capeVerde': function() {
-						if (iframe[15] <= geojsonData['capeVerde'].length - 1) {
+						if (frame[15] <= geojsonData['capeVerde'].length - 1 && !lineDrawn[15]) {
 								setTimeout(function() {
-										geojsonLine['capeVerde'].features[0].geometry.coordinates.push(geojsonData['capeVerde'][iframe[15]]);
-										console.log('Frame #' + iframe[15] + ': Added ' + geojsonData['capeVerde'][iframe[15]] + ' to line capeVerde ', map.getSource('lineToCapeVerde'));
+										geojsonLine['capeVerde'].features[0].geometry.coordinates.push(geojsonData['capeVerde'][frame[15]]);
+										console.log('Frame #' + frame[15] + ': Added ' + geojsonData['capeVerde'][frame[15]] + ' to line capeVerde ', map.getSource('lineToCapeVerde'));
 										map.getSource('lineToCapeVerde').setData(geojsonLine['capeVerde']);
-										iframe[15]++;
+										frame[15]++;
 										animation = requestAnimationFrame(startTrip['capeVerde']);
 								}, 30);
 						} else {
-								iframe[15] = 0;
+								frame[15] = 0;
+								lineDrawn[15] = true;
 						}
 				},
 				'southampton': function() {
-						if (iframe[17] <= geojsonData['southampton'].length - 1) {
+						if (frame[17] <= geojsonData['southampton'].length - 1 && !lineDrawn[17]) {
 								setTimeout(function() {
-										geojsonLine['southampton'].features[0].geometry.coordinates.push(geojsonData['southampton'][iframe[17]]);
-										console.log('Frame #' + iframe[17] + ': Added ' + geojsonData['southampton'][iframe[17]] + ' to line southampton ', map.getSource('lineToSouthampton'));
+										geojsonLine['southampton'].features[0].geometry.coordinates.push(geojsonData['southampton'][frame[17]]);
+										console.log('Frame #' + frame[17] + ': Added ' + geojsonData['southampton'][frame[17]] + ' to line southampton ', map.getSource('lineToSouthampton'));
 										map.getSource('lineToSouthampton').setData(geojsonLine['southampton']);
-										iframe[17]++;
+										frame[17]++;
 										animation = requestAnimationFrame(startTrip['southampton']);
 								}, 30);
 						} else {
-								iframe[17] = 0;
+								frame[17] = 0;
+								lineDrawn[17] = true;
 						}
 				}
 		};
@@ -1103,24 +1170,49 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 		            'line-blur': 1
 						}
 		    });
-				// Find the number of the chapter which the user has refreshed on
-				activeChapterNumber = chapterNames.indexOf(activeChapterName);
-				// If it is an intermediary chapter, switch to real chapter
-				if (!isOdd(activeChapterNumber)) {
-					activeChapterNumber++;
+
+				if (activeChapterName !== 'departure' && activeChapterName !== 'england') {
+					reloadTrips();
+				} else {
+					console.log('reloadTrips() not called');
 				}
-				var selectedChapter;
-				// If not one of the first two stops, loop through and populate lines
-				if (activeChapterNumber > 0) {
-						for (var i = activeChapterNumber; i > 1; i-=2) {
-							selectedChapter = chapterNames[i];
-							startTrip[selectedChapter]();
-							console.log(selectedChapter + ' ' + i + ' automatically populated');
-						}
-				}
+
 				// Allows global functions to run
 				isMapLoaded = true;
+
 		});
+
+function reloadTrips(chN) {
+		// Find the number of the chapter which the user has refreshed on
+		if (chN) {
+			activeChapterNumber = chN;
+		} else {
+			activeChapterNumber = chapterNames.indexOf(activeChapterName);
+		}
+		// If it is an intermediary chapter, switch to real chapter
+		if (!isOdd(activeChapterNumber)) {
+			activeChapterNumber++;
+		}
+		var selectedChapter;
+		// If not one of the first two stops, loop through and populate lines
+		if (activeChapterNumber > 0) {
+				// Increments backwards through stops and draws lines
+				for (var i = 3; i < chapterNames.length; i+=2) {
+						selectedChapter = chapterNames[i];
+						if (i <= activeChapterNumber && lineDrawn[i] === false) {
+								geojsonLine[selectedChapter].features[0].geometry.coordinates = geojsonData[selectedChapter];
+								lineDrawn[i] = true;
+								console.log(selectedChapter + ' ' + i + ' automatically populated');
+						} else if (i > activeChapterNumber && lineDrawn[i] === true) {
+								geojsonLine[selectedChapter].features[0].geometry.coordinates = [geojsonData[selectedChapter][0]];
+								lineDrawn[i] = false;
+								console.log(selectedChapter + ' ' + i + ' automatically erased');
+						}
+						map.getSource(lineIdRef[i]).setData(geojsonLine[selectedChapter]);
+				}
+		}
+}
+
 function isOdd(num) { return num % 2; }
 
 </script>
