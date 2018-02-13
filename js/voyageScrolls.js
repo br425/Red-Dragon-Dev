@@ -183,17 +183,17 @@ new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
                 .setClassToggle("#rain", "rainier") 
                 .addTo(controller);
 
-new ScrollMagic.Scene({triggerElement: "#sierraLeoneText", duration: 700})
+new ScrollMagic.Scene({triggerElement: "#sierraLeoneText", duration: (sierraLeoneH/3)})
                 .setClassToggle("#sierraLeoneParBG", "bigParaShowBG") 
                 .addTo(controller);
 
-new ScrollMagic.Scene({triggerElement: "#sierraLeoneText", duration: 400})
+new ScrollMagic.Scene({triggerElement: "#sierraLeoneText", duration: (sierraLeoneH/3)})
                 .setClassToggle("#sierraLeoneParFG", "bigParaShowFG") 
                 .addTo(controller);
 
 
-var tween = TweenMax.to("#sierraLeoneParFG", 0.5, {left:0});
-var scene = new ScrollMagic.Scene({triggerElement: "#sierraLeoneText", duration: 700})
+var tween = TweenMax.to("#sierraLeoneParFG", 0.5, {left:'20%'});
+var scene = new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: (sierraLeoneH)})
                 .setTween(tween)
                 .addTo(controller);
 

@@ -8,8 +8,8 @@ html {
 }
 body {
 	overflow-x: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
 }
-
 /* TEXT */
 
 @font-face {
@@ -475,6 +475,7 @@ img {
 }
 
 .blackBox {
+	transition: all 1s;
 	filter: invert(.9);
 }
 
@@ -548,7 +549,8 @@ img {
 
 .credits .textArea {
 	width: 100%;
-	/*justify-content: space-between;*/
+	justify-content: space-around;
+	align-items: flex-start;
 	padding: 5rem 0;
 }
 
@@ -591,6 +593,7 @@ img {
 	background: url('../imgs/paper-bg.jpg');
 	background-size: cover;	
 	opacity: 1;
+	transition: all .5s;
 }
 
 #bannerBG {
@@ -613,9 +616,9 @@ img {
 	background: url('../imgs/barcha-del-hercole-fg.png');
 	background-repeat: no-repeat;
 	width: 150%;
-	left: -30%;
+	left: -50%;
 	z-index: -1;
-	filter: invert(1);
+	filter: contrast(2);
 }
 
 .bigParaShowBG {

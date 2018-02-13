@@ -55,6 +55,13 @@ $("#voyageNavA").hover(function(){
     }, function(){
     $("#voyageLogo").attr("src","icons/logo-white.svg");
 });
+
+$("#voyageNavA").hover(function(){
+    $("#voyageTitle").attr("src","icons/title-logo-red.svg");
+    }, function(){
+    $("#voyageTitle").attr("src","icons/title-logo.svg");
+});
+
 $("#voyageNavA").hover(function(){
     $("#voyageNavA h1").css("color","#f23535");
     }, function(){
