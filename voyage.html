@@ -63,7 +63,7 @@
 				<a href="#england" onclick="reloadTrips(1);" id="one"><span class="dot"><span>-</span>x</span><span class="title">England</span></a>
 				<a href="#fuerteventura" onclick="reloadTrips(3);" id="two"><span class="dot"><span>-</span>x</span><span class="title">Fuerteventura</span></a>
 				<a href="#rioDeOro" onclick="reloadTrips(5);" id="three"><span class="dot"><span>-</span>x</span><span class="title">Rio de Oro</span></a>
-				<a href="#sierraLeone" onclick="reloadTrips(7);" id="four"><span class="dot"><span>-</span>x</span><span class="title">Sierraleone</span></a>
+				<a href="#sierraLeone" onclick="reloadTrips(7);" id="four"><span class="dot"><span>-</span>x</span><span class="title">Sierra Leone</span></a>
 				<a href="#rioDeLaPlata" onclick="reloadTrips(9);" id="five"><span class="dot"><span>-</span>x</span><span class="title">Rio De La Plata</span></a>
 				<a href="#islaDeLobos" onclick="reloadTrips(11);" id="six"><span class="dot"><span>-</span>x</span><span class="title">Isle de Lobos</span></a>
 				<a href="#salvador" onclick="reloadTrips(13);" id="seven"><span class="dot"><span>-</span>x</span><span class="title">Salvador</span></a>
@@ -788,6 +788,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 	// 	'capeVerde': 10,
 	// 	'southampton': 10
 	// }
+<<<<<<< Updated upstream
 var chapters = {
        'departure': {
          duration: 5000,
@@ -917,6 +918,137 @@ var chapters = {
          }
     };
     	var isMapLoaded = false;
+=======
+	var chapters = {
+    	'departure': {
+          duration: 5000,
+          bearing: 0,
+          center: [-39.971008, 19.642588],
+          zoom: 2,
+          pitch: 0
+      },
+      'england': {
+          duration: 6000,
+          bearing: 5,
+          center: [-0.14955, 51.4775],
+          zoom: 4,
+          pitch: 10
+      },
+      'toFuerteventura': {
+          duration: 4000,
+          center: [-24.0537, 28.3587],
+          bearing: -0,
+          zoom: 4,
+          pitch: 30
+      },
+      'fuerteventura': {
+          duration: 7500,
+          center: [-14.0537, 28.3587],
+          bearing: 0,
+          zoom: 4.15,
+          pitch: 20
+      },
+      'toRioDeOro': {
+          duration: 6000,
+          center: [-15.796667, 23.711389],
+          bearing: -0,
+          zoom: 4,
+          pitch: 40
+      },
+      'rioDeOro': {
+          duration: 6000,
+          center: [-15.796667, 23.711389],
+          bearing: -5,
+          zoom: 4.25,
+          pitch: 10
+      },
+      'toSierraLeone': {
+          duration: 6000,
+          center: [-13.0289, 8.3308],
+          bearing: 0,
+          zoom: 4,
+          pitch: 40
+      },
+      'sierraLeone': {
+          duration: 5000,
+          center: [-13.0289, 8.3308],
+          bearing: 0,
+          zoom: 4,
+          pitch: 40
+      },
+      'toRioDeLaPlata': {
+          duration: 12000,
+          bearing: 0,
+          center: [-56.7412, -35.1945],
+          zoom: 4,
+          pitch: 40
+      },
+      'rioDeLaPlata': {
+          duration: 5000,
+          bearing: 20,
+          center: [-56.7412, -35.1945],
+          zoom: 2.5,
+          pitch: 10
+      },
+      'toIslaDeLobos': {
+          bearing: 0,
+          center: [-54.8834, -35.0267],
+          zoom: 4,
+          duration: 5000,
+          pitch: 40
+      },
+      'islaDeLobos': {
+          bearing: 0,
+          center: [-54.8834, -35.0267],
+          zoom: 4,
+          duration: 5000,
+          pitch: 40
+      },
+      'toSalvador': {
+          bearing: 0,
+          center: [-38.365938, -12.802113],
+          zoom: 4,
+          duration: 10000,
+          pitch: 40
+      },
+      'salvador': {
+          bearing: 10,
+          center: [-38.365938, -12.802113],
+          zoom: 3,
+          duration: 10000,
+          pitch: 20
+      },
+      'toCapeVerde': {
+          bearing: 0,
+          center: [-23.0418, 16.5388],
+          zoom: 4,
+          duration: 10000,
+          pitch: 40
+      },
+      'capeVerde': {
+          bearing: 0,
+          center: [-23.0418, 16.5388],
+          zoom: 4,
+          duration: 10000,
+          pitch: 40
+      },
+      'toSouthampton': {
+          bearing: 0,
+          center: [-1.4044, 50.9097],
+          zoom: 4,
+          duration: 8000,
+          pitch: 40
+      },
+      'southampton': {
+          bearing: 0,
+          center: [-39.971008, 0.642588],
+          zoom: 1.8,
+          duration: 8000,
+          pitch: 0
+  		}
+		};
+		var isMapLoaded = false;
+>>>>>>> Stashed changes
 		var animation; // to store and cancel the animation
 		var chapterNames = Object.keys(chapters);
 		var chapterName;
@@ -1095,7 +1227,7 @@ var chapters = {
 										map.getSource('lineToRioDeLaPlata').setData(geojsonLine['rioDeLaPlata']);
 										frame[9]++;
 										animation = requestAnimationFrame(startTrip['rioDeLaPlata']);
-								}, 30);
+								}, 40);
 						} else {
 								frame[9] = 0;
 								lineDrawn[9] = true;
