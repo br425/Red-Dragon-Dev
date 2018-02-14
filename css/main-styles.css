@@ -211,6 +211,7 @@ img {
 	font-size: 5rem;
 	font-weight: bold;
 	color: #5f0000;
+	word-spacing: -.2em;
 
 	position: fixed;
 	left: 12rem;
@@ -491,8 +492,9 @@ img {
     -1px 1px 0 #fff,
     1px 1px 0 #fff;  
 	pointer-events: none;
-	font-kerning: 1px;
+	word-spacing: -.2em;
 	line-height: .7;
+	margin-left: 0;
 }
 
 .bigStopText {
@@ -604,7 +606,26 @@ img {
 	left: -20%;
 }
 
+
 #sierraLeoneParBG {
+	background: url('../imgs/sierraleone-bg.jpg');
+	background-size: cover;	
+	width: 120%;
+	z-index: -6;
+	filter: invert(1);
+}
+
+#sierraLeoneParFG {
+	background: url('../imgs/sierraleone-fg.png');
+	background-repeat: no-repeat;
+	width: 120%;
+	left: -20%;
+	z-index: -1;
+	filter: contrast(2);
+}
+
+
+#rioDeLaPlataParBG {
 	background: url('../imgs/barcha-del-hercole-bg.jpg');
 	background-size: cover;	
 	width: 150%;
@@ -612,7 +633,7 @@ img {
 	filter: invert(1);
 }
 
-#sierraLeoneParFG {
+#rioDeLaPlataParFG {
 	background: url('../imgs/barcha-del-hercole-fg.png');
 	background-repeat: no-repeat;
 	width: 150%;
@@ -822,7 +843,7 @@ img {
 /* SECTION */
 
 .spaceCenter {
-	margin-left: -5rem !important;
+	margin-left: -5rem;
 }
 
 .spaceLeft,.spaceCenter,.spaceRight {
@@ -883,7 +904,7 @@ img {
 
 #voyageNav.redTheme {
 	transition: .5s all 0s;
-	background: #5f0000;
+	background: #211;
 }
 
 .hideNav {

@@ -183,11 +183,11 @@ new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
                 .setClassToggle("#rain", "rainier") 
                 .addTo(controller);
 
-new ScrollMagic.Scene({triggerElement: "#sierraLeoneText", duration: (sierraLeoneH/3)})
+new ScrollMagic.Scene({triggerElement: "#sierraLeoneTitle", duration: ('75%')})
                 .setClassToggle("#sierraLeoneParBG", "bigParaShowBG") 
                 .addTo(controller);
 
-new ScrollMagic.Scene({triggerElement: "#sierraLeoneText", duration: (sierraLeoneH/3)})
+new ScrollMagic.Scene({triggerElement: "#sierraLeoneTitle", duration: ('75%')})
                 .setClassToggle("#sierraLeoneParFG", "bigParaShowFG") 
                 .addTo(controller);
 
@@ -210,13 +210,13 @@ new ScrollMagic.Scene({triggerElement: "#sierraLeoneTrans"})
                 .setClassToggle("#four", "visitedDot") 
                 .addTo(controller);
 
-new ScrollMagic.Scene({triggerElement: "#sierraLeoneText",duration: 100})
-                .setClassToggle("#sierraleone-1", "show") 
-                .addTo(controller);
+// new ScrollMagic.Scene({triggerElement: "#sierraLeoneText",duration: 100})
+//                 .setClassToggle("#sierraleone-1", "show") 
+//                 .addTo(controller);
 
-new ScrollMagic.Scene({triggerElement: "#sierraLeoneText2",duration: 100})
-                .setClassToggle("#sierraleone-2", "show") 
-                .addTo(controller);
+// new ScrollMagic.Scene({triggerElement: "#sierraLeoneText2",duration: 100})
+//                 .setClassToggle("#sierraleone-2", "show") 
+//                 .addTo(controller);
 
 
 //  Rio De La Plata
@@ -258,6 +258,15 @@ new ScrollMagic.Scene({triggerElement: "#rioDeLaPlataTrans"})
 
 new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: rioDeLaPlataH})
                 .setClassToggle("#continue", "invert") 
+                .addTo(controller);
+
+
+new ScrollMagic.Scene({triggerElement: "#rioDeLaPlataTitle", duration: ('75%')})
+                .setClassToggle("#rioDeLaPlataParBG", "bigParaShowBG") 
+                .addTo(controller);
+
+new ScrollMagic.Scene({triggerElement: "#rioDeLaPlataTitle", duration: ('75%')})
+                .setClassToggle("#rioDeLaPlataParFG", "bigParaShowFG") 
                 .addTo(controller);
 
 
