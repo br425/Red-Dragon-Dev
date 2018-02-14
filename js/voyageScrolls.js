@@ -183,6 +183,8 @@ new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
                 .setClassToggle("#rain", "rainier") 
                 .addTo(controller);
 
+
+
 new ScrollMagic.Scene({triggerElement: "#sierraLeoneTitle", duration: ('75%')})
                 .setClassToggle("#sierraLeoneParBG", "bigParaShowBG") 
                 .addTo(controller);
@@ -192,10 +194,16 @@ new ScrollMagic.Scene({triggerElement: "#sierraLeoneTitle", duration: ('75%')})
                 .addTo(controller);
 
 
+var tween = TweenMax.to("#sierraLeoneParBG", 0.5, {left:'10%'});
+var scene = new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: (sierraLeoneH)})
+                .setTween(tween)
+                .addTo(controller);
 var tween = TweenMax.to("#sierraLeoneParFG", 0.5, {left:'20%'});
 var scene = new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: (sierraLeoneH)})
                 .setTween(tween)
                 .addTo(controller);
+
+
 
 new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
                 .setClassToggle("#continue", "invert") 
@@ -270,6 +278,14 @@ new ScrollMagic.Scene({triggerElement: "#rioDeLaPlataTitle", duration: ('75%')})
                 .addTo(controller);
 
 
+var tween = TweenMax.to("#rioDeLaPlataParBG", 0.5, {left:'-30%'});
+var scene = new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: (rioDeLaPlataH)})
+                .setTween(tween)
+                .addTo(controller);
+var tween = TweenMax.to("#rioDeLaPlataParFG", 0.5, {left:'20%'});
+var scene = new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: (rioDeLaPlataH)})
+                .setTween(tween)
+                .addTo(controller);
 
 //  Isle De Lobos
 
