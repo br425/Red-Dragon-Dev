@@ -355,6 +355,33 @@ new ScrollMagic.Scene({triggerElement: "#salvador", duration: salvadorH})
 
 
 
+new ScrollMagic.Scene({triggerElement: "#salvadorTitle", duration: ('75%')})
+                .setClassToggle("#salvadorParBG", "bigParaShowBG") 
+                .addTo(controller);
+
+new ScrollMagic.Scene({triggerElement: "#salvadorTitle", duration: ('75%')})
+                .setClassToggle("#salvadorParFG", "bigParaShowMG") 
+                .addTo(controller);
+
+new ScrollMagic.Scene({triggerElement: "#salvadorTitle", duration: ('75%')})
+                .setClassToggle("#salvadorParFG", "bigParaShowFG") 
+                .addTo(controller);
+
+
+var tween = TweenMax.to("#salvadorParBG", 0.5, {left:'-30%'});
+var scene = new ScrollMagic.Scene({triggerElement: "#salvador", duration: (salvadorH)})
+                .setTween(tween)
+                .addTo(controller);
+var tween = TweenMax.to("#salvadorParMG", 0.5, {left:'20%'});
+var scene = new ScrollMagic.Scene({triggerElement: "#salvador", duration: (salvadorH)})
+                .setTween(tween)
+                .addTo(controller);
+var tween = TweenMax.to("#salvadorParFG", 0.5, {left:'20%'});
+var scene = new ScrollMagic.Scene({triggerElement: "#salvador", duration: (salvadorH)})
+                .setTween(tween)
+                .addTo(controller);
+
+
 //  Cape Verde
 
 var capeVerdeH = document.getElementById('capeVerde').offsetHeight;

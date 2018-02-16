@@ -610,8 +610,8 @@ img {
 #sierraLeoneParBG {
 	background: url('../imgs/sierraleone-bg.jpg');
 	background-size: cover;	
-	width: 150%;
-	left: -20%;
+	width: 150vw;
+	left: -20vw;
 	z-index: -6;
 	filter: invert(1);
 }
@@ -619,8 +619,8 @@ img {
 #sierraLeoneParFG {
 	background: url('../imgs/sierraleone-fg.png');
 	background-repeat: no-repeat;
-	width: 130%;
-	left: -30%;
+	width: 130vw;
+	left: -30vw;
 	z-index: -1;
 	filter: contrast(2);
 }
@@ -629,8 +629,8 @@ img {
 #rioDeLaPlataParBG {
 	background: url('../imgs/barcha-del-hercole-bg.jpg');
 	background-size: cover;	
-	width: 150%;
-	left: 0%;
+	width: 150vw;
+	left: 0vw;
 	z-index: -6;
 	filter: invert(1);
 }
@@ -638,9 +638,35 @@ img {
 #rioDeLaPlataParFG {
 	background: url('../imgs/barcha-del-hercole-fg.png');
 	background-repeat: no-repeat;
-	width: 150%;
-	left: -50%;
+	width: 150vw;
+	left: -50vw;
 	z-index: -1;
+	filter: contrast(2);
+}
+
+#salvadorParBG {
+	background: url('../imgs/salvador-bg.jpg');
+	background-size: cover;	
+	width: 150vw;
+	left: -50vw;
+	z-index: -8;
+	filter: invert(1);
+}
+
+#salvadorParFG {
+	background: url('../imgs/salvador-mg.png');
+	background-repeat: no-repeat;
+	width: 150vw;
+	left: -50vw;
+	z-index: -7;
+	filter: contrast(2);
+}
+#salvadorParFG {
+	background: url('../imgs/salvador-fg.png');
+	background-repeat: no-repeat;
+	width: 150vw;
+	left: -50vw;
+	z-index: -6;
 	filter: contrast(2);
 }
 
@@ -648,7 +674,7 @@ img {
 	opacity: 1 !important;
 }
 .bigParaShowFG {
-	opacity: .5 !important;
+	opacity: 1 !important;
 }
 
 #rain {
