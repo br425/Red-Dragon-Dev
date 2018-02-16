@@ -368,15 +368,15 @@ new ScrollMagic.Scene({triggerElement: "#salvadorTitle", duration: ('75%')})
                 .addTo(controller);
 
 
-var tween = TweenMax.to("#salvadorParBG", 0.5, {left:'-30%'});
+var tween = TweenMax.to("#salvadorParBG", 0.5, {left:'0%'});
 var scene = new ScrollMagic.Scene({triggerElement: "#salvador", duration: (salvadorH)})
                 .setTween(tween)
                 .addTo(controller);
-var tween = TweenMax.to("#salvadorParMG", 0.5, {left:'20%'});
-var scene = new ScrollMagic.Scene({triggerElement: "#salvador", duration: (salvadorH)})
-                .setTween(tween)
-                .addTo(controller);
-var tween = TweenMax.to("#salvadorParFG", 0.5, {left:'20%'});
+// var tween = TweenMax.to("#salvadorParMG", 0.5, {left:'20%'});
+// var scene = new ScrollMagic.Scene({triggerElement: "#salvador", duration: (salvadorH)})
+//                 .setTween(tween)
+//                 .addTo(controller);
+var tween = TweenMax.to("#salvadorParFG", 0.5, {left:'0%'});
 var scene = new ScrollMagic.Scene({triggerElement: "#salvador", duration: (salvadorH)})
                 .setTween(tween)
                 .addTo(controller);

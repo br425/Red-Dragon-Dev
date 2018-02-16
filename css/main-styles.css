@@ -584,6 +584,7 @@ img {
 	z-index: -5;
 	background-size: cover;	
 	background-repeat: no-repeat;
+	background-position: center;
 	transition: opacity 1s;
 	transition: filter 1s;
 	pointer-events: none;
@@ -610,64 +611,77 @@ img {
 #sierraLeoneParBG {
 	background: url('../imgs/sierraleone-bg.jpg');
 	background-size: cover;	
+	background-position: center;
 	width: 150vw;
 	left: -20vw;
 	z-index: -6;
-	filter: invert(1);
+	/*filter: invert(1);*/
 }
 
 #sierraLeoneParFG {
 	background: url('../imgs/sierraleone-fg.png');
 	background-repeat: no-repeat;
+	background-size: cover;	
+	background-position: center;
 	width: 130vw;
 	left: -30vw;
 	z-index: -1;
-	filter: contrast(2);
+	/*filter: contrast(2);*/
 }
 
 
 #rioDeLaPlataParBG {
 	background: url('../imgs/barcha-del-hercole-bg.jpg');
 	background-size: cover;	
+	background-position: center;
 	width: 150vw;
 	left: 0vw;
-	z-index: -6;
-	filter: invert(1);
+	z-index: -7;
+	/*filter: invert(1);*/
 }
 
 #rioDeLaPlataParFG {
 	background: url('../imgs/barcha-del-hercole-fg.png');
 	background-repeat: no-repeat;
-	width: 150vw;
+	background-size: cover;	
+	background-position: center;
+	width: 100vw;
 	left: -50vw;
-	z-index: -1;
-	filter: contrast(2);
+	z-index: -6;
+	/*filter: contrast(1.3);*/
 }
 
 #salvadorParBG {
 	background: url('../imgs/salvador-bg.jpg');
 	background-size: cover;	
+	background-position: center;
 	width: 150vw;
 	left: -50vw;
 	z-index: -8;
-	filter: invert(1);
+	/*filter: invert(1);*/
 }
 
-#salvadorParFG {
+#salvadorParMG {
 	background: url('../imgs/salvador-mg.png');
 	background-repeat: no-repeat;
+	background-size: cover;	
 	width: 150vw;
-	left: -50vw;
+	left: -30vw;
 	z-index: -7;
-	filter: contrast(2);
+	/*filter: contrast(2);*/
 }
 #salvadorParFG {
-	background: url('../imgs/salvador-fg.png');
+	background: url('../imgs/salvador-mg3.png');
 	background-repeat: no-repeat;
+	background-size: cover;	
+	background-position: center;
 	width: 150vw;
-	left: -50vw;
+	/*height: 130%;*/
+	left: -70vw;
+	transform-origin: 50% 50%;
+	/*transform: translateY(50%); */
 	z-index: -6;
-	filter: contrast(2);
+	/*filter: contrast(2);*/
 }
 
 .bigParaShowBG {
@@ -1094,6 +1108,18 @@ img {
 @media screen and (min-width: 1700px) {
 	html {
 		font-size: 150% !important;
+	}
+/* HEADER */
+/* MAIN */
+/* SECTION */
+/* FOOTER */
+/* MISC */
+
+}
+
+@media screen and (min-width: 2500px) {
+	html {
+		font-size: 200% !important;
 	}
 /* HEADER */
 /* MAIN */
