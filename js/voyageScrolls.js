@@ -22,7 +22,7 @@ var scene = new ScrollMagic.Scene({triggerElement: "#debug", duration: 200})
                         $("#compassButton").removeClass("activeCompass");
                         $('.locationTitle').removeClass('locPushDown');
                         // console.log('You going up');
-                    } else {        
+                    } else {
                         $('#voyageNav').removeClass('hideNav');
                         $('.locationTitle').addClass('locPushDown');
                         // console.log('You going down');
@@ -84,10 +84,13 @@ var scene = new ScrollMagic.Scene({triggerElement: "#england", duration: england
 			.addTo(controller);
 
 new ScrollMagic.Scene({triggerElement: "#england", duration:englandH})
-                .setClassToggle("#one", "activeDot") 
+                .setClassToggle("#one", "activeDot")
+                .on('progress', function () {
+                    setActiveChapter('england');
+                })
                 .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#england"})
-                .setClassToggle("#one", "visitedDot") 
+                .setClassToggle("#one", "visitedDot")
                 .addTo(controller);
 
 
@@ -107,10 +110,13 @@ var scene = new ScrollMagic.Scene({triggerElement: "#fuerteventura", duration: f
 
 
 new ScrollMagic.Scene({triggerElement: "#fuerteventura",duration:fuerteventuraH})
-                .setClassToggle("#two", "activeDot") 
+                .setClassToggle("#two", "activeDot")
+                .on('progress', function () {
+                    setActiveChapter('fuerteventura');
+                })
                 .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#fuerteventuraTrans"})
-                .setClassToggle("#two", "visitedDot") 
+                .setClassToggle("#two", "visitedDot")
                 .addTo(controller);
 
 //  Rio De Oro
@@ -131,20 +137,23 @@ var scene = new ScrollMagic.Scene({triggerElement: "#rioDeOro", duration: rioDeO
 
 
 // new ScrollMagic.Scene({triggerElement: "#rioDeOroInfo",duration:rioDeOroInfoH})
-//                 .setClassToggle("#paperBG", "redishBox") 
+//                 .setClassToggle("#paperBG", "redishBox")
 //                 .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#rioDeOro",duration:rioDeOroH})
-                .setClassToggle("#three", "activeDot") 
+                .setClassToggle("#three", "activeDot")
+                .on('progress', function () {
+                  setActiveChapter('rioDeOro');
+                })
                 .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#rioDeOroTrans"})
-                .setClassToggle("#three", "visitedDot") 
+                .setClassToggle("#three", "visitedDot")
                 .addTo(controller);
 
+// new ScrollMagic.Scene({triggerElement: "#rioDeOro",duration:rioDeOroH})
+//                 .setClassToggle("#rain", "raining")
+//                 .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#rioDeOro",duration:rioDeOroH})
-                .setClassToggle("#rain", "raining") 
-                .addTo(controller);
-new ScrollMagic.Scene({triggerElement: "#rioDeOro",duration:rioDeOroH})
-                .setClassToggle("#map", "storm1") 
+                .setClassToggle("#map", "storm1")
                 .addTo(controller);
 
 
@@ -173,24 +182,27 @@ new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: 200})
 
 
 new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
-                .setClassToggle("#voyageNav", "redTheme") 
+                .setClassToggle("#voyageNav", "redTheme")
+                .on('enter', function () {
+                    setActiveChapter('sierraLeone');
+                })
                 .addTo(controller);
 
 new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
-                .setClassToggle("#map", "storm2") 
+                .setClassToggle("#map", "storm2")
                 .addTo(controller);
-new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
-                .setClassToggle("#rain", "rainier") 
-                .addTo(controller);
+// new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
+//                 .setClassToggle("#rain", "rainier")
+//                 .addTo(controller);
 
 
 
 new ScrollMagic.Scene({triggerElement: "#sierraLeoneTitle", duration: ('75%')})
-                .setClassToggle("#sierraLeoneParBG", "bigParaShowBG") 
+                .setClassToggle("#sierraLeoneParBG", "bigParaShowBG")
                 .addTo(controller);
 
 new ScrollMagic.Scene({triggerElement: "#sierraLeoneTitle", duration: ('75%')})
-                .setClassToggle("#sierraLeoneParFG", "bigParaShowFG") 
+                .setClassToggle("#sierraLeoneParFG", "bigParaShowFG")
                 .addTo(controller);
 
 
@@ -206,24 +218,24 @@ var scene = new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: (si
 
 
 new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
-                .setClassToggle("#continue", "invert") 
+                .setClassToggle("#continue", "invert")
                 .addTo(controller);
 
 
 
 new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration:sierraLeoneH})
-                .setClassToggle("#four", "activeDot") 
+                .setClassToggle("#four", "activeDot")
                 .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#sierraLeoneTrans"})
-                .setClassToggle("#four", "visitedDot") 
+                .setClassToggle("#four", "visitedDot")
                 .addTo(controller);
 
 // new ScrollMagic.Scene({triggerElement: "#sierraLeoneText",duration: 100})
-//                 .setClassToggle("#sierraleone-1", "show") 
+//                 .setClassToggle("#sierraleone-1", "show")
 //                 .addTo(controller);
 
 // new ScrollMagic.Scene({triggerElement: "#sierraLeoneText2",duration: 100})
-//                 .setClassToggle("#sierraleone-2", "show") 
+//                 .setClassToggle("#sierraleone-2", "show")
 //                 .addTo(controller);
 
 
@@ -244,37 +256,40 @@ var rioDeLaPlataH = document.getElementById('rioDeLaPlata').offsetHeight;
 
 
 new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: rioDeLaPlataH})
-                .setClassToggle("#voyageNav", "redTheme") 
+                .setClassToggle("#voyageNav", "redTheme")
+                .on('enter', function () {
+                    setActiveChapter('rioDeLaPlata');
+                })
                 .addTo(controller);
 
 new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: rioDeLaPlataH})
-                .setClassToggle("#map", "storm2") 
+                .setClassToggle("#map", "storm2")
                 .addTo(controller);
-
-new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: rioDeLaPlataH})
-                .setClassToggle("#rain", "rainier") 
-                .addTo(controller);
+//
+// new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: rioDeLaPlataH})
+//                 .setClassToggle("#rain", "rainier")
+//                 .addTo(controller);
 
 
 new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata",duration:rioDeLaPlataH})
-                .setClassToggle("#five", "activeDot") 
+                .setClassToggle("#five", "activeDot")
                 .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#rioDeLaPlataTrans"})
-                .setClassToggle("#five", "visitedDot") 
+                .setClassToggle("#five", "visitedDot")
                 .addTo(controller);
 
 
 new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: rioDeLaPlataH})
-                .setClassToggle("#continue", "invert") 
+                .setClassToggle("#continue", "invert")
                 .addTo(controller);
 
 
 new ScrollMagic.Scene({triggerElement: "#rioDeLaPlataTitle", duration: ('75%')})
-                .setClassToggle("#rioDeLaPlataParBG", "bigParaShowBG") 
+                .setClassToggle("#rioDeLaPlataParBG", "bigParaShowBG")
                 .addTo(controller);
 
 new ScrollMagic.Scene({triggerElement: "#rioDeLaPlataTitle", duration: ('75%')})
-                .setClassToggle("#rioDeLaPlataParFG", "bigParaShowFG") 
+                .setClassToggle("#rioDeLaPlataParFG", "bigParaShowFG")
                 .addTo(controller);
 
 
@@ -302,10 +317,13 @@ var scene = new ScrollMagic.Scene({triggerElement: "#islaDeLobos", duration: isl
 
 
 new ScrollMagic.Scene({triggerElement: "#islaDeLobos",duration:islaDeLobosH})
-                .setClassToggle("#six", "activeDot") 
+                .setClassToggle("#six", "activeDot")
+                .on('enter', function () {
+                    setActiveChapter('islaDeLobos');
+                })
                 .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#islaDeLobosTrans"})
-                .setClassToggle("#six", "visitedDot") 
+                .setClassToggle("#six", "visitedDot")
                 .addTo(controller);
 
 
@@ -326,45 +344,48 @@ var salvadorH = document.getElementById('salvador').offsetHeight;
 // 			.addTo(controller);
 
 new ScrollMagic.Scene({triggerElement: "#salvador", duration: salvadorH})
-                .setClassToggle("#voyageNav", "redTheme") 
+                .setClassToggle("#voyageNav", "redTheme")
+                .on('enter', function () {
+                    setActiveChapter('salvador');
+                })
                 .addTo(controller);
 
 new ScrollMagic.Scene({triggerElement: "#salvador", duration: salvadorH})
-                .setClassToggle("#map", "redBox") 
+                .setClassToggle("#map", "redBox")
                 .addTo(controller);
 
 
 new ScrollMagic.Scene({triggerElement: "#salvador",duration:salvadorH})
-                .setClassToggle("#seven", "activeDot") 
+                .setClassToggle("#seven", "activeDot")
                 .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#salvadorTrans"})
-                .setClassToggle("#seven", "visitedDot") 
+                .setClassToggle("#seven", "visitedDot")
                 .addTo(controller);
 
 
+// new ScrollMagic.Scene({triggerElement: "#salvador",duration:salvadorH})
+//                 .setClassToggle("#rain", "rainier")
+//                 .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#salvador",duration:salvadorH})
-                .setClassToggle("#rain", "rainier") 
-                .addTo(controller);
-new ScrollMagic.Scene({triggerElement: "#salvador",duration:salvadorH})
-                .setClassToggle("#map", "storm2") 
+                .setClassToggle("#map", "storm2")
                 .addTo(controller);
 
 new ScrollMagic.Scene({triggerElement: "#salvador", duration: salvadorH})
-                .setClassToggle("#continue", "invert") 
+                .setClassToggle("#continue", "invert")
                 .addTo(controller);
 
 
 
 new ScrollMagic.Scene({triggerElement: "#salvadorTitle", duration: ('75%')})
-                .setClassToggle("#salvadorParBG", "bigParaShowBG") 
+                .setClassToggle("#salvadorParBG", "bigParaShowBG")
                 .addTo(controller);
 
 new ScrollMagic.Scene({triggerElement: "#salvadorTitle", duration: ('75%')})
-                .setClassToggle("#salvadorParFG", "bigParaShowMG") 
+                .setClassToggle("#salvadorParFG", "bigParaShowMG")
                 .addTo(controller);
 
 new ScrollMagic.Scene({triggerElement: "#salvadorTitle", duration: ('75%')})
-                .setClassToggle("#salvadorParFG", "bigParaShowFG") 
+                .setClassToggle("#salvadorParFG", "bigParaShowFG")
                 .addTo(controller);
 
 
@@ -397,10 +418,13 @@ var scene = new ScrollMagic.Scene({triggerElement: "#capeVerde", duration: capeV
 
 
 new ScrollMagic.Scene({triggerElement: "#capeVerde",duration:capeVerdeH})
-                .setClassToggle("#eight", "activeDot") 
+                .setClassToggle("#eight", "activeDot")
+                .on('enter', function () {
+                    setActiveChapter('capeVerde');
+                })
                 .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#capeVerdeTrans"})
-                .setClassToggle("#eight", "visitedDot") 
+                .setClassToggle("#eight", "visitedDot")
                 .addTo(controller);
 
 //  Southampton
@@ -418,10 +442,13 @@ var scene = new ScrollMagic.Scene({triggerElement: "#southampton", duration: sou
 
 
 new ScrollMagic.Scene({triggerElement: "#southampton",duration:southamptonH})
-                .setClassToggle("#nine", "activeDot") 
+                .setClassToggle("#nine", "activeDot")
+                .on('enter', function () {
+                    setActiveChapter('southampton');
+                })
                 .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#southamptonTrans"})
-                .setClassToggle("#nine", "visitedDot") 
+                .setClassToggle("#nine", "visitedDot")
                 .addTo(controller);
 
 
@@ -435,7 +462,7 @@ var scene = new ScrollMagic.Scene({triggerElement: "#ending", duration: "100%"})
 
 var creditsH = document.getElementById('credits').offsetHeight;
 var scene = new ScrollMagic.Scene({triggerElement: "#credits", duration: creditsH})
-                .setClassToggle("#paperBG", "blackBox") 
+                .setClassToggle("#paperBG", "blackBox")
                 .addTo(controller);
 
 

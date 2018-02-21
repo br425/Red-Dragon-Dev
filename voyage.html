@@ -465,13 +465,10 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 
 	<script src="js/jquery-min.js"></script>
 	<script src="js/generalScripts.js"></script>
-	<script src="js/ScrollMagic.js"></script>
-	<!-- <script src="js/ScrollMagic.min.js"></script> -->
+	<script src="js/ScrollMagic.min.js"></script>
 	<script src="js/TweenMax.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
-	<script src="js/brushstroke.min.js"></script>
 	<script src="js/voyageScrolls.js"></script>
-	<!-- <script src="js/voyageStrokes.js"></script> -->
 
 <script>
 
@@ -935,13 +932,13 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 		var lineIdRef = ['','','','lineToFuerteventura','','lineToRioDeOro','','lineToSierraLeone','','lineToRioDeLaPlata','','lineToIslaDeLobos','','lineToSalvador','','lineToCapeVerde','','lineToSouthampton'];
 	  window.onscroll = function() {
 	  		// console.log(chapterNames);
-      	for (var i = 0; i < chapterNames.length; i++) {
-	      		chapterName = chapterNames[i];
-	          if (isElementOnScreen(chapterName)) {
-	              setActiveChapter(chapterName);
-	              break;
-	          }
-      	}
+      	// for (var i = 0; i < chapterNames.length; i++) {
+	      // 		chapterName = chapterNames[i];
+	      //     if (isElementOnScreen(chapterName)) {
+	      //         setActiveChapter(chapterName);
+	      //         break;
+	      //     }
+      	// }
 				// On every scroll event, See if a textBox is on screen
 			  textBoxes = textBoxArray;
 		      	for (var i = 0; i < textBoxes.length; i++) {
@@ -1049,7 +1046,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						if (frame[3] <= geojsonData['fuerteventura'].length - 1 && !lineDrawn[3]) {
 								setTimeout(function() {
 										geojsonLine['fuerteventura'].features[0].geometry.coordinates.push(geojsonData['fuerteventura'][frame[3]]);
-										console.log('Frame #' + frame[3] + ': Added ' + geojsonData['fuerteventura'][frame[3]] + ' to line fuerteventura ', map.getSource('lineToFuerteventura'));
+										// console.log('Frame #' + frame[3] + ': Added ' + geojsonData['fuerteventura'][frame[3]] + ' to line fuerteventura ', map.getSource('lineToFuerteventura'));
 										map.getSource('lineToFuerteventura').setData(geojsonLine['fuerteventura']);
 										frame[3]++;
 										animation = requestAnimationFrame(startTrip['fuerteventura']);
@@ -1063,7 +1060,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						if (frame[5] <= geojsonData['rioDeOro'].length - 1 && !lineDrawn[5]) {
 								setTimeout(function() {
 										geojsonLine['rioDeOro'].features[0].geometry.coordinates.push(geojsonData['rioDeOro'][frame[5]]);
-										console.log('Frame #' + frame[5] + ': Added ' + geojsonData['rioDeOro'][frame[5]] + ' to line rioDeOro ', map.getSource('lineToRioDeOro'));
+										// console.log('Frame #' + frame[5] + ': Added ' + geojsonData['rioDeOro'][frame[5]] + ' to line rioDeOro ', map.getSource('lineToRioDeOro'));
 										map.getSource('lineToRioDeOro').setData(geojsonLine['rioDeOro']);
 										frame[5]++;
 										animation = requestAnimationFrame(startTrip['rioDeOro']);
@@ -1077,7 +1074,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						if (frame[7] <= geojsonData['sierraLeone'].length - 1 && !lineDrawn[7]) {
 								setTimeout(function() {
 										geojsonLine['sierraLeone'].features[0].geometry.coordinates.push(geojsonData['sierraLeone'][frame[7]]);
-										console.log('Frame #' + frame[7] + ': Added ' + geojsonData['sierraLeone'][frame[7]] + ' to line sierraLeone ', map.getSource('lineToSierraLeone'));
+										// console.log('Frame #' + frame[7] + ': Added ' + geojsonData['sierraLeone'][frame[7]] + ' to line sierraLeone ', map.getSource('lineToSierraLeone'));
 										map.getSource('lineToSierraLeone').setData(geojsonLine['sierraLeone']);
 										frame[7]++;
 										animation = requestAnimationFrame(startTrip['sierraLeone']);
@@ -1091,7 +1088,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						if (frame[9] <= geojsonData['rioDeLaPlata'].length - 1 && !lineDrawn[9]) {
 								setTimeout(function() {
 										geojsonLine['rioDeLaPlata'].features[0].geometry.coordinates.push(geojsonData['rioDeLaPlata'][frame[9]]);
-										console.log('Frame #' + frame[9] + ': Added ' + geojsonData['rioDeLaPlata'][frame[9]] + ' to line rioDeLaPlata ', map.getSource('lineToRioDeLaPlata'));
+										// console.log('Frame #' + frame[9] + ': Added ' + geojsonData['rioDeLaPlata'][frame[9]] + ' to line rioDeLaPlata ', map.getSource('lineToRioDeLaPlata'));
 										map.getSource('lineToRioDeLaPlata').setData(geojsonLine['rioDeLaPlata']);
 										frame[9]++;
 										animation = requestAnimationFrame(startTrip['rioDeLaPlata']);
@@ -1105,7 +1102,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						if (frame[11] <= geojsonData['islaDeLobos'].length - 1 && !lineDrawn[11]) {
 								setTimeout(function() {
 										geojsonLine['islaDeLobos'].features[0].geometry.coordinates.push(geojsonData['islaDeLobos'][frame[11]]);
-										console.log('Frame #' + frame[11] + ': Added ' + geojsonData['islaDeLobos'][frame[11]] + ' to line islaDeLobos ', map.getSource('lineToIslaDeLobos'));
+										// console.log('Frame #' + frame[11] + ': Added ' + geojsonData['islaDeLobos'][frame[11]] + ' to line islaDeLobos ', map.getSource('lineToIslaDeLobos'));
 										map.getSource('lineToIslaDeLobos').setData(geojsonLine['islaDeLobos']);
 										frame[11]++;
 										animation = requestAnimationFrame(startTrip['islaDeLobos']);
@@ -1119,7 +1116,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						if (frame[13] <= geojsonData['salvador'].length - 1 && !lineDrawn[13]) {
 								setTimeout(function() {
 										geojsonLine['salvador'].features[0].geometry.coordinates.push(geojsonData['salvador'][frame[13]]);
-										console.log('Frame #' + frame[13] + ': Added ' + geojsonData['salvador'][frame[13]] + ' to line salvador ', map.getSource('lineToSalvador'));
+										// console.log('Frame #' + frame[13] + ': Added ' + geojsonData['salvador'][frame[13]] + ' to line salvador ', map.getSource('lineToSalvador'));
 										map.getSource('lineToSalvador').setData(geojsonLine['salvador']);
 										frame[13]++;
 										animation = requestAnimationFrame(startTrip['salvador']);
@@ -1133,7 +1130,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						if (frame[15] <= geojsonData['capeVerde'].length - 1 && !lineDrawn[15]) {
 								setTimeout(function() {
 										geojsonLine['capeVerde'].features[0].geometry.coordinates.push(geojsonData['capeVerde'][frame[15]]);
-										console.log('Frame #' + frame[15] + ': Added ' + geojsonData['capeVerde'][frame[15]] + ' to line capeVerde ', map.getSource('lineToCapeVerde'));
+										// console.log('Frame #' + frame[15] + ': Added ' + geojsonData['capeVerde'][frame[15]] + ' to line capeVerde ', map.getSource('lineToCapeVerde'));
 										map.getSource('lineToCapeVerde').setData(geojsonLine['capeVerde']);
 										frame[15]++;
 										animation = requestAnimationFrame(startTrip['capeVerde']);
@@ -1147,7 +1144,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						if (frame[17] <= geojsonData['southampton'].length - 1 && !lineDrawn[17]) {
 								setTimeout(function() {
 										geojsonLine['southampton'].features[0].geometry.coordinates.push(geojsonData['southampton'][frame[17]]);
-										console.log('Frame #' + frame[17] + ': Added ' + geojsonData['southampton'][frame[17]] + ' to line southampton ', map.getSource('lineToSouthampton'));
+										// console.log('Frame #' + frame[17] + ': Added ' + geojsonData['southampton'][frame[17]] + ' to line southampton ', map.getSource('lineToSouthampton'));
 										map.getSource('lineToSouthampton').setData(geojsonLine['southampton']);
 										frame[17]++;
 										animation = requestAnimationFrame(startTrip['southampton']);
@@ -1321,6 +1318,26 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 
 				// Allows global functions to run
 				isMapLoaded = true;
+
+				function onReady(callback) {
+				    var intervalID = window.setInterval(checkReady, 1000);
+
+				    function checkReady() {
+				        if (document.getElementsByTagName('body')[0] !== undefined) {
+				            window.clearInterval(intervalID);
+				            callback.call(this);
+				        }
+				    }
+				}
+
+				function show(id, value) {
+				    document.getElementById(id).style.opacity = value ? 1 : 0;
+				}
+
+				onReady(function () {
+				    show('content', true);
+				    show('loading', false);
+				});
 
 		});
 
