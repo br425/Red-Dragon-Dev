@@ -931,30 +931,30 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 			lineDrawn[i] = false;
 		}
 		var lineIdRef = ['','','','lineToFuerteventura','','lineToRioDeOro','','lineToSierraLeone','','lineToRioDeLaPlata','','lineToIslaDeLobos','','lineToSalvador','','lineToCapeVerde','','lineToSouthampton'];
-	  window.onscroll = function() {
-	  		// console.log(chapterNames);
-      	// for (var i = 0; i < chapterNames.length; i++) {
-	      // 		chapterName = chapterNames[i];
-	      //     if (isElementOnScreen(chapterName)) {
-	      //         setActiveChapter(chapterName);
-	      //         break;
-	      //     }
-      	// }
-				// On every scroll event, See if a textBox is on screen
-			  textBoxes = textBoxArray;
-		      	for (var i = 0; i < textBoxes.length; i++) {
-		          	textBox = textBoxes[i];
-		            // console.log(textBox);
-		          	if (isElementOnScreen(textBox)) {
-			              // console.log('textBox is ' +textBox);
-			            $('#continue').css({'display':'none'});
-			              break;
-		          	} else {
-			            $('#continue').css({'display':'block'});
-								}
-			      		// $('#continue p').html('Continue Scrolling');
-		      	}
-		};
+	  // window.onscroll = function() {
+	  // 		console.log(chapterNames);
+    //   	for (var i = 0; i < chapterNames.length; i++) {
+	  //     		chapterName = chapterNames[i];
+	  //         if (isElementOnScreen(chapterName)) {
+	  //             setActiveChapter(chapterName);
+	  //             break;
+	  //         }
+    //   	}
+		// 		// On every scroll event, See if a textBox is on screen
+		// 	  textBoxes = textBoxArray;
+		//       	for (var i = 0; i < textBoxes.length; i++) {
+		//           	textBox = textBoxes[i];
+		//             // console.log(textBox);
+		//           	if (isElementOnScreen(textBox)) {
+		// 	              // console.log('textBox is ' +textBox);
+		// 	            $('#continue').css({'display':'none'});
+		// 	              break;
+		//           	} else {
+		// 	            $('#continue').css({'display':'block'});
+		// 						}
+		// 	      		// $('#continue p').html('Continue Scrolling');
+		//       	}
+		// };
 		// If element on screen changes, change the active chapter
 		var activeChapterName = 'england';
 		function setActiveChapter(chapterName) {
@@ -1354,22 +1354,19 @@ function reloadTrips(chN) {
 			activeChapterNumber++;
 		}
 		var selectedChapter;
-		// If not one of the first two stops, loop through and populate lines
-		if (activeChapterNumber > 0) {
-				// Increments backwards through stops and draws lines
-				for (var i = 3; i < chapterNames.length; i+=2) {
-						selectedChapter = chapterNames[i];
-						if (i <= activeChapterNumber && lineDrawn[i] === false) {
-								geojsonLine[selectedChapter].features[0].geometry.coordinates = geojsonData[selectedChapter];
-								lineDrawn[i] = true;
-								console.log(selectedChapter + ' ' + i + ' automatically populated');
-						} else if (i > activeChapterNumber && lineDrawn[i] === true) {
-								geojsonLine[selectedChapter].features[0].geometry.coordinates = [geojsonData[selectedChapter][0]];
-								lineDrawn[i] = false;
-								console.log(selectedChapter + ' ' + i + ' automatically erased');
-						}
-						map.getSource(lineIdRef[i]).setData(geojsonLine[selectedChapter]);
+		// Increments backwards through stops and draws lines
+		for (var i = 3; i < chapterNames.length; i+=2) {
+				selectedChapter = chapterNames[i];
+				if (i <= activeChapterNumber && lineDrawn[i] === false) {
+						geojsonLine[selectedChapter].features[0].geometry.coordinates = geojsonData[selectedChapter];
+						lineDrawn[i] = true;
+						console.log(selectedChapter + ' ' + i + ' automatically populated');
+				} else if (i > activeChapterNumber && lineDrawn[i] === true) {
+						geojsonLine[selectedChapter].features[0].geometry.coordinates = [geojsonData[selectedChapter][0]];
+						lineDrawn[i] = false;
+						console.log(selectedChapter + ' ' + i + ' automatically erased');
 				}
+				map.getSource(lineIdRef[i]).setData(geojsonLine[selectedChapter]);
 		}
 }
 

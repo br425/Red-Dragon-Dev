@@ -9,43 +9,62 @@ var controller = new ScrollMagic.Controller();
 
 
 
-var scene = new ScrollMagic.Scene({triggerElement: "#debug", duration: 200})
-                .addTo(controller)
-                // .addIndicators() // add indicators (requires plugin)
-                .on("update", function (e) {
-                    // console.log(e.target.controller().info("scrollDirection"));
-                    $("#scrollDirection").text(e.target.controller().info("scrollDirection"));
-                    if (e.target.controller().info("scrollDirection") === 'FORWARD') {
-                        $('#voyageNav').addClass('hideNav');
-                        $(".barContainer").removeClass("openMenu");
-                        $('#voyageNav').removeClass('fullMenu');
-                        $("#compassButton").removeClass("activeCompass");
-                        $('.locationTitle').removeClass('locPushDown');
-                        // console.log('You going up');
-                    } else {
-                        $('#voyageNav').removeClass('hideNav');
-                        $('.locationTitle').addClass('locPushDown');
-                        // console.log('You going down');
-                    }
-                })
-                // .on("enter leave", function (e) {
-                //     $("#state").text(e.type == "enter" ? "inside" : "outside");
-                // })
-                // .on("start end", function (e) {
-                //     $("#lastHit").text(e.type == "start" ? "top" : "bottom");
-                // })
-                // .on("progress", function (e) {
-                //     $("#progress").text(e.progress.toFixed(3));
-                // })
-                ;
+// var scene = new ScrollMagic.Scene({triggerElement: "#debug", duration: 200})
+//                 .addTo(controller)
+//                 // .addIndicators() // add indicators (requires plugin)
+//                 .on("update", function (e) {
+//                     // console.log(e.target.controller().info("scrollDirection"));
+//                     $("#scrollDirection").text(e.target.controller().info("scrollDirection"));
+//                     if (e.target.controller().info("scrollDirection") === 'FORWARD') {
+//                         $('#voyageNav').addClass('hideNav');
+//                         $(".barContainer").removeClass("openMenu");
+//                         $('#voyageNav').removeClass('fullMenu');
+//                         $("#compassButton").removeClass("activeCompass");
+//                         $('.locationTitle').removeClass('locPushDown');
+//                         // console.log('You going up');
+//                     } else {
+//                         $('#voyageNav').removeClass('hideNav');
+//                         $('.locationTitle').addClass('locPushDown');
+//                         // console.log('You going down');
+//                     }
+//                 })
+//                 // .on("enter leave", function (e) {
+//                 //     $("#state").text(e.type == "enter" ? "inside" : "outside");
+//                 // })
+//                 // .on("start end", function (e) {
+//                 //     $("#lastHit").text(e.type == "start" ? "top" : "bottom");
+//                 // })
+//                 // .on("progress", function (e) {
+//                 //     $("#progress").text(e.progress.toFixed(3));
+//                 // })
+//                 ;
 
-
+// Text Boxes
+// $('.textBox').each(function () {
+//
+//     var tween = TweenMax.from($(this));
+//     var scene = new ScrollMagic.Scene({triggerElement: this})
+//                     .setTween(tween)
+//                     .on('enter', function () {
+//                         $('#continue').css({'display':'none'});
+//                         console.log('in');
+//                     })
+//                     .on('leave', function () {
+//                         $('#continue').css({'display':'block'});
+//                         console.log('out');
+//                     })
+//                     .addTo(controller);
+//
+// });
 
 //  Departure
 
 var tween = TweenMax.fromTo("#locationBox", 0.5, {display:'none'},{display:'block'});
 var scene = new ScrollMagic.Scene({triggerElement: "#departure", duration: "100%"})
                 .setTween(tween)
+                .on('enter', function () {
+                  setActiveChapter('departure');
+                })
                 .addTo(controller);
 
 
@@ -77,6 +96,7 @@ var englandT = document.getElementById('englandTitle');
 var scene = new ScrollMagic.Scene({triggerElement: "#england", duration: englandH-200})
 			.on("enter", function () {
 				englandT.style.opacity = 1;
+        setActiveChapter('england');
 			})
 			.on("leave", function () {
 				englandT.style.opacity = 0;
@@ -86,7 +106,6 @@ var scene = new ScrollMagic.Scene({triggerElement: "#england", duration: england
 new ScrollMagic.Scene({triggerElement: "#england", duration:englandH})
                 .setClassToggle("#one", "activeDot")
                 .on('progress', function () {
-                    setActiveChapter('england');
                 })
                 .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#england"})
