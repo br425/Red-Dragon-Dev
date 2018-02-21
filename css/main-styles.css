@@ -294,7 +294,7 @@ img {
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: space-between;
-	padding: 2rem 1rem 0;
+	padding: 1rem 1rem 0;
 	box-sizing: border-box;
 }
 
@@ -470,14 +470,11 @@ img {
 	transform: rotateZ(20deg) scale(1.8);
 }
 
-.darkRain {
-	filter: hue-rotate(100deg) brightness(.7);
-	opacity: 1 !important;
-}
 
 .blackBox {
 	transition: all 1s;
-	filter: invert(.9);
+	filter: invert(1);
+	/*opacity: .9 !important;*/
 }
 
 
@@ -553,7 +550,7 @@ img {
 	width: 100%;
 	justify-content: space-around;
 	align-items: flex-start;
-	padding: 5rem 0;
+	padding: 5rem 0 0;
 }
 
 .credits h2 {
@@ -615,7 +612,7 @@ img {
 	width: 150vw;
 	left: -20vw;
 	z-index: -6;
-	/*filter: invert(1);*/
+	filter: invert(1) saturate(0);
 }
 
 #sierraLeoneParFG {
@@ -626,6 +623,7 @@ img {
 	width: 130vw;
 	left: -30vw;
 	z-index: -1;
+	filter: saturate(0);
 	/*filter: contrast(2);*/
 }
 
@@ -637,7 +635,7 @@ img {
 	width: 150vw;
 	left: 0vw;
 	z-index: -7;
-	/*filter: invert(1);*/
+	filter: invert(1) saturate(0);
 }
 
 #rioDeLaPlataParFG {
@@ -658,6 +656,7 @@ img {
 	width: 150vw;
 	left: -50vw;
 	z-index: -8;
+	filter: invert(1) saturate(0);
 	/*filter: invert(1);*/
 }
 
@@ -668,6 +667,7 @@ img {
 	width: 150vw;
 	left: -30vw;
 	z-index: -7;
+	filter: invert(1) saturate(0);
 	/*filter: contrast(2);*/
 }
 #salvadorParFG {
@@ -681,6 +681,7 @@ img {
 	transform-origin: 50% 50%;
 	/*transform: translateY(50%); */
 	z-index: -6;
+	filter: saturate(0);
 	/*filter: contrast(2);*/
 }
 
@@ -746,16 +747,18 @@ img {
 
 #homeHeader {
 	position: fixed;
-	top: 0;
-	left: 2rem;
+	/*top: 35%;*/
+	left: 0rem;
 	display: flex;
-	flex-flow: row nowrap;
-	justify-content: space-between;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
 	z-index: 4;
-	height: 10rem;
-	width: 20rem;
-	/*padding: 1rem;*/
-	/*background: rgba(250, 245, 245,.9);*/
+	height: 100%;
+	width: 10rem;
+	padding: 1rem;
+	background: #5f0000;
+	box-shadow: 0px 0 8px #544;
+	padding: 1rem 1rem 0;
 	/*border-right: solid #aa0000 2px;*/
 	/*border-bottom: solid #aa0000 2px;*/
 }
@@ -790,12 +793,13 @@ img {
 }
 #shipFGCont {
 	position: fixed;
-	left: 40%;
+	left: 40rem;
 	z-index: -1;
 	bottom: -4rem;
+	width: 30rem;
+	height: 110%;
 }
 #shipFG {
-	height: 110%;
 }
 
 

@@ -454,7 +454,7 @@ new ScrollMagic.Scene({triggerElement: "#southamptonTrans"})
 
 //  Ending
 
-var tween = TweenMax.to("#paperBG", 0.5, {opacity:1});
+var tween = TweenMax.to("#paperBG", 0.5, {opacity:.8});
 var scene = new ScrollMagic.Scene({triggerElement: "#ending", duration: "100%"})
                 .setTween(tween)
                 .addTo(controller);

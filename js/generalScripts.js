@@ -30,10 +30,15 @@ $("#voyageNavA").hover(function(){
     $("#voyageLogo").attr("src","icons/logo-white.svg");
 });
 
-$("#voyageNavA").hover(function(){
-    $("#voyageTitle").attr("src","icons/title-logo-red.svg");
+// $("#voyageNavA").hover(function(){
+//     $("#voyageTitle").attr("src","icons/title-logo-red.svg");
+//     }, function(){
+//     $("#voyageTitle").attr("src","icons/title-logo.svg");
+// });
+$("#logo").hover(function(){
+    $("#logo img").attr("src","../../images/reddragon_red.png");
     }, function(){
-    $("#voyageTitle").attr("src","icons/title-logo.svg");
+    $("#logo img").attr("src","../../images/reddragon_white.png");
 });
 
 $("#voyageNavA").hover(function(){

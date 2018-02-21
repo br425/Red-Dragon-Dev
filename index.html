@@ -12,20 +12,29 @@
 	<link rel="stylesheet" href="css/normalize.css">
 </head>
 <body>
-	<aside id="homeNav">
+<!-- 	<aside id="homeNav">
 		<div>
 			<a href="#toVoyage" id="voyageDot"><span class="dots"><span>-</span>x</span></a>
 			<a href="#toArchive" id="archiveDot"><span class="dots"><span>-</span>x</span></a>
 			<a href="#toAbout" id="aboutDot"><span class="dots"><span>-</span>x</span></a>
 		</div>
 	</aside>
-	<div id="wrapper">
+ -->	<div id="wrapper">
 		<div class="BGimg" id="wrapperBG"></div>
 
 	<header id="homeHeader">
+		<a href="index.html" id="voyageNavA">
+			<img src="icons/reddragon_white-03.png" alt="Title" id="voyageTitle">
+		</a>
 		<!-- <h1><span class="voyageLeft">The Voyage of </span><br><span class="biggerFont">The Red Dragon</span></h1> -->
-		<img class="logo" src="icons/title-logo-red.svg" alt="Logo">
-		<img class="logo" src="icons/logo-red.svg" alt="Logo">
+		<!-- <img src="icons/reddragon_white-03.png" alt="Title" id="voyageTitle"> -->
+		<div class="barContainer">
+		<div id="sideBar">
+				<a href="#toVoyage" onclick="smoothScroll('toVoyage')" id="voyageDot"><span class="dot"><span>-</span>x</span><span class="title"></span></a>
+				<a href="#toArchive" onclick="smoothScroll('toArchive')" id="archiveDot"><span class="dot"><span>-</span>x</span><span class="title"></span></a>
+				<a href="#toAbout" onclick="smoothScroll('toAbout')" id="aboutDot"><span class="dot"><span>-</span>x</span><span class="title"></span></a>
+		</div>
+		</div>
 	</header>
 
 	<main>
@@ -33,12 +42,12 @@
 			<div id="skyBGCont"><div id="skyBG"></div></div>
 			<div id="shipBGCont"><div id="shipBG"></div></div>
 			<div id="shipFGCont"><img src="imgs/ship-fg.png" alt="ship" id="shipFG"></div>
-			<div id="rain" class="rain imgBG"></div>
+			<!-- <div id="rain" class="rain imgBG"></div> -->
 			<div id="darken" class="imgBG"></div>
 		</section>
 
 		<section id="parallaxTriggers" class="">
-			<div class="spacer10"></div>
+			<!-- <div class="spacer10"></div> -->
 			<div class="spacer100 spaceRight" id="toVoyage">
 				<div class="textBox redTextBox" id="">
 					<!-- <img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon"> -->
@@ -55,12 +64,12 @@
 				</div>
 			</div>
 
-			<div class="spacer10"></div>
+			<!-- <div class="spacer10"></div> -->
 			<div class="spacer100 spaceRight" id="toArchive">
 
 				<div class="textBox redTextBox" id="">
 					<!-- <img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon"> -->
-					<a href="">
+					<a href="http://www.scg52.com/Archive/">
 						<h2>Discover the Archive</h2>
 						<img src="icons/rightArrow.svg" alt="Arrow">
 					</a>
@@ -108,7 +117,7 @@
 		<!-- <div class="fadedScroller_fade"></div> -->
 
 	</main>
-	<footer></footer>
+	<!-- <footer></footer> -->
 	</div>
 
 	<script src="js/jquery-min.js"></script>
