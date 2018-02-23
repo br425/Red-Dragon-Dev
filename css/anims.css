@@ -90,7 +90,7 @@ main {
 }
 
 @keyframes fadeRedT {
-	from {color: #f23535;} 
+	from {color: #f23535;}
 	to {color: #9a0000;}
 }
 
@@ -173,9 +173,9 @@ main {
 .invert {filter: invert(1);}
 
 @keyframes flicker {
-	0% {opacity: 1;}
-	50% {opacity: .2;}
-	100% {opacity: 1;}
+	0% {color: rgba(0,0,0,1);}
+	50% {color: rgba(0,0,0,.2);}
+	100% {color: rgba(0,0,0,1);};}
 }
 
 .storm1 {
@@ -209,7 +209,7 @@ main {
 
 .storm2 {
 	filter: brightness(.3);
-	
+
 	-webkit-animation-name: stormTwo;
 	-o-animation-name: stormTwo;
 	animation-name: stormTwo;

@@ -40,26 +40,25 @@ var controller = new ScrollMagic.Controller();
 //                 ;
 
 // Text Boxes
-// $('.textBox').each(function () {
-//
-//     var tween = TweenMax.from($(this));
-//     var scene = new ScrollMagic.Scene({triggerElement: this})
-//                     .setTween(tween)
-//                     .on('enter', function () {
-//                         $('#continue').css({'display':'none'});
-//                         console.log('in');
-//                     })
-//                     .on('leave', function () {
-//                         $('#continue').css({'display':'block'});
-//                         console.log('out');
-//                     })
-//                     .addTo(controller);
-//
-// });
+$('.anyText').each(function () {
+
+    var height = $(this).height();
+
+    // var tween = TweenLite.from(current);
+    var scene = new ScrollMagic.Scene({triggerElement: this, triggerHook: 1, duration: height})
+                    .on('enter', function () {
+                        $('#continue').css({'opacity':'0'});
+                    })
+                    .on('leave', function () {
+                        $('#continue').css({'opacity':'1'});
+                    })
+                    .addTo(controller);
+
+});
 
 //  Departure
 
-var tween = TweenMax.fromTo("#locationBox", 0.5, {display:'none'},{display:'block'});
+var tween = TweenLite.fromTo("#locationBox", 0.5, {display:'none'},{display:'block'});
 var scene = new ScrollMagic.Scene({triggerElement: "#departure", duration: "100%"})
                 .setTween(tween)
                 .on('enter', function () {
@@ -73,18 +72,18 @@ var tabletPlusOnly = false;
 if (w > 500) {tabletPlusOnly = true;}
 
 if (tabletPlusOnly) {
-var tween = TweenMax.from("#voyageNav", 0.5, {left:-360});
+var tween = TweenLite.from("#voyageNav", 0.5, {left:-360});
 var scene = new ScrollMagic.Scene({triggerElement: "#departure", duration: "100%"})
                 .setTween(tween)
                 .addTo(controller);
 }
 
-var tween = TweenMax.to("#paperBG", 0.5, {opacity:0});
+var tween = TweenLite.to("#paperBG", 0.5, {opacity:0});
 var scene = new ScrollMagic.Scene({triggerElement: "#departure", duration: "200%"})
                 .setTween(tween)
                 .addTo(controller);
 
-var tween = TweenMax.to("#bannerBG", 0.5, {left:0, opacity:0});
+var tween = TweenLite.to("#bannerBG", 0.5, {left:0, opacity:0});
 var scene = new ScrollMagic.Scene({duration: "200%"})
                 .setTween(tween)
                 .addTo(controller);
@@ -225,11 +224,11 @@ new ScrollMagic.Scene({triggerElement: "#sierraLeoneTitle", duration: ('150%')})
                 .addTo(controller);
 
 
-var tween = TweenMax.to("#sierraLeoneParBG", 0.5, {left:'10%'});
+var tween = TweenLite.to("#sierraLeoneParBG", 0.5, {left:'10%'});
 var scene = new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: (sierraLeoneH)})
                 .setTween(tween)
                 .addTo(controller);
-var tween = TweenMax.to("#sierraLeoneParFG", 0.5, {left:'20%'});
+var tween = TweenLite.to("#sierraLeoneParFG", 0.5, {left:'20%'});
 var scene = new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: (sierraLeoneH)})
                 .setTween(tween)
                 .addTo(controller);
@@ -312,11 +311,11 @@ new ScrollMagic.Scene({triggerElement: "#rioDeLaPlataTitle", duration: ('150%')}
                 .addTo(controller);
 
 
-var tween = TweenMax.to("#rioDeLaPlataParBG", 0.5, {left:'-30%'});
+var tween = TweenLite.to("#rioDeLaPlataParBG", 0.5, {left:'-30%'});
 var scene = new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: (rioDeLaPlataH)})
                 .setTween(tween)
                 .addTo(controller);
-var tween = TweenMax.to("#rioDeLaPlataParFG", 0.5, {left:'20%'});
+var tween = TweenLite.to("#rioDeLaPlataParFG", 0.5, {left:'20%'});
 var scene = new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: (rioDeLaPlataH)})
                 .setTween(tween)
                 .addTo(controller);
@@ -408,15 +407,15 @@ new ScrollMagic.Scene({triggerElement: "#salvadorTitle", duration: ('150%')})
                 .addTo(controller);
 
 
-var tween = TweenMax.to("#salvadorParBG", 0.5, {left:'0%'});
+var tween = TweenLite.to("#salvadorParBG", 0.5, {left:'0%'});
 var scene = new ScrollMagic.Scene({triggerElement: "#salvador", duration: (salvadorH)})
                 .setTween(tween)
                 .addTo(controller);
-// var tween = TweenMax.to("#salvadorParMG", 0.5, {left:'20%'});
+// var tween = TweenLite.to("#salvadorParMG", 0.5, {left:'20%'});
 // var scene = new ScrollMagic.Scene({triggerElement: "#salvador", duration: (salvadorH)})
 //                 .setTween(tween)
 //                 .addTo(controller);
-var tween = TweenMax.to("#salvadorParFG", 0.5, {left:'0%'});
+var tween = TweenLite.to("#salvadorParFG", 0.5, {left:'0%'});
 var scene = new ScrollMagic.Scene({triggerElement: "#salvador", duration: (salvadorH)})
                 .setTween(tween)
                 .addTo(controller);
@@ -473,7 +472,7 @@ new ScrollMagic.Scene({triggerElement: "#southamptonTrans"})
 
 //  Ending
 
-var tween = TweenMax.to("#paperBG", 0.5, {opacity:.8});
+var tween = TweenLite.to("#paperBG", 0.5, {opacity:.8});
 var scene = new ScrollMagic.Scene({triggerElement: "#ending", duration: "100%"})
                 .setTween(tween)
                 .addTo(controller);
@@ -485,7 +484,7 @@ var scene = new ScrollMagic.Scene({triggerElement: "#credits", duration: credits
                 .addTo(controller);
 
 
-var tween = TweenMax.to("#voyageNav", 0.5, {opacity:0});
+var tween = TweenLite.to("#voyageNav", 0.5, {opacity:0});
 var scene = new ScrollMagic.Scene({triggerElement: "#ending", duration: "100%"})
                 .setTween(tween)
                 .addTo(controller);
