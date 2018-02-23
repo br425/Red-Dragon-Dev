@@ -216,11 +216,11 @@ new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
 
 
 
-new ScrollMagic.Scene({triggerElement: "#sierraLeoneTitle", duration: ('75%')})
+new ScrollMagic.Scene({triggerElement: "#sierraLeoneTitle", duration: ('150%')})
                 .setClassToggle("#sierraLeoneParBG", "bigParaShowBG")
                 .addTo(controller);
 
-new ScrollMagic.Scene({triggerElement: "#sierraLeoneTitle", duration: ('75%')})
+new ScrollMagic.Scene({triggerElement: "#sierraLeoneTitle", duration: ('150%')})
                 .setClassToggle("#sierraLeoneParFG", "bigParaShowFG")
                 .addTo(controller);
 
@@ -303,11 +303,11 @@ new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: rioDeLaPlataH}
                 .addTo(controller);
 
 
-new ScrollMagic.Scene({triggerElement: "#rioDeLaPlataTitle", duration: ('75%')})
+new ScrollMagic.Scene({triggerElement: "#rioDeLaPlataTitle", duration: ('150%')})
                 .setClassToggle("#rioDeLaPlataParBG", "bigParaShowBG")
                 .addTo(controller);
 
-new ScrollMagic.Scene({triggerElement: "#rioDeLaPlataTitle", duration: ('75%')})
+new ScrollMagic.Scene({triggerElement: "#rioDeLaPlataTitle", duration: ('150%')})
                 .setClassToggle("#rioDeLaPlataParFG", "bigParaShowFG")
                 .addTo(controller);
 
@@ -395,15 +395,15 @@ new ScrollMagic.Scene({triggerElement: "#salvador", duration: salvadorH})
 
 
 
-new ScrollMagic.Scene({triggerElement: "#salvadorTitle", duration: ('75%')})
+new ScrollMagic.Scene({triggerElement: "#salvadorTitle", duration: ('150%')})
                 .setClassToggle("#salvadorParBG", "bigParaShowBG")
                 .addTo(controller);
 
-new ScrollMagic.Scene({triggerElement: "#salvadorTitle", duration: ('75%')})
+new ScrollMagic.Scene({triggerElement: "#salvadorTitle", duration: ('150%')})
                 .setClassToggle("#salvadorParFG", "bigParaShowMG")
                 .addTo(controller);
 
-new ScrollMagic.Scene({triggerElement: "#salvadorTitle", duration: ('75%')})
+new ScrollMagic.Scene({triggerElement: "#salvadorTitle", duration: ('150%')})
                 .setClassToggle("#salvadorParFG", "bigParaShowFG")
                 .addTo(controller);
 

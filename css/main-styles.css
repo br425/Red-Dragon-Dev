@@ -63,7 +63,7 @@ p {
 }
 
 .redTextBox .textArea {
-	border: solid #aa0000 2px;
+	border: solid #b11 2px;
 	box-shadow: 0px 0 10px rgba(100,80,80,.5);
 	background: rgba(250, 245, 245,.9);
 	display: flex;
@@ -98,7 +98,7 @@ p {
 	transition: .3s;
 }
 .redTextBox a {
-	background: #aa0000;	
+	background: #b11;	
 }
 .blackTextBox .a {
 	background: #200000;
@@ -258,7 +258,7 @@ img {
 
 
  h1 {
-	color: #aa0000;
+	color: #b11;
 }
 
 /*.voyageLogo {
@@ -301,7 +301,7 @@ img {
 #voyageNav h1 {
 	padding: 0rem;
 	margin: 0;
-	/*border-bottom: solid #aa0000 3px;	*/
+	/*border-bottom: solid #b11 3px;	*/
 	transition: .3s;
 	color: #fffcfc;
 	text-align: center;
@@ -349,7 +349,7 @@ img {
 		width: 0;
 		opacity: 0;
 		font-family: 'Kallos';
-		color: #aa0000;
+		color: #b11;
 		transition: .3s;
 		font-size: 1.4rem;
 		pointer-events: none;
@@ -400,7 +400,7 @@ img {
 
 .activeDot .dot {
 	background: transparent;
-	/*border: 2px solid #aa0000;*/
+	/*border: 2px solid #b11;*/
 	font-size: 2rem;
 	color: #fffcfc;
 	line-height: 0;
@@ -489,7 +489,7 @@ img {
     -1px 1px 0 #fff,
     1px 1px 0 #fff;  
 	pointer-events: none;
-	word-spacing: -.2em;
+	word-spacing: -.3em;
 	line-height: .7;
 	margin-left: 0;
 }
@@ -759,8 +759,8 @@ img {
 	background: #5f0000;
 	box-shadow: 0px 0 8px #544;
 	padding: 1rem 1rem 0;
-	/*border-right: solid #aa0000 2px;*/
-	/*border-bottom: solid #aa0000 2px;*/
+	/*border-right: solid #b11 2px;*/
+	/*border-bottom: solid #b11 2px;*/
 }
 
 #skyBGCont {
@@ -889,7 +889,7 @@ img {
 /* SECTION */
 
 .spaceCenter {
-	margin-left: -5rem;
+	margin-left: 0rem;
 }
 
 .spaceLeft,.spaceCenter,.spaceRight {
@@ -1124,6 +1124,30 @@ img {
 @media screen and (min-width: 2500px) {
 	html {
 		font-size: 200% !important;
+	}
+/* HEADER */
+/* MAIN */
+/* SECTION */
+/* FOOTER */
+/* MISC */
+
+}
+
+@media screen and (min-width: 3500px) {
+	html {
+		font-size: 250% !important;
+	}
+/* HEADER */
+/* MAIN */
+/* SECTION */
+/* FOOTER */
+/* MISC */
+
+}
+
+@media screen and (min-width: 5000px) {
+	html {
+		font-size: 300% !important;
 	}
 /* HEADER */
 /* MAIN */
