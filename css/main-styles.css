@@ -46,7 +46,7 @@ p {
 }
 
 .textBox {
-	max-width: 100%; 
+	max-width: 100%;
 	width: 33rem;
 	display: flex;
 	flex-flow: column;
@@ -98,7 +98,7 @@ p {
 	transition: .3s;
 }
 .redTextBox a {
-	background: #b11;	
+	background: #b11;
 }
 .blackTextBox .a {
 	background: #200000;
@@ -418,7 +418,7 @@ img {
     -1px -1px 0 #fffcfc,
     1px -1px 0 #fffcfc,
     -1px 1px 0 #fffcfc,
-    1px 1px 0 #fffcfc;  
+    1px 1px 0 #fffcfc;
 }
 
 #voyageNav.redTheme {
@@ -429,7 +429,7 @@ img {
 }
 .redTheme #sideBar a .title {
 	color: #fffcfc;
-} 
+}
 /*.whiteBar {
 	filter: brightness(0) invert(.9);
 
@@ -437,7 +437,7 @@ img {
 .whiteBar .voyageLogo:hover {
 	filter: invert(.6);
 }
-*/ 
+*/
 
 
 #blendFix {
@@ -487,7 +487,7 @@ img {
     -1px -1px 0 #fff,
     1px -1px 0 #fff,
     -1px 1px 0 #fff,
-    1px 1px 0 #fff;  
+    1px 1px 0 #fff;
 	pointer-events: none;
 	word-spacing: -.3em;
 	line-height: .7;
@@ -500,7 +500,7 @@ img {
 	border-bottom: 2px solid white;
 }
 .bigStopText h2 {
-	padding: 0rem 0rem 2rem; 
+	padding: 0rem 0rem 2rem;
 	font-size: 1.6rem;
 	/*margin-bottom: 2rem;*/
 	color: white;
@@ -525,7 +525,7 @@ img {
 
 }
 .bigStopText p {
-	padding: 2rem 2rem 0rem; 
+	padding: 2rem 2rem 0rem;
 	line-height: 1.7;
 	letter-spacing: 1px;
 	border-left: 2px solid white;
@@ -579,26 +579,25 @@ img {
 	width: 100%;
 	height: 100%;
 	z-index: -5;
-	background-size: cover;	
+	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	transition: opacity 1s;
-	transition: filter 1s;
 	pointer-events: none;
 	opacity: 0;
 	transition: opacity 1s;
+	will-change: transform;
 }
 
 #paperBG {
 	background: url('../imgs/paper-bg.jpg');
-	background-size: cover;	
+	background-size: cover;
 	opacity: 1;
 	transition: all .5s;
 }
 
 #bannerBG {
 	background: url('../imgs/banner-bg.jpg');
-	background-size: cover;	
+	background-size: cover;
 	opacity: .2;
 	width: 150%;
 	left: -20%;
@@ -607,7 +606,7 @@ img {
 
 #sierraLeoneParBG {
 	background: url('../imgs/sierraleone-bg.jpg');
-	background-size: cover;	
+	background-size: cover;
 	background-position: center;
 	width: 150vw;
 	left: -20vw;
@@ -618,7 +617,7 @@ img {
 #sierraLeoneParFG {
 	background: url('../imgs/sierraleone-fg.png');
 	background-repeat: no-repeat;
-	background-size: cover;	
+	background-size: cover;
 	background-position: center;
 	width: 130vw;
 	left: -30vw;
@@ -630,7 +629,7 @@ img {
 
 #rioDeLaPlataParBG {
 	background: url('../imgs/barcha-del-hercole-bg.jpg');
-	background-size: cover;	
+	background-size: cover;
 	background-position: center;
 	width: 150vw;
 	left: 0vw;
@@ -641,7 +640,7 @@ img {
 #rioDeLaPlataParFG {
 	background: url('../imgs/barcha-del-hercole-fg.png');
 	background-repeat: no-repeat;
-	background-size: cover;	
+	background-size: cover;
 	background-position: center;
 	width: 100vw;
 	left: -50vw;
@@ -651,7 +650,7 @@ img {
 
 #salvadorParBG {
 	background: url('../imgs/salvador-bg.jpg');
-	background-size: cover;	
+	background-size: cover;
 	background-position: center;
 	width: 150vw;
 	left: -50vw;
@@ -663,7 +662,7 @@ img {
 #salvadorParMG {
 	background: url('../imgs/salvador-mg.png');
 	background-repeat: no-repeat;
-	background-size: cover;	
+	background-size: cover;
 	width: 150vw;
 	left: -30vw;
 	z-index: -7;
@@ -673,7 +672,7 @@ img {
 #salvadorParFG {
 	background: url('../imgs/salvador-mg3.png');
 	background-repeat: no-repeat;
-	background-size: cover;	
+	background-size: cover;
 	background-position: center;
 	width: 150vw;
 	/*height: 130%;*/
@@ -693,12 +692,13 @@ img {
 }
 
 #rain {
-	background: url('../imgs/rain.gif');	
+	background: url('../imgs/rain.gif');
 	transition: 3s;
 }
 
 #map {
 	transition: 4s;
+	will-change: transform;
 }
 .darken {
 	filter: brightness(.6);
@@ -738,7 +738,7 @@ img {
 #content {
 	padding-left: 10rem;
 	/*background: url('../imgs/paper-bg.jpg');*/
-	background-size: cover;	
+	background-size: cover;
 	transition: 2s;
 }
 
@@ -831,7 +831,7 @@ img {
 }
 
 #toAbout {
-	margin: 0; 
+	margin: 0;
 }
 
 #homeNav a .dots {
@@ -880,7 +880,7 @@ img {
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TABLET */
 
 @media screen and (max-width: 1000px) {
-	
+
 /* HEADER */
 
 
@@ -917,7 +917,7 @@ img {
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MOBILE */
 
 @media screen and (max-width: 500px) {
-	
+
 /* HEADER */
 
 
@@ -929,7 +929,7 @@ img {
 	box-sizing: border-box;
 }
 
-#mobileHeader {	
+#mobileHeader {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
@@ -1063,7 +1063,7 @@ img {
     -1px -1px 0 #fff,
     1px -1px 0 #fff,
     -1px 1px 0 #fff,
-    1px 1px 0 #fff;  
+    1px 1px 0 #fff;
 	pointer-events: none;
 	font-kerning: 1px;
 	line-height: .7;
@@ -1156,4 +1156,3 @@ img {
 /* MISC */
 
 }
-

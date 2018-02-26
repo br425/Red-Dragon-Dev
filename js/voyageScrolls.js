@@ -62,7 +62,7 @@ var tween = TweenLite.fromTo("#locationBox", 0.5, {display:'none'},{display:'blo
 var scene = new ScrollMagic.Scene({triggerElement: "#departure", duration: "100%"})
                 .setTween(tween)
                 .on('enter', function () {
-                  setActiveChapter('departure');
+                    setActiveChapter('departure');
                 })
                 .addTo(controller);
 
@@ -94,17 +94,18 @@ var englandH = document.getElementById('england').offsetHeight;
 var englandT = document.getElementById('englandTitle');
 var scene = new ScrollMagic.Scene({triggerElement: "#england", duration: englandH-200})
 			.on("enter", function () {
-				englandT.style.opacity = 1;
-        setActiveChapter('england');
+  				englandT.style.opacity = 1;
 			})
 			.on("leave", function () {
-				englandT.style.opacity = 0;
+  				englandT.style.opacity = 0;
 			})
 			.addTo(controller);
 
 new ScrollMagic.Scene({triggerElement: "#england", duration:englandH})
                 .setClassToggle("#one", "activeDot")
                 .on('progress', function () {
+                    setActiveChapter('england');
+                    reloadTrips();
                 })
                 .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#england"})
