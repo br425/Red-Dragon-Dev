@@ -325,7 +325,7 @@ img {
 	}
 	#sideBar {
 		width: 100%;
-		background: url('../icons/sideBar.svg');
+		background: url('../icons/sidebar.svg');
 		background-size: cover;
 		display: flex;
 		flex-flow: column;
@@ -1109,50 +1109,70 @@ img {
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ LARGER */
 
-@media screen and (min-width: 1700px) {
+@media screen and (min-width: 1400px) {
 	html {
 		font-size: 150% !important;
 	}
-/* HEADER */
-/* MAIN */
-/* SECTION */
-/* FOOTER */
-/* MISC */
-
+	#map {
+		width:150% !important;
+		height:150% !important;
+	}
 }
 
-@media screen and (min-width: 2500px) {
+@media screen and (min-width: 2100px) {
 	html {
 		font-size: 200% !important;
 	}
-/* HEADER */
-/* MAIN */
-/* SECTION */
-/* FOOTER */
-/* MISC */
-
+	#map {
+		width:200% !important;
+		width:200% !important;
+	}
 }
-
-@media screen and (min-width: 3500px) {
+@media screen and (min-width: 2500px) {
 	html {
 		font-size: 250% !important;
 	}
-/* HEADER */
-/* MAIN */
-/* SECTION */
-/* FOOTER */
-/* MISC */
+	#map {
+		width:250% !important;
+		width:250% !important;
+	}
+}
 
+@media screen and (min-width: 3000px) {
+	html {
+		font-size: 300% !important;
+	}
+	#map {
+		width:300% !important;
+		width:300% !important;
+	}
+}
+@media screen and (min-width: 3500px) {
+	html {
+		font-size: 350% !important;
+	}
+	#map {
+		width:350% !important;
+		width:350% !important;
+	}
+}
+
+@media screen and (min-width: 4200px) {
+	html {
+		font-size: 400% !important;
+	}
+	#map {
+		width:400% !important;
+		width:400% !important;
+	}
 }
 
 @media screen and (min-width: 5000px) {
 	html {
-		font-size: 300% !important;
+		font-size: 450% !important;
 	}
-/* HEADER */
-/* MAIN */
-/* SECTION */
-/* FOOTER */
-/* MISC */
-
+	#map {
+		width:450% !important;
+		width:450% !important;
+	}
 }
