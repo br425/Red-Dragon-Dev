@@ -34,22 +34,22 @@ var controller = new ScrollMagic.Controller();
 // Transition to Archive Section
 
 var tween = TweenLite.to("#shipBGCont", 0.5, {right:0});
-var scene = new ScrollMagic.Scene({triggerElement: "#wrapper", duration: "300%"})
+var scene = new ScrollMagic.Scene({triggerElement: "#wrapper", duration: "350%"})
                 .setTween(tween)
                 .addTo(controller);
 // var tween = TweenLite.to("#voyageInfo", 0.5, {opacity:0});
-// var scene = new ScrollMagic.Scene({triggerElement: "#toArchiveTrigger", duration: "300%"})
+// var scene = new ScrollMagic.Scene({triggerElement: "#toArchiveTrigger", duration: "350%"})
 //                 .setTween(tween)
 //                 .addTo(controller);
 
 // var tween = TweenLite.from("#archiveInfo", 0.5, {opacity:0});
-// var scene = new ScrollMagic.Scene({triggerElement: "#toArchiveTrigger", duration: "300%"})
+// var scene = new ScrollMagic.Scene({triggerElement: "#toArchiveTrigger", duration: "350%"})
 //                 .setTween(tween)
 //                 .addTo(controller);
 
 
 var tween = TweenLite.to("#shipFGCont", 0.5, {left:0});
-var scene = new ScrollMagic.Scene({triggerElement: "#wrapper", duration: "300%"})
+var scene = new ScrollMagic.Scene({triggerElement: "#wrapper", duration: "350%"})
                 .setTween(tween)
                 .addTo(controller);
 

@@ -31,6 +31,7 @@ h1 {
 
 h2,h3,h4 {
 	font-family: 'Kallos';
+	letter-spacing: 1px;
 }
 
 @font-face {
@@ -51,6 +52,7 @@ p {
 	display: flex;
 	flex-flow: column;
 	align-items: center;
+	filter: drop-shadow(0px 0px 0.5rem rgba(0,0,0,.5));
 }
 
 .textArea img {
@@ -63,20 +65,26 @@ p {
 }
 
 .redTextBox .textArea {
-	border: solid #b11 2px;
-	box-shadow: 0px 0 10px rgba(100,80,80,.5);
+	border: solid #900000 .125rem;
+	/*overflow: hidden;*/
 	background: rgba(250, 245, 245,.9);
 	display: flex;
 	flex-flow: column;
 	align-items: center;
 }
 .blackTextBox .textArea {
-	border: solid #000 2px;
+	border: solid #000 .125rem;
 	/*background: rgba(50, 40, 40,.9);*/
 	background: rgba(250, 245, 245,.9);
 	display: flex;
 	flex-flow: column;
 	align-items: center;
+}
+
+.textBox a span {
+	color: #baa;
+	max-height: 4rem;
+	justify-content: flex-end;
 }
 
 .textBox a, .textBox .a {
@@ -85,20 +93,28 @@ p {
 	height: 4rem;
 	display: flex;
 	align-items: center;
-	transition: .3s;
-	box-shadow: 0px 0 10px rgba(100,80,80,.5);
+	transition: transform .3s ease;
 }
 .textBox a img {
-	margin-right: .5rem;
-	max-height: 100%;
+	margin: 0 .5rem;
+	max-height: 3rem;
+}
+.textBox a h2 {
+	flex: 1 0 70%;
 }
 .textBox a:hover img {
 	margin-right: 0;
 	fill: #eae0e0;
 	transition: .3s;
 }
+
+.textBox a:hover span {
+	color: #fffcfc;
+}
+
 .redTextBox a {
-	background: #b11;
+	background: #900000;
+	/*overflow: hidden;*/
 }
 .blackTextBox .a {
 	background: #200000;
@@ -144,7 +160,7 @@ p {
 }
 
 .boxHover .textArea {
-	border: 2px solid #f23535;
+	border: .125rem solid #f23535;
 }
 
 .flexRow {
@@ -210,7 +226,8 @@ img {
 	font-family: 'Zapfino';
 	font-size: 5rem;
 	font-weight: bold;
-	color: #5f0000;
+	color: #900000;
+	/*overflow: hidden;*/
 	word-spacing: -.2em;
 
 	position: fixed;
@@ -251,6 +268,31 @@ img {
 	padding: 1rem;
 }
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ AUDIO */
+
+#audio {
+	position: fixed;
+	z-index: 100;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	flex-flow: row-reverse nowrap;
+	justify-content: space-between;
+	align-items: center;
+	color: #fffcfc;
+	margin: 2rem; 
+	width: 6rem;
+	cursor: pointer;
+	transition: .2s;
+}
+
+#playButton {
+	width: 2rem;
+	height: 2rem;
+	/*background: url('../icons/audioOn.svg');*/
+}
+
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MOBILE */
 
 /* HEADER */
@@ -258,7 +300,8 @@ img {
 
 
  h1 {
-	color: #b11;
+	color: #900000;
+	/*overflow: hidden;*/
 }
 
 /*.voyageLogo {
@@ -278,6 +321,33 @@ img {
 	font-size: 3rem;
 }
 
+#homeLinks {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+#homeLinks a {
+	width: 100%;
+	font-family: 'Zapfino';
+	text-align: center;
+	color: #fffcfc;
+	font-size: 3rem;
+	padding: 1rem .5rem 1rem 0;
+	border-top: 2px solid #fffcfc;
+}
+
+#homeLinks a:hover {
+	color: #f23535;
+}
+
+#homeLogo {
+	margin-bottom: 1rem;
+}
+
 
 #voyageNav {
 	position: fixed;
@@ -288,7 +358,8 @@ img {
 	width: 10rem;
 	padding: 0rem;
 	box-shadow: 0px 0 8px #544;
-	background: #5f0000;
+	background: #900000;
+	/*overflow: hidden;*/
 	/*mix-blend-mode: hue;*/
 	/*opacity: 0;*/
 	display: flex;
@@ -301,7 +372,8 @@ img {
 #voyageNav h1 {
 	padding: 0rem;
 	margin: 0;
-	/*border-bottom: solid #b11 3px;	*/
+	border-bottom: solid #900000 3px;
+	overflow: hidden;	
 	transition: .3s;
 	color: #fffcfc;
 	text-align: center;
@@ -349,7 +421,9 @@ img {
 		width: 0;
 		opacity: 0;
 		font-family: 'Kallos';
-		color: #b11;
+		color: #900000;
+
+/*overflow: hidden;*/
 		transition: .3s;
 		font-size: 1.4rem;
 		pointer-events: none;
@@ -358,7 +432,7 @@ img {
 		opacity: 1;
 	}
 	.dot {
-		border: 2px solid #fffcfc;
+		border: .125rem solid #fffcfc;
 		background: transparent;
 		border-radius: 50%;
 		height: .6rem;
@@ -400,7 +474,8 @@ img {
 
 .activeDot .dot {
 	background: transparent;
-	/*border: 2px solid #b11;*/
+	border: .125rem solid #900000;
+	/*overflow: hidden;*/
 	font-size: 2rem;
 	color: #fffcfc;
 	line-height: 0;
@@ -497,7 +572,7 @@ img {
 .bigStopText {
 	color: #fffcfc;
 	width: 35rem;
-	border-bottom: 2px solid white;
+	border-bottom: .125rem solid white;
 }
 .bigStopText h2 {
 	padding: 0rem 0rem 2rem;
@@ -505,6 +580,7 @@ img {
 	/*margin-bottom: 2rem;*/
 	color: white;
 	padding-top: 2rem;
+	flex: 1 0 70%;
 }
 .bigStopText a {
 	display: flex;
@@ -513,8 +589,18 @@ img {
 	align-items: center;
 	transition: .3s;
 	height: 5rem;
-	border-bottom: 2px solid white;
+	border-bottom: .125rem solid white;
 }
+
+.bigStopText a span {
+	color: #fffcfc;
+	max-height: 4rem;
+	justify-content: flex-end;
+}
+.bigStopText a:hover span {
+	color: #f23535;
+}
+
 .bigStopText a img {
 	height: 3rem;
 	margin-right: .5rem;
@@ -528,8 +614,8 @@ img {
 	padding: 2rem 2rem 0rem;
 	line-height: 1.7;
 	letter-spacing: 1px;
-	border-left: 2px solid white;
-	border-right: 2px solid white;
+	border-left: .125rem solid white;
+	border-right: .125rem solid white;
 	transition: .3s;
 	background: rgba(0,0,0,.5);
 }
@@ -544,6 +630,7 @@ img {
 
 .bigStopHover h2 {
 	color: #f23535 !important;
+	text-shadow: 0 0 5px (0,0,0,.5);
 }
 
 .credits .textArea {
@@ -655,19 +742,8 @@ img {
 	width: 150vw;
 	left: -50vw;
 	z-index: -8;
-	filter: invert(1) saturate(0);
+	filter: saturate(0);
 	/*filter: invert(1);*/
-}
-
-#salvadorParMG {
-	background: url('../imgs/salvador-mg.png');
-	background-repeat: no-repeat;
-	background-size: cover;
-	width: 150vw;
-	left: -30vw;
-	z-index: -7;
-	filter: invert(1) saturate(0);
-	/*filter: contrast(2);*/
 }
 #salvadorParFG {
 	background: url('../imgs/salvador-mg3.png');
@@ -743,6 +819,9 @@ img {
 }
 
 /* SECTION */
+.storm1 {
+	filter: brightness(.7);
+}
 
 
 #homeHeader {
@@ -756,11 +835,14 @@ img {
 	height: 100%;
 	width: 10rem;
 	padding: 1rem;
-	background: #5f0000;
+	background: #900000;
+	/*overflow: hidden;*/
 	box-shadow: 0px 0 8px #544;
 	padding: 1rem 1rem 0;
-	/*border-right: solid #b11 2px;*/
-	/*border-bottom: solid #b11 2px;*/
+	border-right: solid #900000 .125rem;
+	overflow: hidden;
+	border-bottom: solid #900000 .125rem;
+	overflow: hidden;
 }
 
 #skyBGCont {
@@ -1111,68 +1193,68 @@ img {
 
 @media screen and (min-width: 1400px) {
 	html {
-		font-size: 150% !important;
+		font-size: 125% !important;
 	}
-	#map {
-		width:150% !important;
-		height:150% !important;
+/*	#map {
+		width:125% !important;
+		height:125% !important;
 	}
-}
+*/}
 
 @media screen and (min-width: 2100px) {
 	html {
 		font-size: 200% !important;
 	}
-	#map {
+/*	#map {
 		width:200% !important;
 		width:200% !important;
 	}
-}
+*/}
 @media screen and (min-width: 2500px) {
 	html {
 		font-size: 250% !important;
 	}
-	#map {
+/*	#map {
 		width:250% !important;
 		width:250% !important;
 	}
-}
+*/}
 
 @media screen and (min-width: 3000px) {
 	html {
 		font-size: 300% !important;
 	}
-	#map {
+/*	#map {
 		width:300% !important;
 		width:300% !important;
 	}
-}
+*/}
 @media screen and (min-width: 3500px) {
 	html {
 		font-size: 350% !important;
 	}
-	#map {
+/*	#map {
 		width:350% !important;
 		width:350% !important;
 	}
-}
+*/}
 
 @media screen and (min-width: 4200px) {
 	html {
 		font-size: 400% !important;
 	}
-	#map {
+/*	#map {
 		width:400% !important;
 		width:400% !important;
 	}
-}
+*/}
 
 @media screen and (min-width: 5000px) {
 	html {
 		font-size: 450% !important;
 	}
-	#map {
+/*	#map {
 		width:450% !important;
 		width:450% !important;
 	}
-}
+*/}

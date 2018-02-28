@@ -9,35 +9,35 @@ var controller = new ScrollMagic.Controller();
 
 
 
-// var scene = new ScrollMagic.Scene({triggerElement: "#debug", duration: 200})
-//                 .addTo(controller)
-//                 // .addIndicators() // add indicators (requires plugin)
-//                 .on("update", function (e) {
-//                     // console.log(e.target.controller().info("scrollDirection"));
-//                     $("#scrollDirection").text(e.target.controller().info("scrollDirection"));
-//                     if (e.target.controller().info("scrollDirection") === 'FORWARD') {
-//                         $('#voyageNav').addClass('hideNav');
-//                         $(".barContainer").removeClass("openMenu");
-//                         $('#voyageNav').removeClass('fullMenu');
-//                         $("#compassButton").removeClass("activeCompass");
-//                         $('.locationTitle').removeClass('locPushDown');
-//                         // console.log('You going up');
-//                     } else {
-//                         $('#voyageNav').removeClass('hideNav');
-//                         $('.locationTitle').addClass('locPushDown');
-//                         // console.log('You going down');
-//                     }
-//                 })
-//                 // .on("enter leave", function (e) {
-//                 //     $("#state").text(e.type == "enter" ? "inside" : "outside");
-//                 // })
-//                 // .on("start end", function (e) {
-//                 //     $("#lastHit").text(e.type == "start" ? "top" : "bottom");
-//                 // })
-//                 // .on("progress", function (e) {
-//                 //     $("#progress").text(e.progress.toFixed(3));
-//                 // })
-//                 ;
+var scene = new ScrollMagic.Scene({triggerElement: "#debug", duration: 200})
+                .addTo(controller)
+                // .addIndicators() // add indicators (requires plugin)
+                .on("update", function (e) {
+                    // console.log(e.target.controller().info("scrollDirection"));
+                    $("#scrollDirection").text(e.target.controller().info("scrollDirection"));
+                    if (e.target.controller().info("scrollDirection") === 'FORWARD') {
+                        $('#voyageNav').addClass('hideNav');
+                        $(".barContainer").removeClass("openMenu");
+                        $('#voyageNav').removeClass('fullMenu');
+                        $("#compassButton").removeClass("activeCompass");
+                        $('.locationTitle').removeClass('locPushDown');
+                        // console.log('You going up');
+                    } else {
+                        $('#voyageNav').removeClass('hideNav');
+                        $('.locationTitle').addClass('locPushDown');
+                        // console.log('You going down');
+                    }
+                })
+                // .on("enter leave", function (e) {
+                //     $("#state").text(e.type == "enter" ? "inside" : "outside");
+                // })
+                // .on("start end", function (e) {
+                //     $("#lastHit").text(e.type == "start" ? "top" : "bottom");
+                // })
+                // .on("progress", function (e) {
+                //     $("#progress").text(e.progress.toFixed(3));
+                // })
+                ;
 
 // Text Boxes
 $('.anyText').each(function () {
@@ -168,9 +168,9 @@ new ScrollMagic.Scene({triggerElement: "#rioDeOroTrans"})
                 .setClassToggle("#three", "visitedDot")
                 .addTo(controller);
 
-// new ScrollMagic.Scene({triggerElement: "#rioDeOro",duration:rioDeOroH})
-//                 .setClassToggle("#rain", "raining")
-//                 .addTo(controller);
+new ScrollMagic.Scene({triggerElement: "#rioDeOro",duration:rioDeOroH})
+                .setClassToggle("#rain", "raining")
+                .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#rioDeOro",duration:rioDeOroH})
                 .setClassToggle("#map", "storm1")
                 .addTo(controller);
@@ -208,11 +208,14 @@ new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
                 .addTo(controller);
 
 new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
-                .setClassToggle("#map", "storm2")
+                .setClassToggle("#map", "storm3")
                 .addTo(controller);
-// new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
-//                 .setClassToggle("#rain", "rainier")
-//                 .addTo(controller);
+new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
+                .setClassToggle("#sierraLeoneParBG", "storm2")
+                .addTo(controller);
+new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
+                .setClassToggle("#rain", "rainier")
+                .addTo(controller);
 
 
 
@@ -282,12 +285,16 @@ new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: rioDeLaPlataH}
                 .addTo(controller);
 
 new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: rioDeLaPlataH})
-                .setClassToggle("#map", "storm2")
+                .setClassToggle("#map", "storm3")
                 .addTo(controller);
-//
-// new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: rioDeLaPlataH})
-//                 .setClassToggle("#rain", "rainier")
-//                 .addTo(controller);
+
+new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: rioDeLaPlataH})
+                .setClassToggle("#rioDeLaPlataParBG", "storm2")
+                .addTo(controller);
+
+new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: rioDeLaPlataH})
+                .setClassToggle("#rain", "rainier")
+                .addTo(controller);
 
 
 new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata",duration:rioDeLaPlataH})
@@ -382,11 +389,14 @@ new ScrollMagic.Scene({triggerElement: "#salvadorTrans"})
                 .addTo(controller);
 
 
-// new ScrollMagic.Scene({triggerElement: "#salvador",duration:salvadorH})
-//                 .setClassToggle("#rain", "rainier")
-//                 .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#salvador",duration:salvadorH})
-                .setClassToggle("#map", "storm2")
+                .setClassToggle("#rain", "rainier")
+                .addTo(controller);
+new ScrollMagic.Scene({triggerElement: "#salvador",duration:salvadorH})
+                .setClassToggle("#map", "storm3")
+                .addTo(controller);
+new ScrollMagic.Scene({triggerElement: "#salvador",duration:salvadorH})
+                .setClassToggle("#salvadorParBG", "storm2")
                 .addTo(controller);
 
 new ScrollMagic.Scene({triggerElement: "#salvador", duration: salvadorH})
@@ -485,10 +495,13 @@ var scene = new ScrollMagic.Scene({triggerElement: "#credits", duration: credits
                 .addTo(controller);
 
 
-var tween = TweenLite.to("#voyageNav", 0.5, {opacity:0});
+
+if (tabletPlusOnly) {
+var tween = TweenLite.to("#voyageNav", 0.5, {left:-360});
 var scene = new ScrollMagic.Scene({triggerElement: "#ending", duration: "100%"})
                 .setTween(tween)
                 .addTo(controller);
+}
 
 
 

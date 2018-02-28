@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="initial-scale=1.0, width=device-width">
 
-	<title>Voyage Page Beta v1</title>
+	<title>The Red Dragon Voyage</title>
 
 	<link rel="stylesheet" href="css/main-styles.css">
 	<link rel="stylesheet" href="css/anims.css">
@@ -12,11 +12,12 @@
 	<script src='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.js'></script>
 	<link href='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' />
 
-    <style>body{margin:0; padding:0;}#map{position:absolute; top:0; bottom:-30px; width:100%;}
+    <style>
+    	body{margin:0; padding:0;}#map{position:absolute; top:0; bottom:-30px; width:100%;}
     </style>
 
 </head>
-<body><!-- onload="drawMap('regularBG')" -->
+<body id="voyageBody"><!-- onload="drawMap('regularBG')" -->
     <style>#map{position:fixed;width:100%;z-index: -10;}</style>
 
 
@@ -40,10 +41,9 @@
 
 <div id='map'></div>
 
+<div id="debug" style="display: none;"></div>
 <div id="loading"><img src="icons/loading.gif" alt="Loading..."></div>
 <div id="continue"><p>Scroll to Continue</p></div>
-
-<div id="debug" style="display: none;"></div>
 
 
 
@@ -115,7 +115,8 @@
 						<h2>Preamble</h2>
 						<img src="icons/rightArrow.svg" alt="Arrow">
 					</a>
- -->						<img class="boxBottom" src="icons/boxTopBlack.svg" alt="Sidenav Icon">
+ -->						
+ 							<img class="boxBottom" src="icons/boxTopBlack.svg" alt="Sidenav Icon">
 				</div>
 			</div>
 
@@ -131,9 +132,13 @@
 			<div class="spaceRight">
 				<div id="departureText" class="anyText textBox redTextBox">
 					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
-					<a href="http://www.scg52.com/Archive/?category_name=england/">
+					<a href="http://www.scg52.com/Archive/?category=england/">
 						<h2>License to Piracy</h2>
-						<img src="icons/rightArrow.svg" alt="Arrow">
+						<!-- <h2>License to Piracy</h2> -->
+						<span class="flexRow ">
+							<h4>Archive</h4>
+							<img src="icons/rightArrowIn.svg" alt="Arrow">
+						</span>
 					</a>
 					<div class="textArea">
 						<p><img src="imgs/england.png" alt="Map of England"></p>
@@ -145,7 +150,8 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						<h2>Departing England</h2>
 						<img src="icons/rightArrow.svg" alt="Arrow">
 					</a>
- -->					<img class="boxBottom boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
+ -->					
+ 					<img class="boxBottom boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
 				</div>
 			</div>
 			<div id="englandTrans"></div>
@@ -164,9 +170,12 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 
 				<div id="fuerteventuraText" class="anyText textBox redTextBox">
 					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
-					<a href="http://www.scg52.com/Archive/?category_name=fuerteventura">
+					<a href="http://www.scg52.com/Archive/?category=fuerteventura">
 						<h2>The Sack of Lanzarote</h2>
-						<img src="icons/rightArrow.svg" alt="Arrow">
+						<span class="flexRow ">
+							<h4>Archive</h4>
+							<img src="icons/rightArrowIn.svg" alt="Arrow">
+						</span>
 					</a>
 					<div class="textArea">
 						<p><img src="imgs/fuerteventura.png" alt="Battle of Lanzarote"></p>
@@ -179,7 +188,8 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						<h2>The Sack of Lanzarote</h2>
 						<img src="icons/rightArrow.svg" alt="Arrow">
 					</a>
- -->					<img class="boxBottom boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
+ -->					
+ 					<img class="boxBottom boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
 				</div>
 			</div>
 			<div id="fuerteventuraTrans"></div>
@@ -197,9 +207,12 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 
 				<div id="rioDeOroText" class="anyText textBox redTextBox">
 					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
-					<a href="http://www.scg52.com/Archive/?category_name=rio-de-la-plata">
+					<a href="http://www.scg52.com/Archive/?category=rio-de-la-plata">
 						<h2>The Saharan Coast</h2>
-						<img src="icons/rightArrow.svg" alt="Arrow">
+						<span class="flexRow ">
+							<h4>Archive</h4>
+							<img src="icons/rightArrowIn.svg" alt="Arrow">
+						</span>
 					</a>
 					<div class="textArea">
 						<p><img src="imgs/rio-de-oro.jpg" alt="Rio De Oro"></p>
@@ -229,9 +242,12 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 			<div class="spacer100 spaceRight">
 				<div id="sierraLeoneText" class="anyText bigStopText">
 
-					<a href="http://www.scg52.com/Archive/?category_name=sierra-leone">
+					<a href="http://www.scg52.com/Archive/?category=sierra-leone">
 						<h2>Slaughter At the Watering Place</h2>
-						<img src="icons/rightArrow.svg" alt="Arrow">
+						<span class="flexRow ">
+							<h4>Archive</h4>
+							<img src="icons/rightArrow.svg" alt="Arrow">
+						</span>
 					</a>
 					<p>
 						After stopping at the Saharan coast the Red Dragon then moved on to Sierra Leone as Thomas Hood and others had been to the area on previous voyages. Here they would stop for the “watering place” to acquire supplies for their voyage. Previously voyages had been allowed to gather resources from the area if they presented a tribute of wine to the leader of the Zapes. Zape is actually an umbrella term for several tribes in the area but had been brought under the rule of the Manes. Unbeknownst to the crew of the voyage there had been a voyage a few weeks previous led by Thomas Cavendish. The meeting of Cavendish and the Zapes was quick and violent as Cavendish’s men, through the knowledge of a detained Portuguese man, looted and burned a Zape village. This led the Zape people to strike back against Cavendish’s men.
@@ -251,7 +267,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 
 		</section>
 
-		<div class="spacer10"></div>
+		<!-- <div class="spacer10"></div> -->
 
 		<div id="toRioDeLaPlata" class="spacer100"></div>
 
@@ -269,9 +285,12 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 			<div class="spacer100 spaceRight">
 				<div id="rioDeLaPlataText" class="anyText bigStopText">
 
-					<a href="http://www.scg52.com/Archive/?category_name=rio-de-la-plata">
+					<a href="http://www.scg52.com/Archive/?category=rio-de-la-plata">
 						<h2>The Three Slavers</h2>
-						<img src="icons/rightArrow.svg" alt="Arrow">
+						<span class="flexRow ">
+							<h4>Archive</h4>
+							<img src="icons/rightArrow.svg" alt="Arrow">
+						</span>
 					</a>
 <p>
 	After the sack of Sierra Leone the Red Dragon crossed the Atlantic to south America in search of the strait of Magellan. It was December when Hood steered them down the coast of South America. They were now in the Rio de la Plata. In January they reported seeing a sail in the distance. The next day this became two sails, two slaving ships of three on their way to Buenos Aires. These ships were tasked by the Bishop of Tucumán to bring forced labour, evangelizing priests, and material to build sugar mills and churches. The bishop had largely been accused of being less interested in faith and more so in business.
@@ -298,9 +317,12 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 			<div class="spaceRight">
 				<div id="islaDeLobosText" class="anyText textBox redTextBox">
 					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
-					<a href="http://www.scg52.com/Archive/?category_name=isla-de-lobos">
+					<a href="http://www.scg52.com/Archive/?category=isla-de-lobos">
 						<h2>Two Islands and the Coast</h2>
-						<img src="icons/rightArrow.svg" alt="Arrow">
+						<span class="flexRow ">
+							<h4>Archive</h4>
+							<img src="icons/rightArrowIn.svg" alt="Arrow">
+						</span>
 					</a>
 					<div class="textArea">
 						<p>
@@ -334,9 +356,12 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 			<div class="spacer100 spaceRight">
 				<div id="salvadorText" class="anyText bigStopText">
 
-					<a href="http://www.scg52.com/Archive/?category_name=salvador">
+					<a href="http://www.scg52.com/Archive/?category=salvador">
 						<h2>War for the Colony</h2>
-						<img src="icons/rightArrow.svg" alt="Arrow">
+						<span class="flexRow ">
+							<h4>Archive</h4>
+							<img src="icons/rightArrow.svg" alt="Arrow">
+						</span>
 					</a>
 					<p>
 						On the journey up the coast the fleet constantly disbanded and rebanded as tensions ran high. Provisions were growing low. At the end of March a couple mariners died of malnutrition. Eventually the fleet found an island near the Camamu river which they were able to restock on many provisions such as water, fruit, beef, chicken, etc. Even Hood who was largely secular praised God for the find. After poaching the provisions the Red Dragon found that Salvador had closed its doors upon the arrival of the English fleet. There the fleet met a pair of hulks from Flushing who had arrived to trade with the Portuguese but instead agreed to fight alongside the Red Dragon. The British then picked off many ships in the bay and took others captive. One of the few Portuguese prisoners the Red Dragon had not abandoned, Lopo Vaz Pestana, then escaped and swam to Salvador. Salvador, now expecting an imminent attack, gathered a local militia as the fortress guarding the bay only accounted for thirty soldiers. Vaz then went on to lead around thirty men himself to take back a smaller ship taken by the fleet which had drifted too far from them.
@@ -382,9 +407,12 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 
 				<div id="southamptonText" class="anyText textBox redTextBox">
 					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
-					<a href="http://www.scg52.com/Archive/?category_name=england/">
+					<a href="http://www.scg52.com/Archive/?category=england/">
 						<h2>The Return</h2>
-						<img src="icons/rightArrow.svg" alt="Arrow">
+						<span class="flexRow ">
+							<h4>Archive</h4>
+							<img src="icons/rightArrowIn.svg" alt="Arrow">
+						</span>
 					</a>
 					<div class="textArea">
 						<p><img src="imgs/rio-de-oro.jpg" alt="Rio De Oro"></p>
@@ -410,7 +438,10 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
 					<a href="http://www.scg52.com/Archive/">
 						<h2>The Journey Goes Deeper</h2>
-						<img src="icons/rightArrow.svg" alt="Arrow">
+						<span class="flexRow ">
+							<h4>Archive</h4>
+							<img src="icons/rightArrow.svg" alt="Arrow">
+						</span>
 					</a>
 					<div class="textArea">
 						<p>
@@ -971,7 +1002,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						if (frame[3] <= geojsonData['fuerteventura'].length - 1 && !lineDrawn[3]) {
 								setTimeout(function() {
 										geojsonLine['fuerteventura'].features[0].geometry.coordinates.push(geojsonData['fuerteventura'][frame[3]]);
-										console.log('Frame #' + frame[3] + ': Added ' + geojsonData['fuerteventura'][frame[3]] + ' to line fuerteventura ', map.getSource('lineToFuerteventura'));
+										// console.log('Frame #' + frame[3] + ': Added ' + geojsonData['fuerteventura'][frame[3]] + ' to line fuerteventura ', map.getSource('lineToFuerteventura'));
 										map.getSource('lineToFuerteventura').setData(geojsonLine['fuerteventura']);
 										frame[3]++;
 										animation = requestAnimationFrame(startTrip['fuerteventura']);
@@ -988,7 +1019,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						if (frame[5] <= geojsonData['rioDeOro'].length - 1 && !lineDrawn[5]) {
 								setTimeout(function() {
 										geojsonLine['rioDeOro'].features[0].geometry.coordinates.push(geojsonData['rioDeOro'][frame[5]]);
-										console.log('Frame #' + frame[5] + ': Added ' + geojsonData['rioDeOro'][frame[5]] + ' to line rioDeOro ', map.getSource('lineToRioDeOro'));
+										// console.log('Frame #' + frame[5] + ': Added ' + geojsonData['rioDeOro'][frame[5]] + ' to line rioDeOro ', map.getSource('lineToRioDeOro'));
 										map.getSource('lineToRioDeOro').setData(geojsonLine['rioDeOro']);
 										frame[5]++;
 										animation = requestAnimationFrame(startTrip['rioDeOro']);
@@ -1005,7 +1036,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						if (frame[7] <= geojsonData['sierraLeone'].length - 1 && !lineDrawn[7]) {
 								setTimeout(function() {
 										geojsonLine['sierraLeone'].features[0].geometry.coordinates.push(geojsonData['sierraLeone'][frame[7]]);
-										console.log('Frame #' + frame[7] + ': Added ' + geojsonData['sierraLeone'][frame[7]] + ' to line sierraLeone ', map.getSource('lineToSierraLeone'));
+										// console.log('Frame #' + frame[7] + ': Added ' + geojsonData['sierraLeone'][frame[7]] + ' to line sierraLeone ', map.getSource('lineToSierraLeone'));
 										map.getSource('lineToSierraLeone').setData(geojsonLine['sierraLeone']);
 										frame[7]++;
 										animation = requestAnimationFrame(startTrip['sierraLeone']);
@@ -1022,7 +1053,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						if (frame[9] <= geojsonData['rioDeLaPlata'].length - 1 && !lineDrawn[9]) {
 								setTimeout(function() {
 										geojsonLine['rioDeLaPlata'].features[0].geometry.coordinates.push(geojsonData['rioDeLaPlata'][frame[9]]);
-										console.log('Frame #' + frame[9] + ': Added ' + geojsonData['rioDeLaPlata'][frame[9]] + ' to line rioDeLaPlata ', map.getSource('lineToRioDeLaPlata'));
+										// console.log('Frame #' + frame[9] + ': Added ' + geojsonData['rioDeLaPlata'][frame[9]] + ' to line rioDeLaPlata ', map.getSource('lineToRioDeLaPlata'));
 										map.getSource('lineToRioDeLaPlata').setData(geojsonLine['rioDeLaPlata']);
 										frame[9]++;
 										animation = requestAnimationFrame(startTrip['rioDeLaPlata']);
@@ -1039,7 +1070,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						if (frame[11] <= geojsonData['islaDeLobos'].length - 1 && !lineDrawn[11]) {
 								setTimeout(function() {
 										geojsonLine['islaDeLobos'].features[0].geometry.coordinates.push(geojsonData['islaDeLobos'][frame[11]]);
-										console.log('Frame #' + frame[11] + ': Added ' + geojsonData['islaDeLobos'][frame[11]] + ' to line islaDeLobos ', map.getSource('lineToIslaDeLobos'));
+										// console.log('Frame #' + frame[11] + ': Added ' + geojsonData['islaDeLobos'][frame[11]] + ' to line islaDeLobos ', map.getSource('lineToIslaDeLobos'));
 										map.getSource('lineToIslaDeLobos').setData(geojsonLine['islaDeLobos']);
 										frame[11]++;
 										animation = requestAnimationFrame(startTrip['islaDeLobos']);
@@ -1056,7 +1087,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						if (frame[13] <= geojsonData['salvador'].length - 1 && !lineDrawn[13]) {
 								setTimeout(function() {
 										geojsonLine['salvador'].features[0].geometry.coordinates.push(geojsonData['salvador'][frame[13]]);
-										console.log('Frame #' + frame[13] + ': Added ' + geojsonData['salvador'][frame[13]] + ' to line salvador ', map.getSource('lineToSalvador'));
+										// console.log('Frame #' + frame[13] + ': Added ' + geojsonData['salvador'][frame[13]] + ' to line salvador ', map.getSource('lineToSalvador'));
 										map.getSource('lineToSalvador').setData(geojsonLine['salvador']);
 										frame[13]++;
 										animation = requestAnimationFrame(startTrip['salvador']);
@@ -1073,7 +1104,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						if (frame[15] <= geojsonData['capeVerde'].length - 1 && !lineDrawn[15]) {
 								setTimeout(function() {
 										geojsonLine['capeVerde'].features[0].geometry.coordinates.push(geojsonData['capeVerde'][frame[15]]);
-										console.log('Frame #' + frame[15] + ': Added ' + geojsonData['capeVerde'][frame[15]] + ' to line capeVerde ', map.getSource('lineToCapeVerde'));
+										// console.log('Frame #' + frame[15] + ': Added ' + geojsonData['capeVerde'][frame[15]] + ' to line capeVerde ', map.getSource('lineToCapeVerde'));
 										map.getSource('lineToCapeVerde').setData(geojsonLine['capeVerde']);
 										frame[15]++;
 										animation = requestAnimationFrame(startTrip['capeVerde']);
@@ -1090,7 +1121,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 						if (frame[17] <= geojsonData['southampton'].length - 1 && !lineDrawn[17]) {
 								setTimeout(function() {
 										geojsonLine['southampton'].features[0].geometry.coordinates.push(geojsonData['southampton'][frame[17]]);
-										console.log('Frame #' + frame[17] + ': Added ' + geojsonData['southampton'][frame[17]] + ' to line southampton ', map.getSource('lineToSouthampton'));
+										// console.log('Frame #' + frame[17] + ': Added ' + geojsonData['southampton'][frame[17]] + ' to line southampton ', map.getSource('lineToSouthampton'));
 										map.getSource('lineToSouthampton').setData(geojsonLine['southampton']);
 										frame[17]++;
 										animation = requestAnimationFrame(startTrip['southampton']);

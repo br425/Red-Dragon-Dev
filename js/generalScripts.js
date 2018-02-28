@@ -1,7 +1,12 @@
+
+
+
 $(".textBox a").hover(function(){
     $('.redTextBox').addClass('boxHover');
+    $(".redTextBox a img").attr("src","icons/rightArrow.svg");    
     }, function(){
     $('.textBox').removeClass('boxHover');
+    $(".redTextBox a img").attr("src","icons/rightArrowIn.svg");    
 });
 
 $(".textBox a").hover(function(){
@@ -35,10 +40,10 @@ $("#voyageNavA").hover(function(){
 //     }, function(){
 //     $("#voyageTitle").attr("src","icons/title-logo.svg");
 // });
-$("#logo").hover(function(){
-    $("#logo img").attr("src","../../images/reddragon_red.png");
+$("#voyageTitle").hover(function(){
+    $("#voyageTitle").attr("src","icons/reddragon_red-03.png");
     }, function(){
-    $("#logo img").attr("src","../../images/reddragon_white.png");
+    $("#voyageTitle").attr("src","icons/reddragon_white-03.png");
 });
 
 $("#voyageNavA").hover(function(){
@@ -54,3 +59,49 @@ $("#compassButton").click(function(){
     $('#voyageNav').toggleClass('fullMenu');
     $("#compassButton").toggleClass("activeCompass");
 });
+
+
+// var now = new Date();
+// setInterval(function(){
+//     var nnow = new Date();
+//     if(nnow.getTime() - now.getTime() >= 1000)
+//         // $('#voyageBody').animate({scrollTop: '+=50'}, 1000, 'linear');
+//         $('body').animate({scrollTop: -300}, 1000);
+//         console.log('IT WORKS');
+
+//     }, 2000);
+// $(document)
+//     .mousemove(function(){ now = new Date(); $('#voyageBody').stop(); })
+//     .keypress(function(){ now = new Date(); $('#voyageBody').stop(); });
+
+
+
+// var idleTimer = null;
+// var idleState = false;
+// var idleWait = 2000;
+// var idleFor = 0;
+
+// (function ($) {
+//     $(document).ready(function () {
+//         $('*').bind('mousemove keydown scroll', function () {  
+//             clearTimeout(idleTimer);                    
+//             if (idleState === true) {                 
+//                 // Reactivated event
+//                 // $("body").append("<p>Welcome Back.</p>");  
+//                 console.log('Welcome back');          
+//             }           
+//             idleState = false;  
+
+//             idleTimer = setTimeout(function () {               
+//                 // Idle Event
+//                 console.log("You've been idle for " + idleWait/1000 + " seconds.");
+//                 idleState = true; 
+//             }, idleWait);
+//         });   
+
+
+//         $("body").trigger("mousemove");    
+//     });
+
+
+// }) (jQuery)
