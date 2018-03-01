@@ -9,6 +9,25 @@ $(".textBox a").hover(function(){
     $(".redTextBox a img").attr("src","icons/rightArrowIn.svg");    
 });
 
+$("#voyageDot").hover(function(){
+    $("#voyageDot img").attr("src","icons/rightArrowIn.svg");    
+    }, function(){
+    $("#voyageDot img").attr("src","icons/rightArrow.svg");    
+});
+
+$("#archiveDot").hover(function(){
+    $("#archiveDot img").attr("src","icons/rightArrowIn.svg");    
+    }, function(){
+    $("#archiveDot img").attr("src","icons/rightArrow.svg");    
+});
+
+$("#aboutDot").hover(function(){
+    $("#aboutDot img").attr("src","icons/rightArrowIn.svg");    
+    }, function(){
+    $("#aboutDot img").attr("src","icons/rightArrow.svg");    
+});
+
+
 $(".textBox a").hover(function(){
     $(".boxTop").attr("src","icons/boxTopHover.svg");
     }, function(){
@@ -30,7 +49,7 @@ $(".bigStopText a").hover(function(){
 
 
 $("#voyageNavA").hover(function(){
-    $("#voyageLogo").attr("src","icons/logo-hover.svg");
+    $("#voyageLogo").attr("src","icons/logo-hoayver.svg");
     }, function(){
     $("#voyageLogo").attr("src","icons/logo-white.svg");
 });
@@ -41,9 +60,9 @@ $("#voyageNavA").hover(function(){
 //     $("#voyageTitle").attr("src","icons/title-logo.svg");
 // });
 $("#voyageTitle").hover(function(){
-    $("#voyageTitle").attr("src","icons/reddragon_red-03.png");
+    $("#voyageTitle").attr("src","icons/logo-gray.svg");
     }, function(){
-    $("#voyageTitle").attr("src","icons/reddragon_white-03.png");
+    $("#voyageTitle").attr("src","icons/logo-white.svg");
 });
 
 $("#voyageNavA").hover(function(){
