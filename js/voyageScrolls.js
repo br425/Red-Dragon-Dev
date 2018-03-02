@@ -46,7 +46,7 @@ $('.anyText').each(function () {
 
     // var tween = TweenLite.from(current);
     var scene = new ScrollMagic.Scene({triggerElement: this, triggerHook: 1, duration: height})
-                    .on('enter', function () {
+                    .on('progress', function () {
                         $('#continue').css({'opacity':'0'});
                     })
                     .on('leave', function () {
@@ -54,6 +54,14 @@ $('.anyText').each(function () {
                     })
                     .addTo(controller);
 
+    var scene = new ScrollMagic.Scene({triggerElement: this, triggerHook: 0, duration: height})
+                    .on('progress', function () {
+                        $('#continue').css({'opacity':'0'});
+                    })
+                    .on('leave', function () {
+                        $('#continue').css({'opacity':'1'});
+                    })
+                    .addTo(controller);
 });
 
 //  Departure
