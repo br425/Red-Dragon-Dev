@@ -12,6 +12,9 @@
 	<link rel="stylesheet" href="css/normalize.css">
 </head>
 <body>
+
+	<div id="loading"><img src="icons/loading.gif" alt="Loading..."></div>
+
 	<div id="wrapper">
 		<div class="BGimg" id="wrapperBG"></div>
 
@@ -158,5 +161,30 @@ function playOrMute() {
 	<script src="js/plugins/animation.gsap.js"></script>
 	<script src="js/plugins/CSSPlugin.min.js"></script>
 	<script src="js/homeScrolls.js"></script>
+
+	<script>
+
+		function onReady(callback) {
+				var intervalID = window.setInterval(checkReady, 1000);
+
+				function checkReady() {
+						if (document.getElementsByTagName('body')[0] !== undefined) {
+								window.clearInterval(intervalID);
+								callback.call(this);
+						}
+				}
+		}
+
+		function show(id, value) {
+				document.getElementById(id).style.opacity = value ? 1 : 0;
+		}
+
+		onReady(function () {
+				show('audio', true);
+				show('loading', false);
+		});
+
+	</script>
+
 </body>
 </html>
