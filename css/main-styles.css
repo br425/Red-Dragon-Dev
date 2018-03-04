@@ -8,7 +8,6 @@ html {
 }
 body {
 	overflow-x: hidden;
-    -webkit-font-smoothing: subpixel-antialiased;
 }
 /* TEXT */
 
@@ -19,7 +18,9 @@ body {
 
 h1 {
 	font-family: 'Zapfino';
-	font-weight: bold;
+	text-shadow:
+	1px -1px 0 #900000,
+	-1px 1px 0 #900000;
 	word-spacing: -.5rem;
 
 }
@@ -225,11 +226,12 @@ img {
 .locationTitle {
 	font-family: 'Zapfino';
 	font-size: 5rem;
-	font-weight: bold;
+	text-shadow:
+	1px -1px 0 #900000,
+	-1px 1px 0 #900000;
 	color: #900000;
-	/*overflow: hidden;*/
+	padding-right: 2rem;
 	word-spacing: -.2em;
-
 	position: fixed;
 	left: 12rem;
 	top: 2rem;
@@ -586,14 +588,13 @@ img {
 	font-weight: normal;
 	color: #fffcfc;
     text-shadow:
-    -1px -1px 0 #fff,
     1px -1px 0 #fff,
-    -1px 1px 0 #fff,
-    1px 1px 0 #fff;
+    -1px 1px 0 #fff;
 	pointer-events: none;
 	word-spacing: -.3em;
 	line-height: .7;
 	margin-left: 0;
+	text-align: center;
 }
 
 .bigStopText {
@@ -985,13 +986,6 @@ img {
 	margin-left: -5rem !important;
 }
 
-#titleText {
-	font-size: 1.1rem;
-	margin-top: 3rem;
-	text-align: center;
-	opacity: 0.7;
-}
-
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TABLET */
 
@@ -1175,21 +1169,18 @@ img {
 .bigTitle {
 	font-size: 6rem;
 	font-weight: normal;
-    text-shadow:
-    -1px -1px 0 #fff,
-    1px -1px 0 #fff,
-    -1px 1px 0 #fff,
-    1px 1px 0 #fff;
+	text-shadow:
+	1px -1px 0 #fff,
+	-1px 1px 0 #fff;
 	pointer-events: none;
 	font-kerning: 1px;
-	line-height: .7;
+	line-height: 4.5rem;
 }
 
 .bigStopText p {
 	/*border-left: none;*/
 	padding: 1rem;
 }
-
 
 /* FOOTER */
 
