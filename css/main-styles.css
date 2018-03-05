@@ -263,13 +263,8 @@ img {
 	flex-flow: row-reverse nowrap;
 	justify-content: space-between;
 	align-items: center;
-<<<<<<< HEAD
 	color: #baa;
-	margin: 2rem; 
-=======
-	color: #fffcfc;
 	margin: 2rem;
->>>>>>> origin/master
 	width: 6rem;
 	cursor: pointer;
 	transition: .2s;
@@ -286,16 +281,20 @@ img {
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ BROWSER SUPPORT */
 
 .firefoxWarning {
-	width: 100%;
-
+	width: 50%;
 	color: white;
+	margin: 3rem;
+	padding: 1rem;
 	background-color: #900000;
+	box-shadow: 0px 0 8px #544;
 	font-size: 1.1rem;
 	text-align: center;
 	display: none;
 	position: fixed;
 	top: 0;
-	left: 0;
+	right: 0;
+	font-family: 'Neuton';
+	z-index: 100;
 }
 
 @-moz-document url-prefix() {
@@ -642,11 +641,8 @@ img {
 	word-spacing: -.3em;
 	line-height: .7;
 	margin-left: 0;
-<<<<<<< HEAD
 	filter: drop-shadow(0px 0px 1.5rem rgba(0,0,0,1));
-=======
 	text-align: center;
->>>>>>> origin/master
 }
 
 .bigStopText {

@@ -12,16 +12,9 @@
 	<link rel="stylesheet" href="css/normalize.css">
 </head>
 <body>
-<<<<<<< HEAD
 <div id="loading"><img src="icons/loading.gif" alt="Loading..."></div>
 
 	<div id="content">
-=======
-
-	<div id="loading"><img src="icons/loading.gif" alt="Loading..."></div>
-
-	<div id="wrapper">
->>>>>>> origin/master
 		<div class="BGimg" id="wrapperBG"></div>
 
 	<aside id="nav">
@@ -144,7 +137,7 @@ audio.play();
 
 function fadeInAudio (audiosnippetId) {
 	console.log('fadeInAudio called');
-    var fadePoint = 1; 
+    var fadePoint = 1;
     var fadeInAudio = setInterval(function () {
         if ((audio.currentTime >= fadePoint) && (audio.volume != 1.0)) {
             audio.volume += 0.1;
@@ -159,7 +152,7 @@ function fadeInAudio (audiosnippetId) {
 }
 function fadeOutAudio (audiosnippetId) {
 	console.log('fadeOutAudio called');
-    var fadePoint = 1; 
+    var fadePoint = 1;
     var fadeOutAudio = setInterval(function () {
         if ((audio.currentTime >= fadePoint) && (audio.volume != 0.0)) {
             audio.volume -= 0.1;
