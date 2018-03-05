@@ -12,20 +12,24 @@
 	<link rel="stylesheet" href="css/normalize.css">
 </head>
 <body>
-	<div id="wrapper">
+<div id="loading"><img src="icons/loading.gif" alt="Loading..."></div>
+
+	<div id="content">
 		<div class="BGimg" id="wrapperBG"></div>
 
-	<header id="homeHeader">
-		<a href="index.html" id="homeLogo">
-			<img src="icons/logo-white.svg" alt="Title" id="voyageTitle">
-			<!-- <img src="icons/reddragon_white-03.png" alt="Title" id="voyageTitle"> -->
+	<aside id="nav">
+		<div id="mobileHeader">
+		<div id="compassButton"></div>
+		<a href="index.html" id="navA">
+			<!-- <img src="icons/logo-white.svg" alt="Title" id="voyageTitle"> -->
 		</a>
- 		<div id="homeLinks">
-				<a href="#toVoyage" onclick="smoothScroll('toVoyage')" id="voyageDot">Voyage<img src="icons/rightArrow.svg" alt="Arrow"></a>
-				<a href="#toArchive" onclick="smoothScroll('toArchive')" id="archiveDot">Archive<img src="icons/rightArrow.svg" alt="Arrow"></a>
-				<a href="#toAbout" onclick="smoothScroll('toAbout')" id="aboutDot">Credits<img src="icons/rightArrow.svg" alt="Arrow"></a>
 		</div>
-	</header>
+ 		<div id="homeLinks">
+				<a href="#toVoyage" onclick="smoothScroll('toVoyage')" class="arrowLink" id="voyageDot">Voyage<img src="icons/rightArrowIn.svg" alt="Arrow"></a>
+				<a href="#toArchive" onclick="smoothScroll('toArchive')" class="arrowLink" id="archiveDot">Archive<img src="icons/rightArrowIn.svg" alt="Arrow"></a>
+				<a href="#toAbout" onclick="smoothScroll('toAbout')" class="arrowLink" id="aboutDot">Credits<img src="icons/rightArrowIn.svg" alt="Arrow"></a>
+		</div>
+	</aside>
 
 	<main>
 		<section id="parallaxElements">
@@ -37,20 +41,21 @@
 		</section>
 
 		<section id="parallaxTriggers" class="">
+
+			<div class="spacer100"></div>
+
 			<div class="spacer100 spaceRight" id="toVoyage">
-				<div class="textBox redTextBox" id="">
+				<div class="textBox">
 					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
-					<a href="voyage.html">
+					<div class="a">
 						<h2>Experience The Voyage</h2>
-						<span class="flexRow ">
-							<h4>Voyage</h4>
-							<img src="icons/rightArrowIn.svg" alt="Arrow">
-						</span>
-					</a>
+						<a href="voyage.html" class="arrowLink" id="aboutDot">To Voyage<img src="icons/rightArrowRed.svg" alt="Arrow"></a>
+					</div>
 					<div class="textArea">
 						<p>
-							Discover the voyage of the Red Dragon, a privateering vessel which rampaged through the Atlantic for thirteen months. Relive the journey told by the Pilot Thomas Hood of how they plundered, fought, and sailed for riches to bring back to England.
+							Discover the voyage of the Red Redagon, a privateering vessel which rampaged through the Atlantic for thirteen months. Relive the journey told by the Pilot Thomas Hood of how they plundered, fought, and sailed for riches to bring back to England.
 						</p>
+
 					</div>
 					<img class="boxBottom boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
 				</div>
@@ -59,15 +64,12 @@
 			<div class="spacer50"></div>
 			<div class="spacer100 spaceRight" id="toArchive">
 
-				<div class="textBox redTextBox" id="">
+				<div class="textBox">
 					<img class="boxTop" src="icons/boxTop.svg" alt="Sidenav Icon">
-					<a href="http://www.scg52.com/Archive/">
+					<div class="a">
 						<h2>Discover the Archive</h2>
-						<span class="flexRow ">
-							<h4>Archive</h4>
-							<img src="icons/rightArrowIn.svg" alt="Arrow">
-						</span>
-					</a>
+						<a href="http://www.scg52.com/Archive" class="arrowLink" id="aboutDot">To Archive<img src="icons/rightArrowRed.svg" alt="Arrow"></a>
+					</div>
 					<div class="textArea">
 						<p>
 							Discover the research that went into reconstructing the tale of the Red Dragon. Learn about the other ccounts of the story from those within and gainst the voyage.
@@ -80,27 +82,28 @@
 
 					<div class="spacer100 spaceCenter credits" id="toAbout">
 					<!-- <img class="" src="icons/boxTopBlack.svg" alt="Sidenav Icon"> -->
-						<div class="a">
+						<div>
 							<h2>Contributors</h2>
 						</div>
 
 						<div class="flexRow textArea">
 							<span>
 								<h3>Researchers</h3>
-								<p>Gabriel Rocha</p>
+								<p>Gabriel de Avilez Rocha</p>
+								<p>Eleanor Hubbard</p>
+								<p>Kara Schultz</p>
+								<p>David Wheat</p>
 								<p>Maggie McNulty</p>
-								<p></p>
-								<p></p>
 							</span>
-							<span>
+<!-- 							<span>
 								<h3>Artists</h3>
 								<p>Marissa Fu</p>
 								<p>Kaci Kwiatek</p>
 								<p></p>
 								<p></p>
 							</span>
-							<span>
-								<h3>Developers</h3>
+ -->							<span>
+								<h3>Creators</h3>
 								<p>Ben Rodia</p>
 								<p>Axel Mortimer</p>
 								<p>Stephen Gross</p>
@@ -118,8 +121,8 @@
 
 
 
-<div id="audio" onclick="playOrMute()">
-	<img src="icons/audioOn.svg" id="playButton">
+<!-- <div id="audio" onclick="playOrMute()">
+	<img src="icons/audioOff.svg" id="playButton">
 	<p id="soundText">Sound</p>
 </div>
 <script>
@@ -130,26 +133,57 @@ var soundText = document.getElementById('soundText');
 audio.oncanplaythrough = function(){
 audio.play();
 }
-audio.loop = true;
+// audio.muted = true;
 
-audio.onended = function(){
-audio.play();
+function fadeInAudio (audiosnippetId) {
+	console.log('fadeInAudio called');
+    var fadePoint = 1; 
+    var fadeInAudio = setInterval(function () {
+        if ((audio.currentTime >= fadePoint) && (audio.volume != 1.0)) {
+            audio.volume += 0.1;
+        }
+        else {
+            audio.volume = 1;
+            // clearInterval(fadeOutAudio);
+            return;
+        }
+    }, 50);
+
+}
+function fadeOutAudio (audiosnippetId) {
+	console.log('fadeOutAudio called');
+    var fadePoint = 1; 
+    var fadeOutAudio = setInterval(function () {
+        if ((audio.currentTime >= fadePoint) && (audio.volume != 0.0)) {
+            audio.volume -= 0.1;
+        }
+        else {
+            audio.volume = 0;
+            // clearInterval(fadeOutAudio);
+            return;
+        }
+            return;
+
+    }, 50);
+
 }
 
 function playOrMute() {
-	if (audio.muted === true) {
-		audio.muted = false;
+	if (audio.volume === 0.0) {
+		fadeInAudio();
+		// audio.muted = false;
 		playbackBtn.setAttribute('src','icons/audioOn.svg');
 		soundText.setAttribute('style','color: #fffcfc;');
 
 	} else {
-		audio.muted = true;
+		fadeOutAudio();
+		// audio.muted = true;
 		playbackBtn.setAttribute('src','icons/audioOff.svg');
 		soundText.setAttribute('style','color: #baa;');
 	}
 }
 </script>
-
+ -->
 
 	<script src="js/jquery-min.js"></script>
 	<script src="js/generalScripts.js"></script>
