@@ -886,6 +886,7 @@ img {
 	margin-top: 0;
 	font-size: 5rem;
 	position: relative;
+	text-align: center;
 }
 
 #content {
@@ -1081,6 +1082,10 @@ img {
 
 .textBox {
 	width: 30rem;
+}
+
+#titleH span {
+	white-space: nowrap;
 }
 
 /*#titleCard {
