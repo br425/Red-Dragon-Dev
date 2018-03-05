@@ -29,27 +29,55 @@ var controller = new ScrollMagic.Controller();
 
 
 
+var scene = new ScrollMagic.Scene({triggerElement: "#debug", duration: 200})
+                .addTo(controller)
+                // .addIndicators() // add indicators (requires plugin)
+                .on("update", function (e) {
+                    // console.log(e.target.controller().info("scrollDirection"));
+                    $("#scrollDirection").text(e.target.controller().info("scrollDirection"));
+                    if (e.target.controller().info("scrollDirection") === 'FORWARD') {
+                        $('#nav').addClass('hideNav');
+                        $("#homeLinks").removeClass("openMenu");
+                        $('#nav').removeClass('fullMenu');
+                        $("#compassButton").removeClass("activeCompass");
+                        // console.log('You going up');
+                    } else {
+                        $('#nav').removeClass('hideNav');
+                        // console.log('You going down');
+                    }
+                })
+                // .on("enter leave", function (e) {
+                //     $("#state").text(e.type == "enter" ? "inside" : "outside");
+                // })
+                // .on("start end", function (e) {
+                //     $("#lastHit").text(e.type == "start" ? "top" : "bottom");
+                // })
+                // .on("progress", function (e) {
+                //     $("#progress").text(e.progress.toFixed(3));
+                // })
+                ;
+
 
 
 // Transition to Archive Section
 
 var tween = TweenLite.to("#shipBGCont", 0.5, {right:0});
-var scene = new ScrollMagic.Scene({triggerElement: "#wrapper", duration: "350%"})
+var scene = new ScrollMagic.Scene({triggerElement: "#wrapper", duration: "450%"})
                 .setTween(tween)
                 .addTo(controller);
 // var tween = TweenLite.to("#voyageInfo", 0.5, {opacity:0});
-// var scene = new ScrollMagic.Scene({triggerElement: "#toArchiveTrigger", duration: "350%"})
+// var scene = new ScrollMagic.Scene({triggerElement: "#toArchiveTrigger", duration: "450%"})
 //                 .setTween(tween)
 //                 .addTo(controller);
 
 // var tween = TweenLite.from("#archiveInfo", 0.5, {opacity:0});
-// var scene = new ScrollMagic.Scene({triggerElement: "#toArchiveTrigger", duration: "350%"})
+// var scene = new ScrollMagic.Scene({triggerElement: "#toArchiveTrigger", duration: "450%"})
 //                 .setTween(tween)
 //                 .addTo(controller);
 
 
 var tween = TweenLite.to("#shipFGCont", 0.5, {left:0});
-var scene = new ScrollMagic.Scene({triggerElement: "#wrapper", duration: "350%"})
+var scene = new ScrollMagic.Scene({triggerElement: "#wrapper", duration: "450%"})
                 .setTween(tween)
                 .addTo(controller);
 
@@ -71,7 +99,7 @@ var scene = new ScrollMagic.Scene({triggerElement: "#toAbout", duration: "100%"}
                 .setTween(tween)
                 .addTo(controller);
 
-var tween = TweenLite.to("#homeHeader", 0.5, {left:-250});
+var tween = TweenLite.to("#nav", 0.5, {left:-250});
 var scene = new ScrollMagic.Scene({triggerElement: "#toAbout", duration: "60%"})
                 .setTween(tween)
                 .addTo(controller);

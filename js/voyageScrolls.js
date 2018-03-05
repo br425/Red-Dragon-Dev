@@ -16,14 +16,14 @@ var scene = new ScrollMagic.Scene({triggerElement: "#debug", duration: 200})
                     // console.log(e.target.controller().info("scrollDirection"));
                     $("#scrollDirection").text(e.target.controller().info("scrollDirection"));
                     if (e.target.controller().info("scrollDirection") === 'FORWARD') {
-                        $('#voyageNav').addClass('hideNav');
+                        $('#nav').addClass('hideNav');
                         $(".barContainer").removeClass("openMenu");
-                        $('#voyageNav').removeClass('fullMenu');
+                        $('#nav').removeClass('fullMenu');
                         $("#compassButton").removeClass("activeCompass");
                         $('.locationTitle').removeClass('locPushDown');
                         // console.log('You going up');
                     } else {
-                        $('#voyageNav').removeClass('hideNav');
+                        $('#nav').removeClass('hideNav');
                         $('.locationTitle').addClass('locPushDown');
                         // console.log('You going down');
                     }
@@ -80,7 +80,7 @@ var tabletPlusOnly = false;
 if (w > 500) {tabletPlusOnly = true;}
 
 if (tabletPlusOnly) {
-var tween = TweenLite.from("#voyageNav", 0.5, {left:-360});
+var tween = TweenLite.from("#nav", 0.5, {left:-360});
 var scene = new ScrollMagic.Scene({triggerElement: "#departure", duration: "100%"})
                 .setTween(tween)
                 .addTo(controller);
@@ -209,7 +209,7 @@ new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: 200})
 
 
 new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
-                .setClassToggle("#voyageNav", "redTheme")
+                .setClassToggle("#nav", "redTheme")
                 .on('enter', function () {
                     setActiveChapter('sierraLeone');
                 })
@@ -286,7 +286,7 @@ var rioDeLaPlataH = document.getElementById('rioDeLaPlata').offsetHeight;
 
 
 new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: rioDeLaPlataH})
-                .setClassToggle("#voyageNav", "redTheme")
+                .setClassToggle("#nav", "redTheme")
                 .on('enter', function () {
                     setActiveChapter('rioDeLaPlata');
                 })
@@ -378,7 +378,7 @@ var salvadorH = document.getElementById('salvador').offsetHeight;
 // 			.addTo(controller);
 
 new ScrollMagic.Scene({triggerElement: "#salvador", duration: salvadorH})
-                .setClassToggle("#voyageNav", "redTheme")
+                .setClassToggle("#nav", "redTheme")
                 .on('enter', function () {
                     setActiveChapter('salvador');
                 })
@@ -505,7 +505,7 @@ var scene = new ScrollMagic.Scene({triggerElement: "#credits", duration: credits
 
 
 if (tabletPlusOnly) {
-var tween = TweenLite.to("#voyageNav", 0.5, {left:-360});
+var tween = TweenLite.to("#nav", 0.5, {left:-360});
 var scene = new ScrollMagic.Scene({triggerElement: "#ending", duration: "100%"})
                 .setTween(tween)
                 .addTo(controller);
