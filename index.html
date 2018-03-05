@@ -11,8 +11,9 @@
 	<link rel="stylesheet" href="css/anims.css">
 	<link rel="stylesheet" href="css/normalize.css">
 </head>
-<body>
+<body id="indexPage">
 <div id="loading"><img src="icons/loading.gif" alt="Loading..."></div>
+<div id="continue" style="filter: invert(1);"><p>Scroll to Continue</p></div>
 
 	<div id="content">
 		<div class="BGimg" id="wrapperBG"></div>
@@ -20,7 +21,7 @@
 	<aside id="nav">
 		<div id="mobileHeader">
 		<div id="compassButton"></div>
-		<a href="index.html" id="navA">
+		<a href="#indexPage" id="navA" onclick="smoothScroll('indexPage')">
 			<!-- <img src="icons/logo-white.svg" alt="Title" id="voyageTitle"> -->
 		</a>
 		</div>
@@ -42,7 +43,7 @@
 
 		<section id="parallaxTriggers" class="">
 
-			<div class="spacer100"></div>
+			<div id="pageTop" class="spacer100"></div>
 
 			<div class="spacer100 spaceRight" id="toVoyage">
 				<div class="textBox">
@@ -211,7 +212,7 @@ function playOrMute() {
 		}
 
 		onReady(function () {
-				show('audio', true);
+				show('content', true);
 				show('loading', false);
 		});
 
