@@ -18,7 +18,7 @@
 
 </head>
 <body id="voyageBody"><!-- onload="drawMap('regularBG')" -->
-    <style>#map{position:fixed;margin-left: -33%; width:133%;z-index: -10;}</style>
+    <style>#map{position:fixed;margin-left: -15%; width:115%;z-index: -10;}</style>
 
 
 <!-- BACKGROUND EFFECTS -->
@@ -209,8 +209,8 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 		<section id="sierraLeone">
 
 			<div class="spacer100"></div>
-			<div class="spacer100 spaceCenter bigTitleBG">
-				<h2 class="bigTitle anyText" id="sierraLeoneTitle" style="transition: 1s;">Sierra Leone</h2>
+			<div class="spacer100 spaceCenter bigTitleBG anyText">
+				<h2 class="bigTitle" id="sierraLeoneTitle" style="transition: 1s;">Sierra Leone</h2>
 			</div>
 			<div class="spacer50"></div>
 
@@ -249,8 +249,8 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 		<section id="rioDeLaPlata">
 
 			<div class="spacer100"></div>
-			<div class="spacer100 spaceCenter">
-				<h2 class="bigTitle anyText" id="rioDeLaPlataTitle" style="transition: 1s;">Rio De La Plata</h2>
+			<div class="spacer100 spaceCenter anyText">
+				<h2 class="bigTitle" id="rioDeLaPlataTitle" style="transition: 1s;">Rio De La Plata</h2>
 			</div>
 
 			<div class="spacer50"></div>
@@ -273,6 +273,7 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 					</div>
 				</div>
 			</div>
+			<div id="rioDeLaPlataTrans"></div>
 			<div class="spacer100"></div>
 
 		</section>
@@ -314,8 +315,8 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 
 		<section id="salvador">
 			<div class="spacer100"></div>
-			<div class="spacer100 spaceCenter">
-				<h2 class="bigTitle anyText" id="salvadorTitle" style="transition: 1s;">Salvador</h2>
+			<div class="spacer100 spaceCenter anyText">
+				<h2 class="bigTitle" id="salvadorTitle" style="transition: 1s;">Salvador</h2>
 			</div>
 			<div class="spacer50"></div>
 
@@ -1248,8 +1249,31 @@ The Red Dragon expedition was backed by the Earle of Cumberland with the blessin
 		            'line-blur': 1
 						}
 		    });
-    });
-});
+				// map.loadImage('https://axelmortimer.com/idm371/marker.svg', function(error, image) {
+		    //     if (error) throw error;
+		    //     map.addImage('marker', image);
+		    //     map.addLayer({
+		    //         "id": "points",
+		    //         "type": "symbol",
+		    //         "source": {
+		    //             "type": "geojson",
+		    //             "data": {
+		    //                 "type": "FeatureCollection",
+		    //                 "features": [{
+		    //                     "type": "Feature",
+		    //                     "geometry": {
+		    //                         "type": "Point",
+		    //                         "coordinates": [-39.971008, 0.642588]
+		    //                     }
+		    //                 }]
+		    //             }
+		    //         },
+		    //         "layout": {
+		    //             "icon-image": "marker",
+		    //             "icon-size": 0.25
+		    //         }
+		    //     });
+    		// });
 
 				// Allows global functions to run
 				isMapLoaded = true;
