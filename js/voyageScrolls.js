@@ -84,6 +84,11 @@ var tween = TweenLite.from("#nav", 0.5, {left:-360});
 var scene = new ScrollMagic.Scene({triggerElement: "#departure", duration: "100%"})
                 .setTween(tween)
                 .addTo(controller);
+
+var tween = TweenLite.from("#navB", 1, {opacity: 1});
+var scene = new ScrollMagic.Scene({triggerElement: "#departure", duration: "100%"})
+                .setTween(tween)
+                .addTo(controller);
 }
 
 var tween = TweenLite.to("#paperBG", 0.5, {opacity:0});
@@ -222,6 +227,9 @@ new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
                 .setClassToggle("#sierraLeoneParBG", "storm2")
                 .addTo(controller);
 new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
+                .setClassToggle("#sierraLeoneParFG", "storm2")
+                .addTo(controller);
+new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: sierraLeoneH})
                 .setClassToggle("#rain", "rainier")
                 .addTo(controller);
 
@@ -236,11 +244,11 @@ new ScrollMagic.Scene({triggerElement: "#sierraLeoneTitle", duration: ('150%')})
                 .addTo(controller);
 
 
-var tween = TweenLite.to("#sierraLeoneParBG", 0.5, {left:'10%'});
+var tween = TweenLite.to("#sierraLeoneParBG", 0.5, {left:'-10%'});
 var scene = new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: (sierraLeoneH)})
                 .setTween(tween)
                 .addTo(controller);
-var tween = TweenLite.to("#sierraLeoneParFG", 0.5, {left:'20%'});
+var tween = TweenLite.to("#sierraLeoneParFG", 0.5, {left:'50%'});
 var scene = new ScrollMagic.Scene({triggerElement: "#sierraLeone", duration: (sierraLeoneH)})
                 .setTween(tween)
                 .addTo(controller);
@@ -299,6 +307,9 @@ new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: rioDeLaPlataH}
 new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: rioDeLaPlataH})
                 .setClassToggle("#rioDeLaPlataParBG", "storm2")
                 .addTo(controller);
+new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: rioDeLaPlataH})
+                .setClassToggle("#rioDeLaPlataParFG", "storm2")
+                .addTo(controller);
 
 new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: rioDeLaPlataH})
                 .setClassToggle("#rain", "rainier")
@@ -327,11 +338,11 @@ new ScrollMagic.Scene({triggerElement: "#rioDeLaPlataTitle", duration: ('150%')}
                 .addTo(controller);
 
 
-var tween = TweenLite.to("#rioDeLaPlataParBG", 0.5, {left:'-30%'});
+var tween = TweenLite.to("#rioDeLaPlataParBG", 0.5, {left:'-50%'});
 var scene = new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: (rioDeLaPlataH)})
                 .setTween(tween)
                 .addTo(controller);
-var tween = TweenLite.to("#rioDeLaPlataParFG", 0.5, {left:'20%'});
+var tween = TweenLite.to("#rioDeLaPlataParFG", 0.5, {left:'50%'});
 var scene = new ScrollMagic.Scene({triggerElement: "#rioDeLaPlata", duration: (rioDeLaPlataH)})
                 .setTween(tween)
                 .addTo(controller);
@@ -406,6 +417,9 @@ new ScrollMagic.Scene({triggerElement: "#salvador",duration:salvadorH})
 new ScrollMagic.Scene({triggerElement: "#salvador",duration:salvadorH})
                 .setClassToggle("#salvadorParBG", "storm2")
                 .addTo(controller);
+new ScrollMagic.Scene({triggerElement: "#salvador",duration:salvadorH})
+                .setClassToggle("#salvadorParFG", "storm2")
+                .addTo(controller);
 
 new ScrollMagic.Scene({triggerElement: "#salvador", duration: salvadorH})
                 .setClassToggle("#continue", "invert")
@@ -434,7 +448,7 @@ var scene = new ScrollMagic.Scene({triggerElement: "#salvador", duration: (salva
 // var scene = new ScrollMagic.Scene({triggerElement: "#salvador", duration: (salvadorH)})
 //                 .setTween(tween)
 //                 .addTo(controller);
-var tween = TweenLite.to("#salvadorParFG", 0.5, {left:'0%'});
+var tween = TweenLite.to("#salvadorParFG", 0.5, {left:'-10%'});
 var scene = new ScrollMagic.Scene({triggerElement: "#salvador", duration: (salvadorH)})
                 .setTween(tween)
                 .addTo(controller);
@@ -509,9 +523,18 @@ var tween = TweenLite.to("#nav", 0.5, {left:-360});
 var scene = new ScrollMagic.Scene({triggerElement: "#ending", duration: "100%"})
                 .setTween(tween)
                 .addTo(controller);
+
 }
 
 
+var tween = TweenLite.to("#navB", 1, {opacity: 1});
+var scene = new ScrollMagic.Scene({triggerElement: "#ending", duration: "50%"})
+                .setTween(tween)
+                .addTo(controller);
+var tween = TweenLite.to("#navB", 1, {opacity: 0});
+var scene = new ScrollMagic.Scene({triggerElement: "#credits", duration: "50%"})
+                .setTween(tween)
+                .addTo(controller);
 
 
 new ScrollMagic.Scene({triggerElement: "#departure", duration: 200})

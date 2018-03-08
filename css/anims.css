@@ -6,7 +6,7 @@
 #loading {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -200,7 +200,7 @@ main {
 */}
 
 .storm2 {
-	filter: brightness(.6) invert(0) saturate(0);
+	/*filter: brightness(.6) invert(0) saturate(0);*/
 
 	-webkit-animation-name: stormTwo;
 	-o-animation-name: stormTwo;
@@ -210,22 +210,22 @@ main {
 	-o-animation-duration: 13s;
 	animation-duration: 13s;
 
-	-webkit-animation-delay: 5s;
-	-o-animation-delay: 5s;
-	animation-delay: 5s;
+	-webkit-animation-delay: 2s;
+	-o-animation-delay: 2s;
+	animation-delay: 2s;
 
 	animation-iteration-count: infinite;
 }
 
 
 @keyframes stormTwo {
-	0% {filter: brightness(.6) invert(0) saturate(0);}
-	1% {filter: brightness(0) invert(1) saturate(0);}
-	3% {filter: brightness(.6) invert(0) saturate(0);}
-	30% {filter: brightness(.6)invert(0) saturate(0);}
-	32% {filter: brightness(0) invert(.9) saturate(0);}
-	35% {filter: brightness(0) invert(.9) saturate(0);}
-	38% {filter: brightness(.6) invert(.5) saturate(0);}
-	40% {filter: brightness(0) invert(1) saturate(0);}
-	41% {filter: brightness(.6) invert(0) saturate(0);}
+	0% {filter: brightness(1);}
+	1% {filter: brightness(5);}
+	3% {filter: brightness(1);}
+	30% {filter: brightness(1);}
+	32% {filter: brightness(5);}
+	35% {filter: brightness(5);}
+	38% {filter: brightness(1);}
+	40% {filter: brightness(6);}
+	41% {filter: brightness(1);}
 }

@@ -28,8 +28,8 @@ var controller = new ScrollMagic.Controller();
     // });
 
 
-var tween = TweenLite.from("#continue", 0.5, {opacity:1});
-var scene = new ScrollMagic.Scene({triggerElement: "#debug", duration: 200})
+var tween = TweenLite.to("#continue", 0.5, {opacity:0});
+var scene = new ScrollMagic.Scene({triggerElement: "#debug", duration: "25%"})
                 .setTween(tween)
                 .addTo(controller);
 
@@ -75,11 +75,17 @@ var scene = new ScrollMagic.Scene({triggerElement: "#toAbout", duration: "100%"}
                 .setTween(tween)
                 .addTo(controller);
 
+
+var w = $(window).width();
+var tabletPlusOnly = false;
+if (w > 500) {tabletPlusOnly = true;}
+
+if (tabletPlusOnly) {
 var tween = TweenLite.to("#nav", 0.5, {left:-250});
 var scene = new ScrollMagic.Scene({triggerElement: "#toAbout", duration: "60%"})
                 .setTween(tween)
                 .addTo(controller);
-
+}
 
 function currentYPosition() {
     // Firefox, Chrome, Opera, Safari
@@ -111,7 +117,7 @@ function smoothScroll(eID) {
         scrollTo(0, stopY); return;
     }
     var speed = Math.round(distance / 50);
-    if (speed >= 10) speed = 10;
+    if (speed >= 50) speed = 50;
     var step = Math.round(distance / 25);
     var leapY = stopY > startY ? startY + step : startY - step;
     var timer = 0;

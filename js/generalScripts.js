@@ -61,9 +61,9 @@ $(".textBox a").hover(function(){
 });
 
 $(".bigStopText a").hover(function(){
-    $('.bigStopText, .bigStopText a, .bigStopText p').addClass('bigStopHover');
+    $('.bigStopText, .bigStopText a, .bigStopText .textArea').addClass('bigStopHover');
     }, function(){
-    $('.bigStopText, .bigStopText a, .bigStopText p').removeClass('bigStopHover');
+    $('.bigStopText, .bigStopText a, .bigStopText .textArea').removeClass('bigStopHover');
 });
 
 
