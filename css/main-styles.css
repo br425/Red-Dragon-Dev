@@ -2,6 +2,11 @@
 
 /* GENERAL STYLES */
 
+* {
+	transition: ease;
+}
+
+
 html {
 	font-size: 100%;
 	/*background-color: black;*/
@@ -22,6 +27,7 @@ h1 {
 	1px -1px 0 #900000,
 	-1px 1px 0 #900000;
 	word-spacing: -.5rem;
+	overflow: visible;
 
 }
 
@@ -33,6 +39,7 @@ h1 {
 h2,h3,h4 {
 	font-family: 'Kallos';
 	letter-spacing: 1px;
+	overflow: visible;
 }
 
 @font-face {
@@ -354,6 +361,7 @@ img {
 	align-items: center;
 	/*text-align: center;*/
 	transition: all .2s;
+	cursor: pointer;
 }
 
 .textBox .arrowLink {
@@ -773,6 +781,7 @@ img {
 }
 .imgBG img {
 	height: 100vh;
+	max-width: 300vw;
 }
 #paperBG {
 	background: url('../imgs/paper-bg.jpg');
@@ -782,9 +791,9 @@ img {
 }
 
 #bannerBG {
-	background: url('../imgs/banner-bg.jpg');
+	background: url('../imgs/banner-bg3.jpg');
 	background-size: cover;
-	opacity: .2;
+	opacity: .5;
 	width: 150%;
 	left: -20%;
 }
@@ -996,6 +1005,7 @@ img {
 	position: fixed;
 	top: 1rem;
 	left: 1rem;
+	cursor: pointer;
 }
 
 #navA:hover {
@@ -1193,6 +1203,7 @@ img {
 	width: 6rem;
 	white-space: normal;
 	line-height: 1.5rem;
+	border: none;
 }
 
 #compassButton {
