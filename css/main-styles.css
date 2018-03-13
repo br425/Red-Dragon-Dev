@@ -580,7 +580,8 @@ img {
 
 .activeDot .dot {
 	background: transparent;
-	border: .125rem solid #700000;
+	/*border: .125rem solid #700000;*/
+	border: none;
 	font-size: 2rem;
 	color: #fffcfc;
 	line-height: 0;
@@ -619,7 +620,9 @@ img {
 }
 */
 .redTheme #navA:hover {
-	background: url('../icons/logoImg-lr.svg');
+	background: url('../icons/logo-lr.svg');
+	background-size: cover;
+	background-position: center;
 	background-repeat: no-repeat;
 }
 
@@ -1007,13 +1010,6 @@ img {
 	z-index: 20;
 	background: linear-gradient(transparent,rgba(50,0,0,.3))
 }
-#homeNav div {
-/*	display: flex;
-	flex-flow: row nowrap;
-	justify-content: center;
-	align-items: center;
-*/	/*width: 10rem;*/
-}
 
 #navA,#navB {
 	width: 8rem;
@@ -1202,6 +1198,8 @@ img {
 	min-width: 6rem;
 	height: 4rem;
 	background: url('../icons/logoImg-white.svg');
+	background-size: cover;
+	background-position: center;
 	background-repeat: no-repeat;
 
 	position: relative;
@@ -1211,6 +1209,8 @@ img {
 
 #navA:hover {
  	background: url('../icons/logoImg-lr.svg');
+	background-size: cover;
+	background-position: center;
 	background-repeat: no-repeat;
 	cursor: pointer;
 }
