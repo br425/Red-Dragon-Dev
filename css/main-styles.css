@@ -24,8 +24,8 @@ body {
 h1 {
 	font-family: 'Zapfino';
 	text-shadow:
-	1px -1px 0 #900000,
-	-1px 1px 0 #900000;
+	1px -1px 0 #700000,
+	-1px 1px 0 #700000;
 	word-spacing: -.5rem;
 	overflow: visible;
 
@@ -72,7 +72,7 @@ p {
 }
 
 .textBox .textArea {
-	border: solid #900000 .125rem;
+	border: solid #700000 .125rem;
 	/*overflow: hidden;*/
 	background: rgba(250, 245, 245,.9);
 	display: flex;
@@ -93,14 +93,14 @@ p {
 	display: flex;
 	align-items: center;
 	transition: transform .3s ease;
-	background: #900000;
+	background: #700000;
 }
 .textBox .a img {
 	margin: 0 .5rem;
 	max-height: 3rem;
 }
 .textBox .a h2 {
-	flex: 1 0 70%;
+	/*flex: 1 0 70%;*/
 }
 
 .redTextBox a {
@@ -216,9 +216,9 @@ img {
 	font-family: 'Zapfino';
 	font-size: 5rem;
 	text-shadow:
-	1px -1px 0 #900000,
-	-1px 1px 0 #900000;
-	color: #900000;
+	1px -1px 0 #700000,
+	-1px 1px 0 #700000;
+	color: #700000;
 	padding-right: 2rem;
 	word-spacing: -.2em;
 	position: fixed;
@@ -292,7 +292,7 @@ img {
 	color: white;
 	margin: 3rem;
 	padding: 1rem;
-	background-color: #900000;
+	background-color: #700000;
 	box-shadow: 0px 0 8px #544;
 	font-size: 1.1rem;
 	text-align: center;
@@ -317,7 +317,7 @@ img {
 
 
  h1 {
-	color: #900000;
+	color: #700000;
 	/*overflow: hidden;*/
 }
 
@@ -345,12 +345,13 @@ img {
 	align-items: center;
 	width: 100%;
 	height: 100%;
-	margin-top: 13rem;
+	margin-top: 1rem;
 }
 
 .arrowLink {
 	width: 8rem;
 	height: 4rem;
+	font-size: 1.2rem;
 	font-family: 'Kallos';
 	color: #fffcfc;
 	padding: 1rem 0;
@@ -367,9 +368,11 @@ img {
 .textBox .arrowLink {
 	background: #fffcfc;
 	height: 2rem;
-	color: #900000;
+	width: 9rem !important;
+	min-width: 9rem;
+	color: #700000;
 	border: none;
-	/*border-color: #900000;*/
+	/*border-color: #700000;*/
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
@@ -381,46 +384,60 @@ img {
 
 .textBox .arrowLink:hover {
 	color: #f23535;
+	justify-content: center;
 	/*background-color: #bbaaaa;*/
 }
 .textBox .arrowLink img {
-	height: 5rem;
+	height: 1.5rem;
 	padding-left: 0rem;
-	margin-left: -1rem;
+	margin-left: -.5rem;
 	opacity: 0;
 	width: 0;
 
 }
 .textBox .arrowLink:hover img {
 	opacity: 1;
-	margin-left: -1.5rem;
-	margin-right: -1rem;
-	width: 3.2rem;
+	margin-left: .5rem;
+	margin-right: -.5rem;
+	width: 2rem;
+	padding-left: 0rem;
+
 }
 
 
-.arrowLink {
-	font-size: 1.2rem;
-}
 .arrowLink img {
 	height: 2rem;
 	width: 0;
 	opacity: 0;
+	transform: scale(0);
 	transition: .2s;
 	filter: none;
 }
 
 .arrowLink:hover img {
 	opacity: 1;
+	transform: scale(1);
 	width: auto;
-	padding-left: 2rem;
+	padding-left: 1rem;
 }
 
 
 .arrowLink:hover {
-	color: #baa;
+	color: #f23535;
 	/*justify-content: space-between;*/
 	/*text-align: left;*/
+}
+
+.creditsLink {
+	width: 12rem;
+	border: none;
+	height: auto;
+	padding: 0;
+	font-size: 1rem;
+}
+
+.creditsLink:hover {
+	color: #f23535;
 }
 
 #homeLogo {
@@ -443,7 +460,7 @@ img {
 	width: 10rem;
 	padding: 0rem;
 	box-shadow: 0px 0 8px #544;
-	background: #900000;
+	background: #700000;
 	/*overflow: hidden;*/
 	/*mix-blend-mode: hue;*/
 	/*opacity: 0;*/
@@ -451,14 +468,14 @@ img {
 	flex-flow: column nowrap;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1rem 1rem 0;
+	padding: 13rem 1rem 0;
 	box-sizing: border-box;
 }
 
 #nav h1 {
 	padding: 0rem;
 	margin: 0;
-	border-bottom: solid #900000 3px;
+	border-bottom: solid #700000 3px;
 	overflow: hidden;
 	transition: .3s;
 	color: #fffcfc;
@@ -478,7 +495,7 @@ img {
 	.barContainer {
 		display: flex;
 		flex-flow: column;
-		justify-content: flex-end;
+		justify-content: center;
 		flex-grow: 1;
 		padding: 1rem 0;
 	}
@@ -508,7 +525,7 @@ img {
 		width: 0;
 		opacity: 0;
 		font-family: 'Kallos';
-		color: #900000;
+		color: #700000;
 		text-shadow: 0 0 .5rem rgba(255,250,250,.7);
 
 
@@ -563,12 +580,10 @@ img {
 
 .activeDot .dot {
 	background: transparent;
-	border: .125rem solid #900000;
-	/*overflow: hidden;*/
+	border: .125rem solid #700000;
 	font-size: 2rem;
 	color: #fffcfc;
 	line-height: 0;
-	border: none;
 	transform: translateX(-.2rem) !important;
 	letter-spacing: -80px;
 }
@@ -604,7 +619,8 @@ img {
 }
 */
 .redTheme #navA:hover {
-	background: url('../icons/logo-lr.svg');
+	background: url('../icons/logoImg-lr.svg');
+	background-repeat: no-repeat;
 }
 
 
@@ -666,6 +682,9 @@ img {
 .bigStopText {
 	color: #fffcfc;
 	width: 35rem;
+}
+.bigStopText .a {
+	background: transparent !important;
 }
 .bigStopText h2 {
 	padding: 0rem 0rem 2rem;
@@ -739,7 +758,7 @@ img {
 .credits .textArea {
 	width: 100%;
 	justify-content: space-around;
-	align-items: center;
+	align-items: flex-start;
 	padding: 5rem 0 0;
 }
 
@@ -751,6 +770,9 @@ img {
 
 .credits .textArea h3 {
 	font-size: 2rem;
+	border-bottom: 1px solid #baa;
+	margin-bottom: 1rem;
+	padding-bottom: .5rem;
 }
 
 .credits .textArea span {
@@ -914,13 +936,13 @@ img {
 	height: 100%;
 	width: 10rem;
 	padding: 1rem;
-	background: #900000;
+	background: #700000;
 	/*overflow: hidden;*/
 	box-shadow: 0px 0 8px #544;
 	padding: 1rem 1rem 0;
-	border-right: solid #900000 .125rem;
+	border-right: solid #700000 .125rem;
 	overflow: hidden;
-	border-bottom: solid #900000 .125rem;
+	border-bottom: solid #700000 .125rem;
 	overflow: hidden;
 }
 
@@ -959,8 +981,7 @@ img {
 	bottom: -4rem;
 	width: 30rem;
 	height: 110%;
-}
-#shipFG {
+	opacity: 1;
 }
 
 
@@ -1009,7 +1030,7 @@ img {
 }
 
 #navA:hover {
- 	background: url('../icons/logo-gray.svg');
+ 	background: url('../icons/logo-lr.svg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -1020,10 +1041,16 @@ img {
 	opacity: 0;
 	pointer-events: none;
 	background: url('../icons/logo-red.svg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 	z-index: 200;
 }
 #navB:hover {
 	background: url('../icons/logo-lr.svg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 
@@ -1183,7 +1210,7 @@ img {
 }
 
 #navA:hover {
- 	background: url('../icons/logoImg-gray.svg');
+ 	background: url('../icons/logoImg-lr.svg');
 	background-repeat: no-repeat;
 	cursor: pointer;
 }
@@ -1266,6 +1293,8 @@ img {
 	color: #fffcfc;
 	opacity: 1;
 	pointer-events: inherit;
+	text-shadow: none;
+
 }
 
 .openMenu {
@@ -1357,6 +1386,7 @@ img {
 	width: 100%;
 	/*justify-content: space-between;*/
 	padding: 3rem 0;
+	align-items: center;
 }
 
 /* MISC */
@@ -1367,70 +1397,57 @@ img {
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ LARGER */
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1300px) {
 	html {
-		font-size: 125% !important;
+		font-size: 110% !important;
 	}
-/*	#map {
-		width:125% !important;
-		height:125% !important;
+}
+@media screen and (min-width: 1600px) {
+	html {
+		font-size: 120% !important;
 	}
-*/}
+}
+@media screen and (min-width: 1900px) {
+	html {
+		font-size: 130% !important;
+	}
+}
 
 @media screen and (min-width: 2100px) {
 	html {
+		font-size: 150% !important;
+	}
+}
+@media screen and (min-width: 2400px) {
+	html {
+		font-size: 170% !important;
+	}
+}
+
+@media screen and (min-width: 2700px) {
+	html {
 		font-size: 200% !important;
 	}
-/*	#map {
-		width:200% !important;
-		width:200% !important;
-	}
-*/}
-@media screen and (min-width: 2500px) {
-	html {
-		font-size: 250% !important;
-	}
-/*	#map {
-		width:250% !important;
-		width:250% !important;
-	}
-*/}
-
+}
 @media screen and (min-width: 3000px) {
+	html {
+		font-size: 230% !important;
+	}
+}
+
+@media screen and (min-width: 3300px) {
+	html {
+		font-size: 260% !important;
+	}
+}
+
+@media screen and (min-width: 3600px) {
 	html {
 		font-size: 300% !important;
 	}
-/*	#map {
-		width:300% !important;
-		width:300% !important;
-	}
-*/}
-@media screen and (min-width: 3500px) {
+}
+@media screen and (min-width: 4000px) {
 	html {
 		font-size: 350% !important;
 	}
-/*	#map {
-		width:350% !important;
-		width:350% !important;
-	}
-*/}
-
-@media screen and (min-width: 4200px) {
-	html {
-		font-size: 400% !important;
-	}
-/*	#map {
-		width:400% !important;
-		width:400% !important;
-	}
-*/}
-
-@media screen and (min-width: 5000px) {
-	html {
-		font-size: 450% !important;
-	}
-/*	#map {
-		width:450% !important;
-		width:450% !important;
-	}
-*/}
+}

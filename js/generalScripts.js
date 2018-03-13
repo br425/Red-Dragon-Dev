@@ -56,8 +56,8 @@ $(".textBox a").hover(function(){
     $(".a").attr("style","background-color: #f23535;");
     }, function(){
     $(".boxTop").attr("src","icons/boxTop.svg");
-    $(".textArea").attr("style","border-color: #900000;");
-    $(".a").attr("style","background-color: #900000;");
+    $(".textArea").attr("style","border-color: #700000;");
+    $(".a").attr("style","background-color: #700000;");
 });
 
 $(".bigStopText a").hover(function(){
